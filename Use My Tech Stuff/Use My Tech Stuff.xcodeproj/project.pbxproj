@@ -13,6 +13,9 @@
 		33A5D9AB229310A3007467EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9AA229310A3007467EF /* Assets.xcassets */; };
 		33A5D9AE229310A3007467EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9AC229310A3007467EF /* LaunchScreen.storyboard */; };
 		33A5D9B9229310A4007467EF /* Use_My_Tech_StuffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9B8229310A4007467EF /* Use_My_Tech_StuffTests.swift */; };
+		33A5D9CB22931453007467EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9CA22931453007467EF /* User.swift */; };
+		33A5D9CF22931502007467EF /* UIAlertController+NetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9CD22931502007467EF /* UIAlertController+NetError.swift */; };
+		33A5D9D022931502007467EF /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9CE22931502007467EF /* NetworkHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		33A5D9B4229310A4007467EF /* Use My Tech StuffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Use My Tech StuffTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A5D9B8229310A4007467EF /* Use_My_Tech_StuffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Use_My_Tech_StuffTests.swift; sourceTree = "<group>"; };
 		33A5D9BA229310A4007467EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33A5D9CA22931453007467EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		33A5D9CD22931502007467EF /* UIAlertController+NetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+NetError.swift"; sourceTree = "<group>"; };
+		33A5D9CE22931502007467EF /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 		33A5D9A2229310A2007467EF /* Use My Tech Stuff */ = {
 			isa = PBXGroup;
 			children = (
+				33A5D9CC229314FA007467EF /* Helpers */,
 				33A5D9C6229311E0007467EF /* View Controllers */,
 				33A5D9C5229311DC007467EF /* Views */,
 				33A5D9C4229311D6007467EF /* Model Controllers */,
@@ -99,6 +106,7 @@
 		33A5D9C3229311D2007467EF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				33A5D9CA22931453007467EF /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +142,15 @@
 				33A5D9AF229310A3007467EF /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		33A5D9CC229314FA007467EF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				33A5D9CE22931502007467EF /* NetworkHandler.swift */,
+				33A5D9CD22931502007467EF /* UIAlertController+NetError.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +297,9 @@
 			files = (
 				33A5D9A6229310A2007467EF /* ViewController.swift in Sources */,
 				33A5D9A4229310A2007467EF /* AppDelegate.swift in Sources */,
+				33A5D9CF22931502007467EF /* UIAlertController+NetError.swift in Sources */,
+				33A5D9D022931502007467EF /* NetworkHandler.swift in Sources */,
+				33A5D9CB22931453007467EF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
