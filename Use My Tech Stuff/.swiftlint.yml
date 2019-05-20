@@ -1,0 +1,11 @@
+disabled_rules:
+
+excluded:
+  - Carthage
+  - Scripts
+
+identifier_name:
+  excluded: # excluded via string array
+    - id
+cyclomatic_complexity:
+  ignores_case_statements: true

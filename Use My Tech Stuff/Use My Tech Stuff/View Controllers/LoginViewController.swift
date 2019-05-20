@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  Use My Tech Stuff
 //
 //  Created by Michael Redig on 5/20/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
 	@IBOutlet var usernameTextField: UITextField!
 	@IBOutlet var passwordTextField: UITextField!

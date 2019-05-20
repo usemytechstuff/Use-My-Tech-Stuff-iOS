@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		33A5D9A4229310A2007467EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9A3229310A2007467EF /* AppDelegate.swift */; };
-		33A5D9A6229310A2007467EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9A5229310A2007467EF /* ViewController.swift */; };
+		33A5D9A6229310A2007467EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9A5229310A2007467EF /* LoginViewController.swift */; };
 		33A5D9A9229310A2007467EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9A7229310A2007467EF /* Main.storyboard */; };
 		33A5D9AB229310A3007467EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9AA229310A3007467EF /* Assets.xcassets */; };
 		33A5D9AE229310A3007467EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9AC229310A3007467EF /* LaunchScreen.storyboard */; };
@@ -16,6 +16,10 @@
 		33A5D9CB22931453007467EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9CA22931453007467EF /* User.swift */; };
 		33A5D9CF22931502007467EF /* UIAlertController+NetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9CD22931502007467EF /* UIAlertController+NetError.swift */; };
 		33A5D9D022931502007467EF /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9CE22931502007467EF /* NetworkHandler.swift */; };
+		33A5D9D222931FCD007467EF /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9D122931FCD007467EF /* Cartfile */; };
+		33A5D9D922932158007467EF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9D822932158007467EF /* .swiftlint.yml */; };
+		33A5D9DB22932208007467EF /* SwiftyUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A5D9DA22932208007467EF /* SwiftyUtils.framework */; };
+		33A5D9DC22932208007467EF /* SwiftyUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33A5D9DA22932208007467EF /* SwiftyUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,10 +32,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		33A5D9DD22932208007467EF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				33A5D9DC22932208007467EF /* SwiftyUtils.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		33A5D9A0229310A2007467EF /* Use My Tech Stuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Use My Tech Stuff.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A5D9A3229310A2007467EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33A5D9A5229310A2007467EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		33A5D9A5229310A2007467EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		33A5D9A8229310A2007467EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33A5D9AA229310A3007467EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33A5D9AD229310A3007467EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +60,10 @@
 		33A5D9CA22931453007467EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		33A5D9CD22931502007467EF /* UIAlertController+NetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+NetError.swift"; sourceTree = "<group>"; };
 		33A5D9CE22931502007467EF /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
+		33A5D9D122931FCD007467EF /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		33A5D9D622932086007467EF /* SwiftyUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUtils.framework; path = Carthage/Build/iOS/SwiftyUtils.framework; sourceTree = "<group>"; };
+		33A5D9D822932158007467EF /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		33A5D9DA22932208007467EF /* SwiftyUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUtils.framework; path = Carthage/Build/iOS/SwiftyUtils.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33A5D9DB22932208007467EF /* SwiftyUtils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,9 +88,13 @@
 		33A5D997229310A2007467EF = {
 			isa = PBXGroup;
 			children = (
+				33A5D9DA22932208007467EF /* SwiftyUtils.framework */,
+				33A5D9D822932158007467EF /* .swiftlint.yml */,
+				33A5D9D122931FCD007467EF /* Cartfile */,
 				33A5D9A2229310A2007467EF /* Use My Tech Stuff */,
 				33A5D9B7229310A4007467EF /* Use My Tech StuffTests */,
 				33A5D9A1229310A2007467EF /* Products */,
+				33A5D9D522932086007467EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,7 +155,7 @@
 		33A5D9C6229311E0007467EF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				33A5D9A5229310A2007467EF /* ViewController.swift */,
+				33A5D9A5229310A2007467EF /* LoginViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -153,6 +180,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		33A5D9D522932086007467EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33A5D9D622932086007467EF /* SwiftyUtils.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,6 +200,8 @@
 				33A5D99D229310A2007467EF /* Frameworks */,
 				33A5D99E229310A2007467EF /* Resources */,
 				33A5D9C92293122D007467EF /* Run Script - Increment Build Script */,
+				33A5D9D42293203D007467EF /* Run Script - carthage */,
+				33A5D9DD22932208007467EF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,8 +273,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33A5D9D922932158007467EF /* .swiftlint.yml in Resources */,
 				33A5D9AE229310A3007467EF /* LaunchScreen.storyboard in Resources */,
 				33A5D9AB229310A3007467EF /* Assets.xcassets in Resources */,
+				33A5D9D222931FCD007467EF /* Cartfile in Resources */,
 				33A5D9A9229310A2007467EF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +327,26 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/bash\nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((bN += 1))\nbN=$(printf \"%d\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"\n";
 		};
+		33A5D9D42293203D007467EF /* Run Script - carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyUtils.framework",
+			);
+			name = "Run Script - carthage";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyUtils.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n/usr/local/bin/carthage outdated --xcode-warnings\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -295,7 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33A5D9A6229310A2007467EF /* ViewController.swift in Sources */,
+				33A5D9A6229310A2007467EF /* LoginViewController.swift in Sources */,
 				33A5D9A4229310A2007467EF /* AppDelegate.swift in Sources */,
 				33A5D9CF22931502007467EF /* UIAlertController+NetError.swift in Sources */,
 				33A5D9D022931502007467EF /* NetworkHandler.swift in Sources */,
@@ -463,6 +522,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5UZAT7KA9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Use My Tech Stuff/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -482,6 +545,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5UZAT7KA9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Use My Tech Stuff/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
