@@ -23,7 +23,12 @@ class LoginViewController: UIViewController {
 	// FIXME: remove initing here
 	var techStuffController: TechStuffController? = TechStuffController()
 
-	var loginMode: LoginMode = .login
+	var loginMode: LoginMode = .login {
+		didSet {
+			updateLoginFields()
+		}
+	}
+
 	@IBOutlet var stackContainer: UIStackView!
 
 	@IBOutlet var usernameTextField: UITextField!
@@ -44,7 +49,6 @@ class LoginViewController: UIViewController {
 	// MARK: - user input
 	@IBAction func loginTypeChanged(_ sender: UISegmentedControl) {
 		loginMode = LoginMode.getType(for: sender.selectedSegmentIndex)
-		updateLoginFields()
 	}
 
 	@IBAction func loginButtonPressed(_ sender: UIButton) {
@@ -53,6 +57,10 @@ class LoginViewController: UIViewController {
 				control.resignFirstResponder()
 			}
 		}
+		performSelectedLoginOption()
+	}
+
+	private func performSelectedLoginOption() {
 		switch loginMode {
 		case .login:
 			login()
@@ -82,11 +90,13 @@ class LoginViewController: UIViewController {
 			return
 		}
 
-		techStuffController?.login(with: User(username: username, password: password, email: nil), completion: { [weak self] (result: Result<Bearer, NetworkError>) in
+		techStuffController?.login(with: User(username: username, password: password, email: nil),
+								   completion: { [weak self] (result: Result<Bearer, NetworkError>) in
 			do {
 				_ = try result.get()
 			} catch {
-				print("error logging in: \(error)")
+				let errorAlert = UIAlertController(error: error)
+				self?.present(errorAlert, animated: true)
 				return
 			}
 			//sign in here
@@ -132,14 +142,15 @@ class LoginViewController: UIViewController {
 			do {
 				_ = try result.get()
 			} catch {
-				print("error signing up: \(error)")
+				let errorAlert = UIAlertController(error: error)
+				self?.present(errorAlert, animated: true)
 				return
 			}
 			//sign in here
 			guard let self = self else { return }
-			let alert = self.createSimpleAlert(withTitle: "Success", message: "Thanks for creating an account, \(username)!")
-			DispatchQueue.main.async {
-				self.present(alert, animated: true)
+			DispatchQueue.main.async { [weak self] in
+				self?.loginMode = .login
+				self?.performSelectedLoginOption()
 			}
 		})
 	}
@@ -212,7 +223,6 @@ class LoginViewController: UIViewController {
 
 	@IBAction func emailFieldEdited(_ sender: UITextField) {
 		if let email = sender.text {
-			print(email)
 			if email.isEmail {
 				colorViewBorder(sender, color: .clear, borderWidth: 0)
 			} else {
