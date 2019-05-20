@@ -62,12 +62,40 @@ class LoginViewController: UIViewController {
 	}
 
 	private func login() {
-		guard let username = usernameTextField.text, !username.isEmpty,
-			let password = passwordTextField.text, !password.isEmpty else {
-				wiggle(textField: passwordTextField)
-				wiggle(textField: usernameTextField)
-				return
+		guard let username = usernameTextField.text, !username.isEmpty else {
+			wiggle(textField: usernameTextField)
+			return
 		}
+		guard username.count < 32 else {
+			let alert = createSimpleAlert(withTitle: "Username error",
+										  message: "Your username must be fewer than 32 characters.")
+			present(alert, animated: true)
+			return
+		}
+		guard let password = passwordTextField.text, !password.isEmpty else {
+			wiggle(textField: passwordTextField)
+			return
+		}
+		guard password.count >= 8 else {
+			let alert = createSimpleAlert(withTitle: "Weak Password", message: "Your password must be at least 8 characters.")
+			present(alert, animated: true)
+			return
+		}
+
+		techStuffController?.login(with: User(username: username, password: password, email: nil), completion: { [weak self] (result: Result<Bearer, NetworkError>) in
+			do {
+				_ = try result.get()
+			} catch {
+				print("error logging in: \(error)")
+				return
+			}
+			//sign in here
+			guard let self = self else { return }
+			let alert = self.createSimpleAlert(withTitle: "Success", message: "Login success, \(username)!")
+			DispatchQueue.main.async {
+				self.present(alert, animated: true)
+			}
+		})
 	}
 
 	private func signUp() {
@@ -104,7 +132,7 @@ class LoginViewController: UIViewController {
 			do {
 				_ = try result.get()
 			} catch {
-				print("error getting result: \(error)")
+				print("error signing up: \(error)")
 				return
 			}
 			//sign in here

@@ -38,4 +38,29 @@ class TechStuffController {
 
 		networkHandler.transferMahDatas(with: request, completion: completion)
 	}
+
+	func login(with user: User, completion: @escaping (Result<Bearer, NetworkError>) -> Void) {
+		let loginURL = baseURL.appendingPathComponent(Endpoints.login.rawValue)
+
+		var request = URLRequest(url: loginURL)
+		request.httpMethod = HTTPMethods.post.rawValue
+		request.addValue(HTTPHeaderKeys.ContentTypes.json.rawValue, forHTTPHeaderField: HTTPHeaderKeys.contentType.rawValue)
+
+		let encoder = JSONEncoder()
+		do {
+			request.httpBody = try encoder.encode(user)
+		} catch {
+			completion(.failure(.dataCodingError(specifically: error)))
+			return
+		}
+		networkHandler.transferMahCodableDatas(with: request) { [weak self] (result: Result<Bearer, NetworkError>) in
+			do {
+				let bearer = try result.get()
+				self?.bearer = bearer
+				completion(.success(bearer))
+			} catch {
+				completion(.failure((error as? NetworkError) ?? NetworkError.otherError(error: error)))
+			}
+		}
+	}
 }
