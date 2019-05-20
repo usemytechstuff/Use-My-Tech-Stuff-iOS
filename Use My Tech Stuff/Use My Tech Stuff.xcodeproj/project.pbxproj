@@ -77,12 +77,12 @@
 		33A5D9A2229310A2007467EF /* Use My Tech Stuff */ = {
 			isa = PBXGroup;
 			children = (
+				33A5D9C6229311E0007467EF /* View Controllers */,
+				33A5D9C5229311DC007467EF /* Views */,
+				33A5D9C4229311D6007467EF /* Model Controllers */,
+				33A5D9C3229311D2007467EF /* Models */,
 				33A5D9A3229310A2007467EF /* AppDelegate.swift */,
-				33A5D9A5229310A2007467EF /* ViewController.swift */,
-				33A5D9A7229310A2007467EF /* Main.storyboard */,
-				33A5D9AA229310A3007467EF /* Assets.xcassets */,
-				33A5D9AC229310A3007467EF /* LaunchScreen.storyboard */,
-				33A5D9AF229310A3007467EF /* Info.plist */,
+				33A5D9C7229311EA007467EF /* Resources */,
 			);
 			path = "Use My Tech Stuff";
 			sourceTree = "<group>";
@@ -96,6 +96,46 @@
 			path = "Use My Tech StuffTests";
 			sourceTree = "<group>";
 		};
+		33A5D9C3229311D2007467EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		33A5D9C4229311D6007467EF /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		33A5D9C5229311DC007467EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		33A5D9C6229311E0007467EF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				33A5D9A5229310A2007467EF /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		33A5D9C7229311EA007467EF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				33A5D9A7229310A2007467EF /* Main.storyboard */,
+				33A5D9AA229310A3007467EF /* Assets.xcassets */,
+				33A5D9AC229310A3007467EF /* LaunchScreen.storyboard */,
+				33A5D9AF229310A3007467EF /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33A5D9BD229310A4007467EF /* Build configuration list for PBXNativeTarget "Use My Tech Stuff" */;
 			buildPhases = (
+				33A5D9C822931208007467EF /* Run Script - swiftlint */,
 				33A5D99C229310A2007467EF /* Sources */,
 				33A5D99D229310A2007467EF /* Frameworks */,
 				33A5D99E229310A2007467EF /* Resources */,
+				33A5D9C92293122D007467EF /* Run Script - Increment Build Script */,
 			);
 			buildRules = (
 			);
@@ -191,6 +233,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33A5D9C822931208007467EF /* Run Script - swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - swiftlint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nfi\n";
+		};
+		33A5D9C92293122D007467EF /* Run Script - Increment Build Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - Increment Build Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((bN += 1))\nbN=$(printf \"%d\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		33A5D99C229310A2007467EF /* Sources */ = {
@@ -362,7 +443,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5UZAT7KA9;
-				INFOPLIST_FILE = "Use My Tech Stuff/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Use My Tech Stuff/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +462,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5UZAT7KA9;
-				INFOPLIST_FILE = "Use My Tech Stuff/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Use My Tech Stuff/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

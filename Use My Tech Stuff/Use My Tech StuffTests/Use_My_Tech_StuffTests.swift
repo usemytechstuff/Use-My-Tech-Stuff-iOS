@@ -5,6 +5,7 @@
 //  Created by Michael Redig on 5/20/19.
 //  Copyright © 2019 Red_Egg Productions. All rights reserved.
 //
+//swiftlint:disable type_name
 
 import XCTest
 @testable import Use_My_Tech_Stuff
