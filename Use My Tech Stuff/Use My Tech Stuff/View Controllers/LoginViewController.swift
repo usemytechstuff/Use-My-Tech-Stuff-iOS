@@ -121,22 +121,36 @@ class LoginViewController: UIViewController {
 	}
 
 	private func updateLoginFields() {
+		let animation: () -> Void
 		switch loginMode {
 		case .login:
 			// FIXME: remove
 			setupMockDataSignIn()
-			confirmPasswordTextField.isHidden = true
-			emailTextField.isHidden = true
-			loginButton.setTitle("Login", for: .normal)
-			loginTypeSelector.selectedSegmentIndex = loginMode.rawValue
+			animation = { [weak self] in
+				guard let self = self else { return }
+				self.confirmPasswordTextField.isHidden = true
+				self.emailTextField.isHidden = true
+				self.loginButton.setTitle("Login", for: .normal)
+				self.loginTypeSelector.selectedSegmentIndex = self.loginMode.rawValue
+			}
 		case .signUp:
 			// FIXME: remove
 			setupMockDataSignUp()
-			confirmPasswordTextField.isHidden = false
-			emailTextField.isHidden = false
-			loginButton.setTitle("Sign Up", for: .normal)
-			loginTypeSelector.selectedSegmentIndex = loginMode.rawValue
+			animation = { [weak self] in
+				guard let self = self else { return }
+				self.confirmPasswordTextField.isHidden = false
+				self.emailTextField.isHidden = false
+				self.loginButton.setTitle("Sign Up", for: .normal)
+				self.loginTypeSelector.selectedSegmentIndex = self.loginMode.rawValue
+			}
 		}
+		UIView.animate(withDuration: 1.0,
+					   delay: 0,
+					   usingSpringWithDamping: 0.3,
+					   initialSpringVelocity: 0,
+					   options: [],
+					   animations: animation,
+					   completion: nil)
 	}
 
 	private func wiggle(textField: UITextField) {
