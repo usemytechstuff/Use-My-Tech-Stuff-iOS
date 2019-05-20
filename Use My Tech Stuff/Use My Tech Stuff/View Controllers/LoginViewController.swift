@@ -76,7 +76,8 @@ class LoginViewController: UIViewController {
 			return
 		}
 		guard username.count < 32 else {
-			let alert = createSimpleAlert(withTitle: "Username error", message: "Your username must be fewer than 32 characters.")
+			let alert = createSimpleAlert(withTitle: "Username error",
+										  message: "Your username must be fewer than 32 characters.")
 			present(alert, animated: true)
 			return
 		}
