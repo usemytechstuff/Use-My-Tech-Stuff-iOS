@@ -14,10 +14,12 @@ class TechStuffController {
 	var bearer: Bearer?
 
 	enum Endpoints: String {
-		case signup = "/users/signup"
+		case signup = "/register"
+		case login = "/login"
+		case logout = "/logout"
 	}
 
-	let baseURL = URL(string: "https://temp.com")!
+	let baseURL = URL(string: "https://usemytechstuffapp.herokuapp.com/api/")!
 
 	func signUp(with user: User, completion: @escaping (Result<Data, NetworkError>) -> Void) {
 		let signUpURL = baseURL.appendingPathComponent(Endpoints.signup.rawValue)
