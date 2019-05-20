@@ -92,6 +92,7 @@ class LoginViewController: UIViewController {
 		})
 	}
 
+	// FIXME: remove
 	func setupMockDataSignUp() {
 		techStuffController?.networkHandler.mockSuccess = true
 		techStuffController?.networkHandler.mockMode = true
@@ -105,6 +106,7 @@ class LoginViewController: UIViewController {
 		}
 	}
 
+	// FIXME: remove
 	func setupMockDataSignIn() {
 		techStuffController?.networkHandler.mockSuccess = true
 		techStuffController?.networkHandler.mockMode = true
