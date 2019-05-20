@@ -54,13 +54,22 @@ class LoginViewController: UIViewController {
 
 	private func login() {
 		guard let username = usernameTextField.text, !username.isEmpty,
-			let password = passwordTextField.text, !password.isEmpty else { return }
-
+			let password = passwordTextField.text, !password.isEmpty else {
+				wiggle(textField: passwordTextField)
+				wiggle(textField: usernameTextField)
+				return
+		}
 	}
 
 	private func signUp() {
-		guard let username = usernameTextField.text, !username.isEmpty,
-			let password = passwordTextField.text, !password.isEmpty else { return }
+		guard let username = usernameTextField.text, !username.isEmpty else {
+			wiggle(textField: usernameTextField)
+			return
+		}
+		guard let password = passwordTextField.text, !password.isEmpty else {
+			wiggle(textField: passwordTextField)
+			return
+		}
 		guard let confirmPassword = confirmPasswordTextField.text, password == confirmPassword else {
 			wiggle(textField: confirmPasswordTextField)
 			return
@@ -144,5 +153,34 @@ class LoginViewController: UIViewController {
 		UIView.animate(withDuration: 0.1, animations: {
 			textField.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
 		}, completion: spring)
+	}
+
+	@IBAction func passwordFieldEdited(_ sender: UITextField) {
+		if loginMode == .signUp {
+			if let password = passwordTextField.text, let confirmPassword = confirmPasswordTextField.text {
+				if password == confirmPassword {
+					colorViewBorder(confirmPasswordTextField, color: .clear, borderWidth: 0)
+				} else {
+					colorViewBorder(confirmPasswordTextField, color: .red)
+				}
+			}
+		}
+	}
+
+	@IBAction func emailFieldEdited(_ sender: UITextField) {
+		if let email = sender.text {
+			print(email)
+			if email.isEmail {
+				colorViewBorder(sender, color: .clear, borderWidth: 0)
+			} else {
+				colorViewBorder(sender, color: .red)
+			}
+		}
+	}
+
+	private func colorViewBorder(_ view: UIView, color: UIColor, borderWidth: CGFloat = 1) {
+		view.layer.borderColor = color.cgColor
+		view.layer.borderWidth = borderWidth
+		view.layer.cornerRadius = 5
 	}
 }
