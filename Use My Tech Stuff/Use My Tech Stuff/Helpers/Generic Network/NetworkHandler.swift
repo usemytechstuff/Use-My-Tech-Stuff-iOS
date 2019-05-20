@@ -33,7 +33,7 @@ enum NetworkError: Error {
 	case dataCodingError(specifically: Error)
 	case imageDecodeError
 	case noStatusCodeResponse
-	case httpNon200StatusCode(code: Int)
+	case httpNon200StatusCode(code: Int, data: Data?)
 }
 
 class NetworkHandler {
@@ -88,11 +88,11 @@ class NetworkHandler {
 				if let response = response as? HTTPURLResponse {
 					if self.strict200CodeResponse && response.statusCode != 200 {
 						self.printToConsole("Received a non 200 http response: \(response.statusCode)")
-						completion(.failure(.httpNon200StatusCode(code: response.statusCode)))
+						completion(.failure(.httpNon200StatusCode(code: response.statusCode, data: data)))
 						return
 					} else if !self.strict200CodeResponse && !(200..<300).contains(response.statusCode) {
 						self.printToConsole("Received a non 200 http response: \(response.statusCode)")
-						completion(.failure(.httpNon200StatusCode(code: response.statusCode)))
+						completion(.failure(.httpNon200StatusCode(code: response.statusCode, data: data)))
 						return
 					}
 				} else {

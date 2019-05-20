@@ -95,14 +95,16 @@ class LoginViewController: UIViewController {
 			do {
 				_ = try result.get()
 			} catch {
-				let errorAlert = UIAlertController(error: error)
-				self?.present(errorAlert, animated: true)
+				DispatchQueue.main.async {
+					let errorAlert = UIAlertController(error: error)
+					self?.present(errorAlert, animated: true)
+				}
 				return
 			}
 			//sign in here
 			guard let self = self else { return }
-			let alert = self.createSimpleAlert(withTitle: "Success", message: "Login success, \(username)!")
 			DispatchQueue.main.async {
+				let alert = self.createSimpleAlert(withTitle: "Success", message: "Login success, \(username)!")
 				self.present(alert, animated: true)
 			}
 		})
@@ -142,8 +144,10 @@ class LoginViewController: UIViewController {
 			do {
 				_ = try result.get()
 			} catch {
-				let errorAlert = UIAlertController(error: error)
-				self?.present(errorAlert, animated: true)
+				DispatchQueue.main.async {
+					let errorAlert = UIAlertController(error: error)
+					self?.present(errorAlert, animated: true)
+				}
 				return
 			}
 			//sign in here

@@ -9,6 +9,9 @@
 import UIKit
 
 extension UIAlertController {
+	private struct Message: Decodable {
+		let message: String
+	}
 
 	convenience init(error: Error, preferredStyle: UIAlertController.Style = .alert) {
 		self.init(title: nil, message: nil, preferredStyle: preferredStyle)
@@ -22,8 +25,8 @@ extension UIAlertController {
 			switch error {
 			case .badData:
 				message = "Bad Data"
-			case .httpNon200StatusCode(let code):
-				let httpErrorMessage = getStatusCodeSpecifics(statusCode: code)
+			case .httpNon200StatusCode(let code, let data):
+				let httpErrorMessage = getStatusCodeSpecifics(statusCode: code, potentialData: data)
 				message = "HTTP transfer error: \(httpErrorMessage)"
 			case .dataCodingError(specifically: let specificDecodeError):
 				message = "There was an error decoding data. Please screenshot this and inform the developer: \(specificDecodeError)"
@@ -44,7 +47,13 @@ extension UIAlertController {
 		}
 	}
 
-	private func getStatusCodeSpecifics(statusCode: Int) -> String {
+	private func getStatusCodeSpecifics(statusCode: Int, potentialData data: Data? = nil) -> String {
+		if let data = data {
+			let decoder = JSONDecoder()
+			if let message = try? decoder.decode(Message.self, from: data) {
+				return message.message
+			}
+		}
 		switch statusCode {
 		case 300:
 			return "The data source has moved. Please notify the developer."
