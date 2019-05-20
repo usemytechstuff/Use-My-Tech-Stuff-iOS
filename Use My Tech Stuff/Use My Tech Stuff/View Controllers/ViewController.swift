@@ -18,16 +18,14 @@ class ViewController: UIViewController {
 	@IBOutlet var loginTypeSelector: UISegmentedControl!
 	@IBOutlet var loginButton: UIButton!
 
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
 
-
 	@IBAction func loginTypeChanged(_ sender: UISegmentedControl) {
 	}
-	
+
 	@IBAction func loginButtonPressed(_ sender: UIButton) {
 	}
-	
+
 }
