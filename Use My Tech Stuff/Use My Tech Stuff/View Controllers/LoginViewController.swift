@@ -75,8 +75,18 @@ class LoginViewController: UIViewController {
 			wiggle(textField: usernameTextField)
 			return
 		}
+		guard username.count < 32 else {
+			let alert = createSimpleAlert(withTitle: "Username error", message: "Your username must be fewer than 32 characters.")
+			present(alert, animated: true)
+			return
+		}
 		guard let password = passwordTextField.text, !password.isEmpty else {
 			wiggle(textField: passwordTextField)
+			return
+		}
+		guard password.count >= 8 else {
+			let alert = createSimpleAlert(withTitle: "Weak Password", message: "Your password must be at least 8 characters.")
+			present(alert, animated: true)
 			return
 		}
 		guard let confirmPassword = confirmPasswordTextField.text, password == confirmPassword else {
@@ -89,14 +99,18 @@ class LoginViewController: UIViewController {
 		}
 
 		let user = User(username: username, password: password, email: email)
-		techStuffController?.signUp(with: user, completion: { (result: Result<Data, NetworkError>) in
+		techStuffController?.signUp(with: user, completion: { [weak self] (result: Result<Data, NetworkError>) in
 			do {
-				let data = try result.get()
-				let str = String(data: data, encoding: .utf8)
-				print(str)
+				_ = try result.get()
 			} catch {
 				print("error getting result: \(error)")
 				return
+			}
+			//sign in here
+			guard let self = self else { return }
+			let alert = self.createSimpleAlert(withTitle: "Success", message: "Thanks for creating an account, \(username)!")
+			DispatchQueue.main.async {
+				self.present(alert, animated: true)
 			}
 		})
 	}
@@ -182,6 +196,12 @@ class LoginViewController: UIViewController {
 		view.layer.borderColor = color.cgColor
 		view.layer.borderWidth = borderWidth
 		view.layer.cornerRadius = 5
+	}
+
+	private func createSimpleAlert(withTitle title: String, message: String? = nil) -> UIAlertController {
+		let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+		return alert
 	}
 }
 
