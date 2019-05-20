@@ -20,6 +20,7 @@
 		33A5D9D922932158007467EF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9D822932158007467EF /* .swiftlint.yml */; };
 		33A5D9DF229325E0007467EF /* SwiftyUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A5D9D622932086007467EF /* SwiftyUtils.framework */; };
 		33A5D9E222933053007467EF /* TechStuffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9E122933053007467EF /* TechStuffController.swift */; };
+		33A5D9E4229352E0007467EF /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A5D9E3229352E0007467EF /* IQKeyboardManagerSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		33A5D9D822932158007467EF /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		33A5D9DA22932208007467EF /* SwiftyUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUtils.framework; path = Carthage/Build/iOS/SwiftyUtils.framework; sourceTree = SOURCE_ROOT; };
 		33A5D9E122933053007467EF /* TechStuffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechStuffController.swift; sourceTree = "<group>"; };
+		33A5D9E3229352E0007467EF /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33A5D9DF229325E0007467EF /* SwiftyUtils.framework in Frameworks */,
+				33A5D9E4229352E0007467EF /* IQKeyboardManagerSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +181,7 @@
 		33A5D9DE22932441007467EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				33A5D9E3229352E0007467EF /* IQKeyboardManagerSwift.framework */,
 				33A5D9DA22932208007467EF /* SwiftyUtils.framework */,
 			);
 			path = Frameworks;
@@ -339,12 +343,14 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyUtils.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
 			);
 			name = "Run Script - carthage";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyUtils.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IQKeyboardManagerSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

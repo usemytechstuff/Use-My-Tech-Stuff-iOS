@@ -34,17 +34,25 @@ class LoginViewController: UIViewController {
 	@IBOutlet var loginTypeSelector: UISegmentedControl!
 	@IBOutlet var loginButton: UIButton!
 
+	// MARK: - init stuff
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		updateLoginFields(animate: false)
+		techStuffController?.networkHandler.strict200CodeResponse = false
 	}
 
+	// MARK: - user input
 	@IBAction func loginTypeChanged(_ sender: UISegmentedControl) {
 		loginMode = LoginMode.getType(for: sender.selectedSegmentIndex)
 		updateLoginFields()
 	}
 
 	@IBAction func loginButtonPressed(_ sender: UIButton) {
+		for subview in stackContainer.subviews {
+			if let control = subview as? UIControl {
+				control.resignFirstResponder()
+			}
+		}
 		switch loginMode {
 		case .login:
 			login()
@@ -93,40 +101,11 @@ class LoginViewController: UIViewController {
 		})
 	}
 
-	// FIXME: remove
-	func setupMockDataSignUp() {
-		techStuffController?.networkHandler.mockSuccess = true
-		techStuffController?.networkHandler.mockMode = true
-
-		let dataDict = ["username": "tester", "id": "1"]
-		let encoder = JSONEncoder()
-		do {
-			techStuffController?.networkHandler.mockData = try encoder.encode(dataDict)
-		} catch {
-			print("error mocking data")
-		}
-	}
-
-	// FIXME: remove
-	func setupMockDataSignIn() {
-		techStuffController?.networkHandler.mockSuccess = true
-		techStuffController?.networkHandler.mockMode = true
-
-		let dataDict = ["username": "tester", "token": "akdghaskjhfaskdjhfaskdgkajhsmd"]
-		let encoder = JSONEncoder()
-		do {
-			techStuffController?.networkHandler.mockData = try encoder.encode(dataDict)
-		} catch {
-			print("error mocking data")
-		}
-	}
-
+	// MARK: - custom ui stuff
 	private func updateLoginFields(animate: Bool = true) {
 		let animation: () -> Void
 		switch loginMode {
 		case .login:
-			// FIXME: remove
-			setupMockDataSignIn()
 			animation = { [weak self] in
 				guard let self = self else { return }
 				self.confirmPasswordTextField.isHidden = true
@@ -136,8 +115,6 @@ class LoginViewController: UIViewController {
 				self.stackContainer.layoutSubviews()
 			}
 		case .signUp:
-			// FIXME: remove
-			setupMockDataSignUp()
 			animation = { [weak self] in
 				guard let self = self else { return }
 				self.confirmPasswordTextField.isHidden = false
@@ -205,5 +182,34 @@ class LoginViewController: UIViewController {
 		view.layer.borderColor = color.cgColor
 		view.layer.borderWidth = borderWidth
 		view.layer.cornerRadius = 5
+	}
+}
+
+// MARK: - Mock data
+extension LoginViewController {
+	func setupMockDataSignUp() {
+		techStuffController?.networkHandler.mockSuccess = true
+		techStuffController?.networkHandler.mockMode = true
+
+		let dataDict = ["username": "tester", "id": "1"]
+		let encoder = JSONEncoder()
+		do {
+			techStuffController?.networkHandler.mockData = try encoder.encode(dataDict)
+		} catch {
+			print("error mocking data")
+		}
+	}
+
+	func setupMockDataSignIn() {
+		techStuffController?.networkHandler.mockSuccess = true
+		techStuffController?.networkHandler.mockMode = true
+
+		let dataDict = ["username": "tester", "token": "akdghaskjhfaskdjhfaskdgkajhsmd"]
+		let encoder = JSONEncoder()
+		do {
+			techStuffController?.networkHandler.mockData = try encoder.encode(dataDict)
+		} catch {
+			print("error mocking data")
+		}
 	}
 }
