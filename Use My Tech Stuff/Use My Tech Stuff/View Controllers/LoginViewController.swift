@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
 	var techStuffController: TechStuffController? = TechStuffController()
 
 	var loginMode: LoginMode = .login
+	@IBOutlet var stackContainer: UIStackView!
 
 	@IBOutlet var usernameTextField: UITextField!
 	@IBOutlet var passwordTextField: UITextField!
@@ -35,7 +36,7 @@ class LoginViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		updateLoginFields()
+		updateLoginFields(animate: false)
 	}
 
 	@IBAction func loginTypeChanged(_ sender: UISegmentedControl) {
@@ -120,7 +121,7 @@ class LoginViewController: UIViewController {
 		}
 	}
 
-	private func updateLoginFields() {
+	private func updateLoginFields(animate: Bool = true) {
 		let animation: () -> Void
 		switch loginMode {
 		case .login:
@@ -132,6 +133,7 @@ class LoginViewController: UIViewController {
 				self.emailTextField.isHidden = true
 				self.loginButton.setTitle("Login", for: .normal)
 				self.loginTypeSelector.selectedSegmentIndex = self.loginMode.rawValue
+				self.stackContainer.layoutSubviews()
 			}
 		case .signUp:
 			// FIXME: remove
@@ -142,15 +144,20 @@ class LoginViewController: UIViewController {
 				self.emailTextField.isHidden = false
 				self.loginButton.setTitle("Sign Up", for: .normal)
 				self.loginTypeSelector.selectedSegmentIndex = self.loginMode.rawValue
+				self.stackContainer.layoutSubviews()
 			}
 		}
-		UIView.animate(withDuration: 1.0,
-					   delay: 0,
-					   usingSpringWithDamping: 0.3,
-					   initialSpringVelocity: 0,
-					   options: [],
-					   animations: animation,
-					   completion: nil)
+		if animate {
+			UIView.animate(withDuration: 1.0,
+						   delay: 0,
+						   usingSpringWithDamping: 0.3,
+						   initialSpringVelocity: 0,
+						   options: [],
+						   animations: animation,
+						   completion: nil)
+		} else {
+			animation()
+		}
 	}
 
 	private func wiggle(textField: UITextField) {

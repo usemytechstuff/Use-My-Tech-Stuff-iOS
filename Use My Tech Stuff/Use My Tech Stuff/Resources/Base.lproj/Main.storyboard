@@ -103,6 +103,7 @@
                         <outlet property="loginButton" destination="9Kc-Bo-orW" id="4ah-RY-afB"/>
                         <outlet property="loginTypeSelector" destination="wSy-OL-A9X" id="7r3-vy-eGL"/>
                         <outlet property="passwordTextField" destination="wyj-wL-1BU" id="iWY-mB-bGB"/>
+                        <outlet property="stackContainer" destination="2eL-Gs-Dh3" id="gmw-f9-JYA"/>
                         <outlet property="usernameTextField" destination="IQU-hz-IrL" id="es0-EI-E2M"/>
                     </connections>
                 </viewController>
