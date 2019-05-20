@@ -18,10 +18,19 @@ enum HTTPMethods: String {
 	case options = "OPTIONS"
 }
 
+enum HTTPHeaderKeys: String {
+	case contentType = "Content-Type"
+	case auth = "Authorization"
+
+	enum ContentTypes: String {
+		case json = "application/json"
+	}
+}
+
 enum NetworkError: Error {
 	case otherError(error: Error)
 	case badData
-	case dataDecodeError(specifically: Error)
+	case dataCodingError(specifically: Error)
 	case imageDecodeError
 	case noStatusCodeResponse
 	case httpNon200StatusCode(code: Int)
@@ -129,7 +138,7 @@ class NetworkHandler {
 				completion(.success(newType))
 			} catch {
 				self.printToConsole("Error decoding data: \(error)")
-				completion(.failure(.dataDecodeError(specifically: error)))
+				completion(.failure(.dataCodingError(specifically: error)))
 			}
 		}
 	}

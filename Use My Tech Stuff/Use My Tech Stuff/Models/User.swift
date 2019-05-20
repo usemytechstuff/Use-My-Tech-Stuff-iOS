@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct User {
+struct User: Codable {
 	let username: String
 	let password: String
-	let email: String
+	var email: String?
 }
 
-struct Bearer {
+struct Bearer: Decodable {
 	let token: String
 }

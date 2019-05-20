@@ -19,6 +19,7 @@
 		33A5D9D222931FCD007467EF /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9D122931FCD007467EF /* Cartfile */; };
 		33A5D9D922932158007467EF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9D822932158007467EF /* .swiftlint.yml */; };
 		33A5D9DF229325E0007467EF /* SwiftyUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A5D9D622932086007467EF /* SwiftyUtils.framework */; };
+		33A5D9E222933053007467EF /* TechStuffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9E122933053007467EF /* TechStuffController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		33A5D9D622932086007467EF /* SwiftyUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUtils.framework; path = Carthage/Build/iOS/SwiftyUtils.framework; sourceTree = "<group>"; };
 		33A5D9D822932158007467EF /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		33A5D9DA22932208007467EF /* SwiftyUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUtils.framework; path = Carthage/Build/iOS/SwiftyUtils.framework; sourceTree = SOURCE_ROOT; };
+		33A5D9E122933053007467EF /* TechStuffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechStuffController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,8 +161,8 @@
 		33A5D9CC229314FA007467EF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				33A5D9CE22931502007467EF /* NetworkHandler.swift */,
-				33A5D9CD22931502007467EF /* UIAlertController+NetError.swift */,
+				33A5D9E022933021007467EF /* Generic Network */,
+				33A5D9E122933053007467EF /* TechStuffController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -179,6 +181,15 @@
 				33A5D9DA22932208007467EF /* SwiftyUtils.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		33A5D9E022933021007467EF /* Generic Network */ = {
+			isa = PBXGroup;
+			children = (
+				33A5D9CE22931502007467EF /* NetworkHandler.swift */,
+				33A5D9CD22931502007467EF /* UIAlertController+NetError.swift */,
+			);
+			path = "Generic Network";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +360,7 @@
 				33A5D9A6229310A2007467EF /* LoginViewController.swift in Sources */,
 				33A5D9A4229310A2007467EF /* AppDelegate.swift in Sources */,
 				33A5D9CF22931502007467EF /* UIAlertController+NetError.swift in Sources */,
+				33A5D9E222933053007467EF /* TechStuffController.swift in Sources */,
 				33A5D9D022931502007467EF /* NetworkHandler.swift in Sources */,
 				33A5D9CB22931453007467EF /* User.swift in Sources */,
 			);
