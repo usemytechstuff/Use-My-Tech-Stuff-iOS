@@ -13,6 +13,11 @@ class TechStuffController {
 
 	var bearer: Bearer?
 
+	init() {
+		loadData()
+	}
+
+
 	enum Endpoints: String {
 		case signup = "/register"
 		case login = "/login"
@@ -58,9 +63,32 @@ class TechStuffController {
 				let bearer = try result.get()
 				self?.bearer = bearer
 				completion(.success(bearer))
+				self?.saveData()
 			} catch {
 				completion(.failure((error as? NetworkError) ?? NetworkError.otherError(error: error)))
 			}
 		}
+	}
+
+	private var fileURL: URL {
+		let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+		return documents.appendingPathComponent("techStuff.plist")
+	}
+
+	private func saveData() {
+		let defaults = UserDefaults.standard
+		let encoder = PropertyListEncoder()
+		let data = try? encoder.encode(bearer)
+		defaults.set(data, forKey: "user")
+		// save favorites separately
+	}
+
+	private func loadData() {
+		//load favorites separately
+		let defaults = UserDefaults.standard
+		let decoder = PropertyListDecoder()
+		guard let data = defaults.data(forKey: "user") else { return }
+		let bearer = try? decoder.decode(Bearer.self, from: data)
+		self.bearer = bearer
 	}
 }

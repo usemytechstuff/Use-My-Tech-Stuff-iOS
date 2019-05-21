@@ -14,7 +14,7 @@ struct User: Codable {
 	var email: String?
 }
 
-struct Bearer: Decodable {
+struct Bearer: Codable {
 //	let id: Int
 	let message: String?
 	let token: String
