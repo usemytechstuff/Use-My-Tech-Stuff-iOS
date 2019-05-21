@@ -25,7 +25,7 @@ class SearchResultTableViewCell: UITableViewCell, TechStuffAccessor {
 	}
 
 	private func updateViews() {
-		guard let listing = listing else { return }
+		guard let listing = listing, searchResultImageView != nil else { return }
 		searchResultImageView.image = UIImage(named: "placeholderImage")
 		itemTitleLabel.text = listing.title
 		itemDescriptionLabel.text = listing.description

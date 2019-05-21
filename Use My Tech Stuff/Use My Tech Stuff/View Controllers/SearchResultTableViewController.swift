@@ -13,6 +13,9 @@ class SearchResultTableViewController: UITableViewController, TechStuffAccessor 
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		let nib = UINib(nibName: "SearchResultTableViewCell", bundle: nil)
+		tableView.register(nib, forCellReuseIdentifier: "SearchResultCell")
 	}
 }
 

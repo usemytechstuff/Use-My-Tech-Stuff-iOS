@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" rowHeight="110" id="KGk-i7-Jjw" customClass="SearchResultTableViewCell" customModule="Use_My_Tech_Stuff" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="109.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2T-m1-Oq7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="110.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kxF-Wn-12d">
+                                <rect key="frame" x="8" y="8" width="304" height="94.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fEm-mC-bXS">
+                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="94.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fEm-mC-bXS" secondAttribute="height" multiplier="1:1" id="LK1-tm-FMb"/>
+                                            <constraint firstAttribute="width" constant="94" id="Qp7-yP-AdX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Qx-Q7-mVE">
+                                        <rect key="frame" x="102.5" y="0.0" width="129.5" height="94.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNq-Fg-Czl">
+                                                <rect key="frame" x="0.0" y="0.0" width="129.5" height="31.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="23"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="brand/model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqq-rh-fWN">
+                                                <rect key="frame" x="0.0" y="39.5" width="129.5" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6q7-ic-4iQ">
+                                                <rect key="frame" x="0.0" y="71" width="129.5" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="$price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6S-Ev-JHg">
+                                        <rect key="frame" x="240" y="0.0" width="64" height="94.5"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="kxF-Wn-12d" firstAttribute="leading" secondItem="T2T-m1-Oq7" secondAttribute="leading" constant="8" id="8ZB-TO-yuj"/>
+                            <constraint firstAttribute="trailing" secondItem="kxF-Wn-12d" secondAttribute="trailing" constant="8" id="J8w-Em-Jc3"/>
+                            <constraint firstAttribute="bottom" secondItem="kxF-Wn-12d" secondAttribute="bottom" constant="8" id="aLK-Sr-xOZ"/>
+                            <constraint firstItem="kxF-Wn-12d" firstAttribute="top" secondItem="T2T-m1-Oq7" secondAttribute="top" constant="8" id="utT-Vd-fBx"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="T2T-m1-Oq7" secondAttribute="bottom" id="7j7-l3-Keu"/>
+                    <constraint firstItem="T2T-m1-Oq7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ayN-xC-fGz"/>
+                    <constraint firstItem="T2T-m1-Oq7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bd0-Nh-YTe"/>
+                    <constraint firstAttribute="trailing" secondItem="T2T-m1-Oq7" secondAttribute="trailing" id="cHM-yl-wHc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="itemBrandModelLabel" destination="lqq-rh-fWN" id="765-2b-rMz"/>
+                <outlet property="itemDescriptionLabel" destination="6q7-ic-4iQ" id="2ym-c9-0c8"/>
+                <outlet property="itemPriceLabel" destination="q6S-Ev-JHg" id="dvr-xX-HTX"/>
+                <outlet property="itemTitleLabel" destination="KNq-Fg-Czl" id="DVm-LE-rg1"/>
+                <outlet property="searchResultImageView" destination="fEm-mC-bXS" id="DWd-Ok-drY"/>
+            </connections>
+            <point key="canvasLocation" x="34.782608695652179" y="56.919642857142854"/>
+        </tableViewCell>
+    </objects>
+</document>
