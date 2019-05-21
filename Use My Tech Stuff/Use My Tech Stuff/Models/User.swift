@@ -15,6 +15,7 @@ struct User: Codable {
 }
 
 struct Bearer: Decodable {
+//	let id: Int
 	let message: String?
 	let token: String
 }
