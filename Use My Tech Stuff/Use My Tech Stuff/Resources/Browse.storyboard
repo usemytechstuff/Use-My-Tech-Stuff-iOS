@@ -258,23 +258,25 @@
                                     <constraint firstItem="n9G-Ac-g0P" firstAttribute="leading" secondItem="T4x-5C-Kbu" secondAttribute="leading" id="xwk-01-GSe"/>
                                 </constraints>
                             </scrollView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="eVB-9K-hoB">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Try &quot;Cameras&quot;" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGI-dl-5Pl">
+                                <rect key="frame" x="20" y="108" width="374" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="6Wy-aT-Qhv"/>
+                                    <constraint firstAttribute="height" constant="45" id="7os-RT-8o6"/>
                                 </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="no" returnKeyType="search" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="T4x-5C-Kbu" firstAttribute="top" secondItem="z86-hU-uB9" secondAttribute="top" id="A43-Od-0y3"/>
                             <constraint firstAttribute="bottom" secondItem="T4x-5C-Kbu" secondAttribute="bottom" id="EAr-Vw-suB"/>
                             <constraint firstAttribute="trailing" secondItem="T4x-5C-Kbu" secondAttribute="trailing" id="G9D-2n-RGg"/>
-                            <constraint firstItem="eVB-9K-hoB" firstAttribute="top" secondItem="z86-hU-uB9" secondAttribute="top" id="Tqj-zU-0iC"/>
-                            <constraint firstItem="eVB-9K-hoB" firstAttribute="leading" secondItem="z86-hU-uB9" secondAttribute="leading" id="eM2-au-vsP"/>
                             <constraint firstItem="T4x-5C-Kbu" firstAttribute="leading" secondItem="xZ2-e8-cf3" secondAttribute="leading" id="eRi-ya-zhU"/>
-                            <constraint firstItem="eVB-9K-hoB" firstAttribute="trailing" secondItem="z86-hU-uB9" secondAttribute="trailing" id="nJS-Wd-iOB"/>
+                            <constraint firstItem="xGI-dl-5Pl" firstAttribute="leading" secondItem="z86-hU-uB9" secondAttribute="leading" constant="20" id="gCn-d7-DFl"/>
+                            <constraint firstItem="z86-hU-uB9" firstAttribute="trailing" secondItem="xGI-dl-5Pl" secondAttribute="trailing" constant="20" id="xps-Ra-H7T"/>
+                            <constraint firstItem="xGI-dl-5Pl" firstAttribute="top" secondItem="z86-hU-uB9" secondAttribute="top" constant="20" id="yTh-ec-pl3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z86-hU-uB9"/>
                     </view>
