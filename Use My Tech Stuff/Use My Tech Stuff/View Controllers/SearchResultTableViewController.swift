@@ -15,3 +15,18 @@ class SearchResultTableViewController: UITableViewController, TechStuffAccessor 
 		super.viewDidLoad()
 	}
 }
+
+// MARK: - tableview stuff
+extension SearchResultTableViewController {
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return techStuffController?.itemListings.count ?? 0
+	}
+
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath)
+		guard let searchCell = cell as? SearchResultTableViewCell else { return cell }
+		searchCell.techStuffController = techStuffController
+		searchCell.listing = techStuffController?.itemListings[indexPath.row]
+		return searchCell
+	}
+}

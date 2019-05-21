@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchResultTableViewCell: UITableViewCell {
+class SearchResultTableViewCell: UITableViewCell, TechStuffAccessor {
 
 	var techStuffController: TechStuffController?
 
@@ -26,6 +26,7 @@ class SearchResultTableViewCell: UITableViewCell {
 
 	private func updateViews() {
 		guard let listing = listing else { return }
+		searchResultImageView.image = UIImage(named: "placeholderImage")
 		itemTitleLabel.text = listing.title
 		itemDescriptionLabel.text = listing.description
 		itemBrandModelLabel.text = "\(listing.brand) - \(listing.model)"
@@ -34,14 +35,14 @@ class SearchResultTableViewCell: UITableViewCell {
 		let cents = listing.price % 100
 		itemPriceLabel.text = "$\(dollars).\(cents)"
 
-		techStuffController?.get(imageAtURL: listing.imgURL, completion: { [weak self] (result: Result<UIImage, NetworkError>) in
+		guard let imgURL = listing.imgURL else { print("no url: \(listing)"); return }
+		techStuffController?.get(imageAtURL: imgURL, completion: { [weak self] (result: Result<UIImage, NetworkError>) in
 			DispatchQueue.main.async {
 				do {
 					let image = try result.get()
 					self?.searchResultImageView.image = image
 				} catch {
 					print("failed getting image: \(error)")
-					self?.searchResultImageView.image = UIImage(named: "placeholderImage")
 				}
 			}
 		})

@@ -21,7 +21,24 @@ class TechStuffController {
 
 	init() {
 		loadData()
-		getAllItems()
+		getAllItems { (result: Result<Bool, NetworkError>) in
+			do {
+				_ = try result.get()
+			} catch {
+				print(error)
+				if let netError = error as? NetworkError {
+					switch netError {
+					case .httpNon200StatusCode(let code, let data):
+						print("code: \(code)")
+						guard let data = data else { break }
+						let dataStr = String(data: data, encoding: .utf8)
+						print(dataStr)
+					default:
+						break
+					}
+				}
+			}
+		}
 	}
 
 	enum Endpoints: String {
@@ -31,7 +48,7 @@ class TechStuffController {
 		case items = "/items"
 	}
 
-	let baseURL = URL(string: "https://usemytechstuffapp.herokuapp.com/api/")!
+	let baseURL = URL(string: "https://usemytechstuffapp.herokuapp.com/api")!
 
 	func signUp(with user: User, completion: @escaping (Result<Data, NetworkError>) -> Void) {
 		let signUpURL = baseURL.appendingPathComponent(Endpoints.signup.rawValue)
