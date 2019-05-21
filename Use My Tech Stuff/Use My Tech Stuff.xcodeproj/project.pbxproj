@@ -35,6 +35,7 @@
 		33A5DA002294A17D007467EF /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9FF2294A17D007467EF /* BrowseViewController.swift */; };
 		33A5DA022294A18F007467EF /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5DA012294A18F007467EF /* SearchResultTableViewController.swift */; };
 		33A5DA062294B2E1007467EF /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33A5DA042294B2E1007467EF /* SearchResultTableViewCell.xib */; };
+		33A5DA082294C0C8007467EF /* RandomItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5DA072294C0C8007467EF /* RandomItemController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		33A5D9FF2294A17D007467EF /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		33A5DA012294A18F007467EF /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
 		33A5DA042294B2E1007467EF /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
+		33A5DA072294C0C8007467EF /* RandomItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomItemController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				33A5D9F722946BBE007467EF /* CategoriesController.swift */,
+				33A5DA072294C0C8007467EF /* RandomItemController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				33A5D9A4229310A2007467EF /* AppDelegate.swift in Sources */,
 				33A5D9F822946BBE007467EF /* CategoriesController.swift in Sources */,
 				33A5D9CF22931502007467EF /* UIAlertController+NetError.swift in Sources */,
+				33A5DA082294C0C8007467EF /* RandomItemController.swift in Sources */,
 				33A5DA002294A17D007467EF /* BrowseViewController.swift in Sources */,
 				33A5D9E222933053007467EF /* TechStuffController.swift in Sources */,
 				33A5D9D022931502007467EF /* NetworkHandler.swift in Sources */,

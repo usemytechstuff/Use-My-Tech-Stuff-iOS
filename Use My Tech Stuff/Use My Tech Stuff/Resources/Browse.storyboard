@@ -89,6 +89,10 @@
                                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2SN-kU-DT3">
                                                                                                     <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
                                                                                                 </imageView>
+                                                                                                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZP-7E-26I">
+                                                                                                    <rect key="frame" x="0.0" y="101.5" width="145" height="43.5"/>
+                                                                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                </view>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Cuz-lp-rAB">
                                                                                                     <rect key="frame" x="8" y="109.5" width="129" height="27.5"/>
                                                                                                     <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="20"/>
@@ -97,13 +101,17 @@
                                                                                                 </label>
                                                                                             </subviews>
                                                                                             <constraints>
+                                                                                                <constraint firstAttribute="trailing" secondItem="TZP-7E-26I" secondAttribute="trailing" id="1Xy-sW-doq"/>
                                                                                                 <constraint firstAttribute="trailing" secondItem="Cuz-lp-rAB" secondAttribute="trailing" constant="8" id="GGj-I9-7n9"/>
                                                                                                 <constraint firstItem="2SN-kU-DT3" firstAttribute="top" secondItem="u6t-zW-aPF" secondAttribute="top" id="SPp-Rm-3cd"/>
                                                                                                 <constraint firstItem="Cuz-lp-rAB" firstAttribute="leading" secondItem="u6t-zW-aPF" secondAttribute="leading" constant="8" id="VOk-DF-Sh2"/>
+                                                                                                <constraint firstItem="TZP-7E-26I" firstAttribute="top" secondItem="Cuz-lp-rAB" secondAttribute="top" constant="-8" id="ZDF-do-AvW"/>
                                                                                                 <constraint firstAttribute="bottom" secondItem="2SN-kU-DT3" secondAttribute="bottom" id="aCa-wb-bab"/>
                                                                                                 <constraint firstAttribute="trailing" secondItem="2SN-kU-DT3" secondAttribute="trailing" id="b4i-on-dRf"/>
+                                                                                                <constraint firstItem="TZP-7E-26I" firstAttribute="leading" secondItem="u6t-zW-aPF" secondAttribute="leading" id="cof-yD-rhL"/>
                                                                                                 <constraint firstAttribute="bottom" secondItem="Cuz-lp-rAB" secondAttribute="bottom" constant="8" id="fwh-BF-dtH"/>
                                                                                                 <constraint firstItem="2SN-kU-DT3" firstAttribute="leading" secondItem="u6t-zW-aPF" secondAttribute="leading" id="haW-aE-reB"/>
+                                                                                                <constraint firstAttribute="bottom" secondItem="TZP-7E-26I" secondAttribute="bottom" id="iNm-rN-3bD"/>
                                                                                             </constraints>
                                                                                         </view>
                                                                                     </subviews>
@@ -121,10 +129,6 @@
                                                                                 </connections>
                                                                             </collectionViewCell>
                                                                         </cells>
-                                                                        <connections>
-                                                                            <outlet property="dataSource" destination="KRn-Jo-0zm" id="wNn-8w-xaD"/>
-                                                                            <outlet property="delegate" destination="KRn-Jo-0zm" id="vWV-ic-ZxZ"/>
-                                                                        </connections>
                                                                     </collectionView>
                                                                 </subviews>
                                                                 <constraints>
@@ -214,10 +218,6 @@
                                                                                 </connections>
                                                                             </collectionViewCell>
                                                                         </cells>
-                                                                        <connections>
-                                                                            <outlet property="dataSource" destination="KRn-Jo-0zm" id="GQc-eg-svQ"/>
-                                                                            <outlet property="delegate" destination="KRn-Jo-0zm" id="pXJ-BC-4ry"/>
-                                                                        </connections>
                                                                     </collectionView>
                                                                 </subviews>
                                                                 <constraints>
@@ -264,7 +264,7 @@
                                     <constraint firstAttribute="height" constant="45" id="7os-RT-8o6"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="no" returnKeyType="search" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                         </subviews>
@@ -281,9 +281,12 @@
                         <viewLayoutGuide key="safeArea" id="z86-hU-uB9"/>
                     </view>
                     <navigationItem key="navigationItem" id="ERR-Ty-8iW"/>
+                    <connections>
+                        <outlet property="categoriesCollectionView" destination="KHJ-gA-gUK" id="sdb-RS-o2a"/>
+                        <outlet property="topRatedCollectionView" destination="QHy-En-ctO" id="cT4-rV-AU7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jO-Ig-fZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="KRn-Jo-0zm" customClass="CategoriesController" customModule="Use_My_Tech_Stuff" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="180.80357142857142"/>
         </scene>

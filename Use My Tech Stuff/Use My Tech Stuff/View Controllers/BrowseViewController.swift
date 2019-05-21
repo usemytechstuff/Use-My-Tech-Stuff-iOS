@@ -8,6 +8,37 @@
 
 import UIKit
 
+class BrowseViewController: UIViewController, TechStuffAccessor {
+
+	@IBOutlet var categoriesCollectionView: UICollectionView!
+	@IBOutlet var topRatedCollectionView: UICollectionView!
+	let categoriesController = CategoriesController()
+	let randomItemController = RandomItemController()
+
+	var techStuffController: TechStuffController?
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		categoriesCollectionView.dataSource = categoriesController
+		categoriesCollectionView.delegate = categoriesController
+
+		randomItemController.refreshedClosure = { [weak self] in
+			DispatchQueue.main.async {
+				self?.topRatedCollectionView.reloadData()
+			}
+		}
+		randomItemController.techStuffController = techStuffController
+		topRatedCollectionView.dataSource = randomItemController
+		topRatedCollectionView.delegate = randomItemController
+	}
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let techAccess = segue.destination as? TechStuffAccessor {
+			techAccess.techStuffController = techStuffController
+		}
+	}
+}
+
 class BrowseNavViewController: UINavigationController, TechStuffAccessor {
 	var techStuffController: TechStuffController?
 
@@ -16,21 +47,6 @@ class BrowseNavViewController: UINavigationController, TechStuffAccessor {
 			if let techStuff = $0 as? TechStuffAccessor {
 				techStuff.techStuffController = techStuffController
 			}
-		}
-	}
-}
-
-class BrowseViewController: UIViewController, TechStuffAccessor {
-
-	var techStuffController: TechStuffController?
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-	}
-
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if let techAccess = segue.destination as? TechStuffAccessor {
-			techAccess.techStuffController = techStuffController
 		}
 	}
 }
