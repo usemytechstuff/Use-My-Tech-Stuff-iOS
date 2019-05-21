@@ -22,6 +22,7 @@
 		33A5D9E222933053007467EF /* TechStuffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9E122933053007467EF /* TechStuffController.swift */; };
 		33A5D9E4229352E0007467EF /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A5D9E3229352E0007467EF /* IQKeyboardManagerSwift.framework */; };
 		33A5D9E62293747C007467EF /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9E52293747C007467EF /* Listing.swift */; };
+		33A5D9EC229459D1007467EF /* BaseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9EB229459D1007467EF /* BaseTabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		33A5D9E122933053007467EF /* TechStuffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechStuffController.swift; sourceTree = "<group>"; };
 		33A5D9E3229352E0007467EF /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = SOURCE_ROOT; };
 		33A5D9E52293747C007467EF /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
+		33A5D9EB229459D1007467EF /* BaseTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				33A5D9A5229310A2007467EF /* LoginViewController.swift */,
+				33A5D9EB229459D1007467EF /* BaseTabViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				33A5D9E222933053007467EF /* TechStuffController.swift in Sources */,
 				33A5D9D022931502007467EF /* NetworkHandler.swift in Sources */,
 				33A5D9CB22931453007467EF /* User.swift in Sources */,
+				33A5D9EC229459D1007467EF /* BaseTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

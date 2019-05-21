@@ -20,8 +20,7 @@ enum LoginMode: Int {
 
 class LoginViewController: UIViewController {
 
-	// FIXME: remove initing here
-	var techStuffController: TechStuffController? = TechStuffController()
+	var techStuffController: TechStuffController?
 
 	var loginMode: LoginMode = .login {
 		didSet {
@@ -104,8 +103,7 @@ class LoginViewController: UIViewController {
 			//sign in here
 			guard let self = self else { return }
 			DispatchQueue.main.async {
-				let alert = self.createSimpleAlert(withTitle: "Success", message: "Login success, \(username)!")
-				self.present(alert, animated: true)
+				self.dismiss(animated: true, completion: nil)
 			}
 		})
 	}
