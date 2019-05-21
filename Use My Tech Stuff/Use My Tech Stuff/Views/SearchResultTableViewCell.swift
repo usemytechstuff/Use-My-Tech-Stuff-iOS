@@ -10,13 +10,14 @@ import UIKit
 
 class SearchResultTableViewCell: UITableViewCell {
 
+	var techStuffController: TechStuffController?
+
 	@IBOutlet var searchResultImageView: UIImageView!
 	@IBOutlet var itemTitleLabel: UILabel!
 	@IBOutlet var itemBrandModelLabel: UILabel!
 	@IBOutlet var itemDescriptionLabel: UILabel!
 	@IBOutlet var itemPriceLabel: UILabel!
 
-	var techStuffController: TechStuffController?
 	var listing: Listing? {
 		didSet {
 			updateViews()

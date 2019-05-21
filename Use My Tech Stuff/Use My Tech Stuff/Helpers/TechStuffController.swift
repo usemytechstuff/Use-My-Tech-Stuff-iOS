@@ -8,19 +8,27 @@
 
 import UIKit
 
+protocol TechStuffAccessor: AnyObject {
+	var techStuffController: TechStuffController? { get set }
+}
+
 class TechStuffController {
 	let networkHandler = NetworkHandler()
 
 	var bearer: Bearer?
 
+	var itemListings: [Listing] = []
+
 	init() {
 		loadData()
+		getAllItems()
 	}
 
 	enum Endpoints: String {
 		case signup = "/register"
 		case login = "/login"
 		case logout = "/logout"
+		case items = "/items"
 	}
 
 	let baseURL = URL(string: "https://usemytechstuffapp.herokuapp.com/api/")!
@@ -88,7 +96,30 @@ class TechStuffController {
 				completion(.failure(error as? NetworkError ?? NetworkError.otherError(error: error)))
 			}
 		})
+	}
 
+	typealias BoolCompletion = (Result<Bool, NetworkError>) -> Void
+	func getAllItems(completion: BoolCompletion? = nil) {
+		guard let bearer = bearer else {
+			// FIXME: perhaps change error here?
+			completion?(.failure(.httpNon200StatusCode(code: 401, data: nil)))
+			return
+		}
+		let itemsURL = baseURL.appendingPathComponent(Endpoints.items.rawValue)
+
+		var request = URLRequest(url: itemsURL)
+		request.addValue(HTTPHeaderKeys.ContentTypes.json.rawValue, forHTTPHeaderField: HTTPHeaderKeys.contentType.rawValue)
+		request.addValue(bearer.token, forHTTPHeaderField: HTTPHeaderKeys.auth.rawValue)
+
+		networkHandler.transferMahCodableDatas(with: request) { (result: Result<[Listing], NetworkError>) in
+			do {
+				let listings = try result.get()
+				self.itemListings = listings
+				completion?(.success(true))
+			} catch {
+				completion?(.failure(error as? NetworkError ?? NetworkError.otherError(error: error)))
+			}
+		}
 	}
 
 	private var fileURL: URL {

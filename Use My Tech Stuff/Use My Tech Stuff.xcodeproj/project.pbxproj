@@ -32,6 +32,8 @@
 		33A5D9FA22946D7B007467EF /* Nunito.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9F922946D7B007467EF /* Nunito.ttf */; };
 		33A5D9FC22946E03007467EF /* BrowseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9FB22946E03007467EF /* BrowseCollectionViewCell.swift */; };
 		33A5D9FE22947BFF007467EF /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9FD22947BFF007467EF /* SearchResultTableViewCell.swift */; };
+		33A5DA002294A17D007467EF /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9FF2294A17D007467EF /* BrowseViewController.swift */; };
+		33A5DA022294A18F007467EF /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5DA012294A18F007467EF /* SearchResultTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		33A5D9F922946D7B007467EF /* Nunito.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Nunito.ttf; path = ../../../assets/fonts/Nunito.ttf; sourceTree = "<group>"; };
 		33A5D9FB22946E03007467EF /* BrowseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionViewCell.swift; sourceTree = "<group>"; };
 		33A5D9FD22947BFF007467EF /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		33A5D9FF2294A17D007467EF /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
+		33A5DA012294A18F007467EF /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,8 @@
 		33A5D9C6229311E0007467EF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				33A5D9FF2294A17D007467EF /* BrowseViewController.swift */,
+				33A5DA012294A18F007467EF /* SearchResultTableViewController.swift */,
 				33A5D9A5229310A2007467EF /* LoginViewController.swift */,
 				33A5D9EB229459D1007467EF /* BaseTabViewController.swift */,
 			);
@@ -403,11 +409,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				33A5D9A6229310A2007467EF /* LoginViewController.swift in Sources */,
+				33A5DA022294A18F007467EF /* SearchResultTableViewController.swift in Sources */,
 				33A5D9FE22947BFF007467EF /* SearchResultTableViewCell.swift in Sources */,
 				33A5D9E62293747C007467EF /* Listing.swift in Sources */,
 				33A5D9A4229310A2007467EF /* AppDelegate.swift in Sources */,
 				33A5D9F822946BBE007467EF /* CategoriesController.swift in Sources */,
 				33A5D9CF22931502007467EF /* UIAlertController+NetError.swift in Sources */,
+				33A5DA002294A17D007467EF /* BrowseViewController.swift in Sources */,
 				33A5D9E222933053007467EF /* TechStuffController.swift in Sources */,
 				33A5D9D022931502007467EF /* NetworkHandler.swift in Sources */,
 				33A5D9CB22931453007467EF /* User.swift in Sources */,

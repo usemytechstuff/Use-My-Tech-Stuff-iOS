@@ -18,7 +18,7 @@ enum LoginMode: Int {
 	}
 }
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, TechStuffAccessor {
 
 	var techStuffController: TechStuffController?
 

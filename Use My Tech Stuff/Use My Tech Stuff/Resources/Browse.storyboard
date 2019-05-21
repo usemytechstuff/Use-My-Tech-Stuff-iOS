@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Browse View Controller-->
         <scene sceneID="IXV-rc-yUi">
             <objects>
-                <viewController id="d8n-hF-jMf" sceneMemberID="viewController">
+                <viewController id="d8n-hF-jMf" customClass="BrowseViewController" customModule="Use_My_Tech_Stuff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xZ2-e8-cf3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,10 +285,10 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="180.80357142857142"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Search Result Table View Controller-->
         <scene sceneID="YVg-dJ-rVW">
             <objects>
-                <tableViewController id="hmJ-mq-Tg6" sceneMemberID="viewController">
+                <tableViewController id="hmJ-mq-Tg6" customClass="SearchResultTableViewController" customModule="Use_My_Tech_Stuff" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GO1-nB-V6o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -380,10 +380,10 @@
             </objects>
             <point key="canvasLocation" x="1915.9420289855075" y="180.80357142857142"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Browse Nav View Controller-->
         <scene sceneID="ZNS-Nd-9H4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kGQ-sk-y2k" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kGQ-sk-y2k" customClass="BrowseNavViewController" customModule="Use_My_Tech_Stuff" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="KJU-dF-pKF"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
