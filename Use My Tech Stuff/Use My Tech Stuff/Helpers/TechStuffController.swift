@@ -6,7 +6,7 @@
 //  Copyright © 2019 Red_Egg Productions. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class TechStuffController {
 	let networkHandler = NetworkHandler()
@@ -16,7 +16,6 @@ class TechStuffController {
 	init() {
 		loadData()
 	}
-
 
 	enum Endpoints: String {
 		case signup = "/register"
@@ -68,6 +67,28 @@ class TechStuffController {
 				completion(.failure((error as? NetworkError) ?? NetworkError.otherError(error: error)))
 			}
 		}
+	}
+
+	func get(imageAtURL imageURLString: String, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
+		guard let imageURL = URL(string: imageURLString) else {
+			// FIXME: Give better error (image url invalid)
+			completion(.failure(.imageDecodeError))
+			return
+		}
+		let request = URLRequest(url: imageURL)
+		networkHandler.transferMahDatas(with: request, completion: { (result: Result<Data, NetworkError>) in
+			do {
+				let imageData = try result.get()
+				guard let image = UIImage(data: imageData) else {
+					completion(.failure(.imageDecodeError))
+					return
+				}
+				completion(.success(image))
+			} catch {
+				completion(.failure(error as? NetworkError ?? NetworkError.otherError(error: error)))
+			}
+		})
+
 	}
 
 	private var fileURL: URL {

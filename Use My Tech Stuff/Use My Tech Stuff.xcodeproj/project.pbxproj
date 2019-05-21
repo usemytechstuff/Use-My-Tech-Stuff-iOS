@@ -31,6 +31,7 @@
 		33A5D9F822946BBE007467EF /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9F722946BBE007467EF /* CategoriesController.swift */; };
 		33A5D9FA22946D7B007467EF /* Nunito.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9F922946D7B007467EF /* Nunito.ttf */; };
 		33A5D9FC22946E03007467EF /* BrowseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9FB22946E03007467EF /* BrowseCollectionViewCell.swift */; };
+		33A5D9FE22947BFF007467EF /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9FD22947BFF007467EF /* SearchResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		33A5D9F722946BBE007467EF /* CategoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesController.swift; sourceTree = "<group>"; };
 		33A5D9F922946D7B007467EF /* Nunito.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Nunito.ttf; path = ../../../assets/fonts/Nunito.ttf; sourceTree = "<group>"; };
 		33A5D9FB22946E03007467EF /* BrowseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionViewCell.swift; sourceTree = "<group>"; };
+		33A5D9FD22947BFF007467EF /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				33A5D9FB22946E03007467EF /* BrowseCollectionViewCell.swift */,
+				33A5D9FD22947BFF007467EF /* SearchResultTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33A5D9A6229310A2007467EF /* LoginViewController.swift in Sources */,
+				33A5D9FE22947BFF007467EF /* SearchResultTableViewCell.swift in Sources */,
 				33A5D9E62293747C007467EF /* Listing.swift in Sources */,
 				33A5D9A4229310A2007467EF /* AppDelegate.swift in Sources */,
 				33A5D9F822946BBE007467EF /* CategoriesController.swift in Sources */,

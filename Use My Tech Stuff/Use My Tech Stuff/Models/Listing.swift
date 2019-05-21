@@ -11,15 +11,15 @@ import Foundation
 struct Listing: Codable {
 	let itemId: Int
 	let owner: Int
-	let itemType: String
-	let itemDescription: String
-	let itemBrand: String
-	let itemModel: String
+	let type: String
+	let description: String
+	let brand: String
+	let model: String
 	let imgURL: String
-	let itemPrice: Int
-
+	let price: Int
+	let title: String
 
 	// should we do this much?
-	let itemAvailability: Bool
+	let availability: Bool
 	let renter: Int
 }
