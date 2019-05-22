@@ -27,6 +27,21 @@ class StuffTableViewController: UITableViewController, TechStuffAccessor {
 		tableView.register(nib, forCellReuseIdentifier: "SearchResultCell")
 	}
 
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		techStuffController?.getAllItems(completion: { [weak self] (result: Result<Bool, NetworkError>) in
+			DispatchQueue.main.async {
+				do {
+					_ = try result.get()
+					self?.tableView.reloadData()
+				} catch {
+					let alert = UIAlertController(error: error)
+					self?.present(alert, animated: true)
+				}
+			}
+		})
+	}
+
 	@IBAction func addNewItemButtonPressed(_ sender: UIBarButtonItem) {
 		guard let editItemVCArray = Bundle.main.loadNibNamed("EditListingDetailViewController",
 															 owner: nil,
@@ -40,6 +55,11 @@ class StuffTableViewController: UITableViewController, TechStuffAccessor {
 
 // MARK: - tableview stuff
 extension StuffTableViewController {
+
+	override func numberOfSections(in tableView: UITableView) -> Int {
+		return 2
+	}
+
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		let section = StuffSection.getSection(for: section)
 		switch section {
