@@ -24,6 +24,12 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 	@IBOutlet var submitButton: UIButton!
 	@IBOutlet var priceLabel: UILabel!
 
+	var mode = ListingMode.viewing {
+		didSet {
+			updateMode()
+		}
+	}
+
 	var techStuffController: TechStuffController?
 	var listing: Listing? {
 		didSet {
@@ -41,9 +47,14 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 		titleTextField.text = listing.title
 		navigationItem.title = listing.title
 		brandModelLabel.text = StringFormatting.formatBrandAndModel(brand: listing.brand, model: listing.model)
+		if brandModelLabel.text == "" {
+			brandModelLabel.isHidden = true
+		}
 		descriptionTextView.text = listing.description
 
 		priceLabel.text = StringFormatting.formatPrice(withIntValue: listing.price)
+
+		updateMode()
 
 		//image and owner
 		imageView.image = UIImage(named: "placeholderImage")
@@ -58,5 +69,18 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 				}
 			}
 		})
+	}
+
+	private func updateMode() {
+		ownerLabel.isHidden = true
+		switch mode {
+		case .creatingOwn:
+			break
+		case .updatingOwn:
+			break
+		case .viewing:
+			titleTextField.isHidden = true
+			descriptionTextView.isEditable = false
+		}
 	}
 }
