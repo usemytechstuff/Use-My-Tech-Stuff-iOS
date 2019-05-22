@@ -75,6 +75,5 @@ extension SearchResultTableViewController {
 		viewItemVC.techStuffController = techStuffController
 		viewItemVC.listing = item
 		navigationController?.pushViewController(viewItemVC, animated: true)
-
 	}
 }
