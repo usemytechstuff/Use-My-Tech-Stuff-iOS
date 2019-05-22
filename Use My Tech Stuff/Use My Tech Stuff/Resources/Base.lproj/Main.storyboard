@@ -74,7 +74,6 @@
                         <segue destination="SF7-s6-zT5" kind="relationship" relationship="viewControllers" id="xsF-qc-cdp"/>
                         <segue destination="WxP-3N-EGS" kind="relationship" relationship="viewControllers" id="fbx-o9-M2X"/>
                         <segue destination="578-yH-NWo" kind="relationship" relationship="viewControllers" id="qgX-de-1D6"/>
-                        <segue destination="f7c-Tl-bjq" kind="relationship" relationship="viewControllers" id="32N-Kq-pzj"/>
                         <segue destination="GP7-gb-iBA" kind="relationship" relationship="viewControllers" id="ykX-hn-Dpm"/>
                     </connections>
                 </tabBarController>
