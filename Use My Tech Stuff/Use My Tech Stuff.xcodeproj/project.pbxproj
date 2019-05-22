@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33685CE822960C0600EA57AB /* ViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685CE722960C0600EA57AB /* ViewControllerHelper.swift */; };
 		33A5D9A4229310A2007467EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9A3229310A2007467EF /* AppDelegate.swift */; };
 		33A5D9A6229310A2007467EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9A5229310A2007467EF /* LoginViewController.swift */; };
 		33A5D9A9229310A2007467EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9A7229310A2007467EF /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33685CE722960C0600EA57AB /* ViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHelper.swift; sourceTree = "<group>"; };
 		33A5D9A0229310A2007467EF /* Use My Tech Stuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Use My Tech Stuff.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A5D9A3229310A2007467EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33A5D9A5229310A2007467EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				33A5DA112294F664007467EF /* StringFormatting.swift */,
 				33AC2F35229500AC00884B81 /* ItemCategory.swift */,
 				33AC2F632295B32800884B81 /* Animations.swift */,
+				33685CE722960C0600EA57AB /* ViewControllerHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				33A5D9E62293747C007467EF /* Listing.swift in Sources */,
 				33AC2F2F2294FE2A00884B81 /* StuffTableViewController.swift in Sources */,
 				33A5D9A4229310A2007467EF /* AppDelegate.swift in Sources */,
+				33685CE822960C0600EA57AB /* ViewControllerHelper.swift in Sources */,
 				33A5D9F822946BBE007467EF /* CategoriesController.swift in Sources */,
 				33A5D9CF22931502007467EF /* UIAlertController+NetError.swift in Sources */,
 				33A5DA082294C0C8007467EF /* RandomItemController.swift in Sources */,

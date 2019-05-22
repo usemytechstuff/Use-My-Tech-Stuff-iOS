@@ -124,8 +124,11 @@ extension StuffTableViewController {
 			editItemVC.listing = item
 			navigationController?.pushViewController(editItemVC, animated: true)
 		case .myRentals:
-			break
+			let item = techStuffController?.myRentals[indexPath.row]
+			guard let viewItemVC = UIViewController.listingDetailViewController() else { return }
+			viewItemVC.techStuffController = techStuffController
+			viewItemVC.listing = item
+			navigationController?.pushViewController(viewItemVC, animated: true)
 		}
-
 	}
 }
