@@ -1,0 +1,3 @@
+# Use My Tech Stuff
+
+AirBNB, but for renting tech equipment! Okay, so it's actually a school project, but this idea might have legs...
