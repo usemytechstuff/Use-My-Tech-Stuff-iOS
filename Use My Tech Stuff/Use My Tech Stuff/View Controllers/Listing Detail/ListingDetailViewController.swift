@@ -12,11 +12,11 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 
 	enum ListingMode {
 		case viewing
-		case updatingOwn
-		case creatingOwn
+		case viewingSelfRented
+		case viewingRented
+		case viewingOwn
 	}
 
-	@IBOutlet var titleTextField: UITextField!
 	@IBOutlet var imageView: UIImageView!
 	@IBOutlet var brandModelLabel: UILabel!
 	@IBOutlet var ownerLabel: UILabel!
@@ -43,8 +43,9 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 
 	func updateViews() {
 		guard let listing = listing else { return }
+		guard let bearer = techStuffController?.bearer else { return }
 		loadViewIfNeeded()
-		titleTextField.text = listing.title
+		checkMode(item: listing, bearer: bearer)
 		navigationItem.title = listing.title
 		brandModelLabel.text = StringFormatting.formatBrandAndModel(brand: listing.brand, model: listing.model)
 		if brandModelLabel.text == "" {
@@ -71,16 +72,44 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 		})
 	}
 
+	private func checkMode(item: Listing, bearer: Bearer) {
+		if item.owner == bearer.id {
+			mode = .viewingOwn
+			return
+		}
+		if item.renter == bearer.id {
+			mode = .viewingSelfRented
+			return
+		}
+		if item.renter != nil && item.renter != bearer.id {
+			mode = .viewingRented
+			return
+		}
+		if item.renter == nil {
+			mode = .viewing
+			return
+		}
+	}
+
 	private func updateMode() {
 		ownerLabel.isHidden = true
+		descriptionTextView.isEditable = false
 		switch mode {
-		case .creatingOwn:
-			break
-		case .updatingOwn:
-			break
+		case .viewingRented:
+			submitButton.setTitle("This item is currently rented", for: .normal)
+			submitButton.isEnabled = false
+		case .viewingOwn:
+			submitButton.setTitle("You own this item!", for: .normal)
+			submitButton.isEnabled = false
+		case .viewingSelfRented:
+			submitButton.setTitle("You're already renting this item!", for: .normal)
+			submitButton.isEnabled = false
 		case .viewing:
-			titleTextField.isHidden = true
-			descriptionTextView.isEditable = false
+			submitButton.setTitle("Rent This Item", for: .normal)
 		}
+	}
+
+	@IBAction func submitButtonPressed(_ sender: UIButton) {
+//		sender.isEnabled = false
 	}
 }
