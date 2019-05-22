@@ -21,7 +21,7 @@ struct Listing: Codable, Equatable {
 
 	// should we do this much?
 	let availability: Bool
-	let renter: Int?
+	var renter: Int?
 
 	static func == (rhs: Listing, lhs: Listing) -> Bool {
 		if rhs.id != nil || lhs.id != nil {

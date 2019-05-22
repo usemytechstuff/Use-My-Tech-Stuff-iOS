@@ -27,6 +27,7 @@ class SearchResultTableViewController: UITableViewController, TechStuffAccessor 
 		super.viewWillAppear(animated)
 		filterForCategory()
 		filterForSearchTerms()
+		tableView.reloadData()
 	}
 
 	private func filterForCategory() {
@@ -35,10 +36,12 @@ class SearchResultTableViewController: UITableViewController, TechStuffAccessor 
 			return
 		}
 		searchResults = techStuffController?.categories[category] ?? []
+		navigationItem.title = "Category: \(category.rawValue.capitalized)"
 	}
 
 	private func filterForSearchTerms() {
 		guard let searchTerms = searchTerms, !searchTerms.isEmpty else { return }
+		navigationItem.title = "Results for: \(searchTerms)"
 		let termArray = searchTerms.lowercased().split(separator: " ").map { String($0) }
 		for term in termArray {
 			searchResults = searchResults.filter {

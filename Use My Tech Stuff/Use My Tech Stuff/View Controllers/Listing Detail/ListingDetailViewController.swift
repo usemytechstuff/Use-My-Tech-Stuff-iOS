@@ -5,6 +5,7 @@
 //  Created by Michael Redig on 5/21/19.
 //  Copyright © 2019 Red_Egg Productions. All rights reserved.
 //
+//swiftlint:disable line_length
 
 import UIKit
 
@@ -110,6 +111,27 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 	}
 
 	@IBAction func submitButtonPressed(_ sender: UIButton) {
-//		sender.isEnabled = false
+		guard var listing = listing else { return }
+		listing.renter = techStuffController?.bearer?.id
+		sender.isEnabled = false
+
+		techStuffController?.update(existingItem: listing,
+									completion: { [weak self] (result: Result<ListingResponse, NetworkError>) in
+			DispatchQueue.main.async {
+				do {
+					let response = try result.get()
+					print(response.message)
+					let alert = UIAlertController(title: "Rented!", message: "You've successfully rented '\(listing.title)'.\n\nYou will be charged via a **MaGiCaL** payment method!\n\nThe item will appear behind you in 10 seconds. If it doesn't you'll need to take that up with the jerk who posted an item and didn't ship it via magical teleportation to you. Jerks.", preferredStyle: .alert)
+					alert.addAction(UIAlertAction(title: "Woohoo!", style: .default, handler: { [weak self] action in
+						self?.navigationController?.popViewController(animated: true)
+					}))
+					self?.present(alert, animated: true)
+				} catch {
+					let alert = UIAlertController(error: error)
+					self?.present(alert, animated: true)
+				}
+				sender.isEnabled = true
+			}
+		})
 	}
 }

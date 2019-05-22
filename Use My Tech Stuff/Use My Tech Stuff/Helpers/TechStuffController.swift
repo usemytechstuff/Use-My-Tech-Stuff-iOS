@@ -119,7 +119,7 @@ class TechStuffController {
 		networkHandler.transferMahCodableDatas(with: request) { (result: Result<[Listing], NetworkError>) in
 			do {
 				let listings = try result.get()
-				self.itemListings = listings
+				self.itemListings = listings.sorted { $0.title < $1.title }
 				completion?(.success(true))
 			} catch {
 				completion?(.failure(error as? NetworkError ?? NetworkError.otherError(error: error)))
@@ -239,6 +239,7 @@ class TechStuffController {
 		updateRandomList(randomList: &topRatedListings)
 		updateRandomList(randomList: &recommendedForYouListings)
 		updateMyListings()
+		updateMyRentals()
 	}
 
 	private func updateAvailableItems() {
