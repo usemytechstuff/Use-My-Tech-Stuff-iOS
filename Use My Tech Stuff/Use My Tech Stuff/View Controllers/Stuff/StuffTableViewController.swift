@@ -5,6 +5,7 @@
 //  Created by Michael Redig on 5/21/19.
 //  Copyright © 2019 Red_Egg Productions. All rights reserved.
 //
+//swiftlint:disable vertical_parameter_alignment
 
 import UIKit
 
@@ -94,5 +95,16 @@ extension StuffTableViewController {
 		}
 
 		return searchCell
+	}
+
+	override func tableView(_ tableView: UITableView,
+							commit editingStyle: UITableViewCell.EditingStyle,
+							forRowAt indexPath: IndexPath) {
+		let section = StuffSection(rawValue: indexPath.section)
+		guard section == .some(.myListings) && editingStyle == .delete else { return }
+
+		guard let item = techStuffController?.myListings[indexPath.row] else { return }
+		techStuffController?.deleteFromMyListings(item: item)
+		tableView.deleteRows(at: [indexPath], with: .automatic)
 	}
 }

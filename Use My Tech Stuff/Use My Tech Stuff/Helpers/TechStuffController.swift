@@ -175,6 +175,55 @@ class TechStuffController {
 		}
 	}
 
+	func delete(existingItem item: Listing, completion: @escaping (Result<ListingResponse, NetworkError>) -> Void) {
+		guard let bearer = bearer else {
+			// FIXME: perhaps change error here? - reset to login screen
+			completion(.failure(.httpNon200StatusCode(code: 401, data: nil)))
+			return
+		}
+		guard let itemID = item.id else { return }
+		let itemURL = baseURL.appendingPathComponent(Endpoints.items.rawValue).appendingPathComponent(String(itemID))
+		print(itemURL)
+
+		var request = URLRequest(url: itemURL)
+		request.httpMethod = HTTPMethods.delete.rawValue
+		request.addValue(HTTPHeaderKeys.ContentTypes.json.rawValue, forHTTPHeaderField: HTTPHeaderKeys.contentType.rawValue)
+		request.addValue(bearer.token, forHTTPHeaderField: HTTPHeaderKeys.auth.rawValue)
+
+		networkHandler.transferMahCodableDatas(with: request) { [weak self] (result: Result<ListingResponse, NetworkError>) in
+			self?.refreshItems()
+			completion(result)
+		}
+	}
+
+	func update(existingItem item: Listing, completion: @escaping (Result<ListingResponse, NetworkError>) -> Void) {
+		guard let bearer = bearer else {
+			// FIXME: perhaps change error here? - reset to login screen
+			completion(.failure(.httpNon200StatusCode(code: 401, data: nil)))
+			return
+		}
+		guard let itemID = item.id else { return }
+		let itemURL = baseURL.appendingPathComponent(Endpoints.items.rawValue).appendingPathComponent(String(itemID))
+		print(itemURL)
+
+		var request = URLRequest(url: itemURL)
+		request.httpMethod = HTTPMethods.put.rawValue
+		request.addValue(HTTPHeaderKeys.ContentTypes.json.rawValue, forHTTPHeaderField: HTTPHeaderKeys.contentType.rawValue)
+		request.addValue(bearer.token, forHTTPHeaderField: HTTPHeaderKeys.auth.rawValue)
+
+		let encoder = JSONEncoder()
+		do {
+			request.httpBody = try encoder.encode(item)
+		} catch {
+			completion(.failure(.dataCodingError(specifically: error)))
+		}
+
+		networkHandler.transferMahCodableDatas(with: request) { [weak self] (result: Result<ListingResponse, NetworkError>) in
+			self?.refreshItems()
+			completion(result)
+		}
+	}
+
 	// MARK: - list derivatives
 	var categories = [ItemCategory: [Listing]]()
 	var topRatedListings = [Listing]()
@@ -221,6 +270,14 @@ class TechStuffController {
 		myRentals = itemListings.filter {
 			$0.renter == bearer.id
 		}
+	}
+
+	// MARK: - my listing management
+
+	func deleteFromMyListings(item: Listing) {
+		delete(existingItem: item) { _ in }
+		guard let index = myListings.firstIndex(of: item) else { return }
+		myListings.remove(at: index)
 	}
 
 	// MARK: - data persistance

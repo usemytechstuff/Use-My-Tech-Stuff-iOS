@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Listing: Codable {
+struct Listing: Codable, Equatable {
 	let id: Int?
 	let owner: Int
 	let type: String
@@ -22,6 +22,13 @@ struct Listing: Codable {
 	// should we do this much?
 	let availability: Bool
 	let renter: Int?
+
+	static func == (rhs: Listing, lhs: Listing) -> Bool {
+		if rhs.id != nil || lhs.id != nil {
+			return rhs.id == lhs.id
+		}
+		return lhs.title == rhs.title && lhs.description == rhs.description
+	}
 }
 
 extension Listing {
@@ -43,5 +50,5 @@ extension Listing {
 
 struct ListingResponse: Codable {
 	let message: String
-	let item: Listing
+	let item: Listing?
 }
