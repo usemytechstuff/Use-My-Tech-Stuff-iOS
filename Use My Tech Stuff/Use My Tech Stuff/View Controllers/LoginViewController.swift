@@ -70,7 +70,7 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 
 	private func login() {
 		guard let username = usernameTextField.text, !username.isEmpty else {
-			wiggle(textField: usernameTextField)
+			Animations.wiggle(view: usernameTextField)
 			return
 		}
 		guard username.count < 32 else {
@@ -80,7 +80,7 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 			return
 		}
 		guard let password = passwordTextField.text, !password.isEmpty else {
-			wiggle(textField: passwordTextField)
+			Animations.wiggle(view: passwordTextField)
 			return
 		}
 		guard password.count >= 8 else {
@@ -110,7 +110,7 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 
 	private func signUp() {
 		guard let username = usernameTextField.text, !username.isEmpty else {
-			wiggle(textField: usernameTextField)
+			Animations.wiggle(view: usernameTextField)
 			return
 		}
 		guard username.count < 32 else {
@@ -120,7 +120,7 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 			return
 		}
 		guard let password = passwordTextField.text, !password.isEmpty else {
-			wiggle(textField: passwordTextField)
+			Animations.wiggle(view: passwordTextField)
 			return
 		}
 		guard password.count >= 8 else {
@@ -129,11 +129,11 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 			return
 		}
 		guard let confirmPassword = confirmPasswordTextField.text, password == confirmPassword else {
-			wiggle(textField: confirmPasswordTextField)
+			Animations.wiggle(view: confirmPasswordTextField)
 			return
 		}
 		guard let email = emailTextField.text, email.isEmail else {
-			wiggle(textField: emailTextField)
+			Animations.wiggle(view: emailTextField)
 			return
 		}
 
@@ -193,23 +193,23 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 		}
 	}
 
-	private func wiggle(textField: UITextField) {
-
-		let spring = { (finished: Bool) in
-			UIView.animate(withDuration: 1,
-						   delay: 0,
-						   usingSpringWithDamping: 0.2,
-						   initialSpringVelocity: 0,
-						   options: [],
-						   animations: {
-							textField.transform = .identity
-			}, completion: nil)
-		}
-
-		UIView.animate(withDuration: 0.1, animations: {
-			textField.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
-		}, completion: spring)
-	}
+//	private func wiggle(textField: UITextField) {
+//
+//		let spring = { (finished: Bool) in
+//			UIView.animate(withDuration: 1,
+//						   delay: 0,
+//						   usingSpringWithDamping: 0.2,
+//						   initialSpringVelocity: 0,
+//						   options: [],
+//						   animations: {
+//							textField.transform = .identity
+//			}, completion: nil)
+//		}
+//
+//		UIView.animate(withDuration: 0.1, animations: {
+//			textField.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+//		}, completion: spring)
+//	}
 
 	@IBAction func passwordFieldEdited(_ sender: UITextField) {
 		if loginMode == .signUp {

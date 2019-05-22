@@ -45,6 +45,7 @@
 		33AC2F2F2294FE2A00884B81 /* StuffTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AC2F2E2294FE2A00884B81 /* StuffTableViewController.swift */; };
 		33AC2F312294FFCB00884B81 /* StuffNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AC2F302294FFCB00884B81 /* StuffNavController.swift */; };
 		33AC2F36229500AC00884B81 /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AC2F35229500AC00884B81 /* ItemCategory.swift */; };
+		33AC2F642295B32800884B81 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AC2F632295B32800884B81 /* Animations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		33AC2F2E2294FE2A00884B81 /* StuffTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffTableViewController.swift; sourceTree = "<group>"; };
 		33AC2F302294FFCB00884B81 /* StuffNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffNavController.swift; sourceTree = "<group>"; };
 		33AC2F35229500AC00884B81 /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
+		33AC2F632295B32800884B81 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 				33A5D9E122933053007467EF /* TechStuffController.swift */,
 				33A5DA112294F664007467EF /* StringFormatting.swift */,
 				33AC2F35229500AC00884B81 /* ItemCategory.swift */,
+				33AC2F632295B32800884B81 /* Animations.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				33A5D9CB22931453007467EF /* User.swift in Sources */,
 				33A5D9FC22946E03007467EF /* BrowseCollectionViewCell.swift in Sources */,
 				33A5D9EC229459D1007467EF /* BaseTabViewController.swift in Sources */,
+				33AC2F642295B32800884B81 /* Animations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

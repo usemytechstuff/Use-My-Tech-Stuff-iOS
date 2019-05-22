@@ -74,6 +74,5 @@ extension StuffTableViewController {
 		}
 
 		return searchCell
-
 	}
 }
