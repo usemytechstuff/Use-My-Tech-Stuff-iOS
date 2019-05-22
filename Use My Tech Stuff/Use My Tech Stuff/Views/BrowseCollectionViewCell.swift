@@ -8,10 +8,18 @@
 
 import UIKit
 
-class BrowseCollectionViewCell: UICollectionViewCell {
+class BrowseCollectionViewCell: UICollectionViewCell, TechStuffAccessor {
+
+	var techStuffController: TechStuffController?
 
 	@IBOutlet var myContentView: UIView!
 	@IBOutlet var imageView: UIImageView!
+
+	var listing: Listing? {
+		didSet {
+			updateViews()
+		}
+	}
 
 	@IBOutlet var textLabel: UILabel! {
 		didSet {
@@ -22,9 +30,28 @@ class BrowseCollectionViewCell: UICollectionViewCell {
 		}
 	}
 
+	func updateViews() {
+		guard let listing = listing else { return }
+		textLabel.text = listing.title
+		imageView.image = UIImage(named: "placeholderImage")
+
+		guard let imageURL = listing.imgURL else { return }
+		techStuffController?.get(imageAtURL: imageURL, completion: { [weak self] (result: Result<UIImage, NetworkError>) in
+			DispatchQueue.main.async {
+				do {
+					let image = try result.get()
+					self?.imageView.image = image
+				} catch {
+					print("error retrieving image: \(error)")
+				}
+			}
+		})
+	}
+
 	var image: UIImage? {
 		didSet {
 			imageView.image = image
+			listing = nil
 		}
 	}
 }

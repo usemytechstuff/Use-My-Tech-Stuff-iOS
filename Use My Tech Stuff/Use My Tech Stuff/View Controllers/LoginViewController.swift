@@ -89,7 +89,7 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 			return
 		}
 
-		techStuffController?.login(with: User(username: username, password: password, email: nil),
+		techStuffController?.login(with: User(username: username, password: password),
 								   completion: { [weak self] (result: Result<Bearer, NetworkError>) in
 			do {
 				_ = try result.get()

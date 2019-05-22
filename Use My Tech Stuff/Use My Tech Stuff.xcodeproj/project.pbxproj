@@ -37,6 +37,8 @@
 		33A5DA062294B2E1007467EF /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33A5DA042294B2E1007467EF /* SearchResultTableViewCell.xib */; };
 		33A5DA082294C0C8007467EF /* RandomItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5DA072294C0C8007467EF /* RandomItemController.swift */; };
 		33A5DA0C2294C803007467EF /* BrowseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33A5DA0A2294C803007467EF /* BrowseCollectionViewCell.xib */; };
+		33A5DA0F2294D0D9007467EF /* ListingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5DA0D2294D0D9007467EF /* ListingDetailViewController.swift */; };
+		33A5DA102294D0D9007467EF /* ListingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33A5DA0E2294D0D9007467EF /* ListingDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		33A5DA042294B2E1007467EF /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
 		33A5DA072294C0C8007467EF /* RandomItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomItemController.swift; sourceTree = "<group>"; };
 		33A5DA0A2294C803007467EF /* BrowseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowseCollectionViewCell.xib; sourceTree = "<group>"; };
+		33A5DA0D2294D0D9007467EF /* ListingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailViewController.swift; sourceTree = "<group>"; };
+		33A5DA0E2294D0D9007467EF /* ListingDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListingDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,8 @@
 				33A5DA012294A18F007467EF /* SearchResultTableViewController.swift */,
 				33A5D9A5229310A2007467EF /* LoginViewController.swift */,
 				33A5D9EB229459D1007467EF /* BaseTabViewController.swift */,
+				33A5DA0D2294D0D9007467EF /* ListingDetailViewController.swift */,
+				33A5DA0E2294D0D9007467EF /* ListingDetailViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 				33A5D9AB229310A3007467EF /* Assets.xcassets in Resources */,
 				33A5D9F022946040007467EF /* Faves.storyboard in Resources */,
 				33A5D9F6229460CA007467EF /* Stuff.storyboard in Resources */,
+				33A5DA102294D0D9007467EF /* ListingDetailViewController.xib in Resources */,
 				33A5D9D222931FCD007467EF /* Cartfile in Resources */,
 				33A5D9F422946083007467EF /* Profile.storyboard in Resources */,
 				33A5DA0C2294C803007467EF /* BrowseCollectionViewCell.xib in Resources */,
@@ -428,6 +435,7 @@
 				33A5D9CF22931502007467EF /* UIAlertController+NetError.swift in Sources */,
 				33A5DA082294C0C8007467EF /* RandomItemController.swift in Sources */,
 				33A5DA002294A17D007467EF /* BrowseViewController.swift in Sources */,
+				33A5DA0F2294D0D9007467EF /* ListingDetailViewController.swift in Sources */,
 				33A5D9E222933053007467EF /* TechStuffController.swift in Sources */,
 				33A5D9D022931502007467EF /* NetworkHandler.swift in Sources */,
 				33A5D9CB22931453007467EF /* User.swift in Sources */,

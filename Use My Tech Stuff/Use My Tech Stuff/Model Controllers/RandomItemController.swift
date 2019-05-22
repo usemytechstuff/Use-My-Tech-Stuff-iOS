@@ -19,9 +19,11 @@ class RandomItemController: NSObject, UICollectionViewDelegate, UICollectionView
 
 	var refreshedClosure: (() -> Void)?
 
+	var itemTouchedClosure: ((BrowseCollectionViewCell) -> Void)?
+
 	func requestData() {
 		if techStuffController?.itemListings.count == 0 {
-			techStuffController?.getAllItems(completion: { [weak self] (result: Result<Bool, NetworkError>) in
+			techStuffController?.getAllItems(completion: { [weak self] _ in
 				self?.refreshItems()
 			})
 		} else {
@@ -48,21 +50,14 @@ class RandomItemController: NSObject, UICollectionViewDelegate, UICollectionView
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
 		guard let browseCell = cell as? BrowseCollectionViewCell else { return cell }
-		browseCell.image = UIImage(named: "placeholderImage")
-		browseCell.textLabel.text = listedItems[indexPath.item].title
+		browseCell.techStuffController = techStuffController
+		browseCell.listing = listedItems[indexPath.item]
 
-		if let imageURL = listedItems[indexPath.item].imgURL {
-			techStuffController?.get(imageAtURL: imageURL, completion: { (result: Result<UIImage, NetworkError>) in
-				DispatchQueue.main.async {
-					do {
-						let image = try result.get()
-						browseCell.image = image
-					} catch {
-						print("error fetching image: \(error)")
-					}
-				}
-			})
-		}
 		return browseCell
+	}
+
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		guard let cell = collectionView.cellForItem(at: indexPath) as? BrowseCollectionViewCell else { return }
+		itemTouchedClosure?(cell)
 	}
 }

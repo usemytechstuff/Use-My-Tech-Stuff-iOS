@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Browse View Controller-->
+        <!--Browse UMTS-->
         <scene sceneID="IXV-rc-yUi">
             <objects>
                 <viewController id="d8n-hF-jMf" customClass="BrowseViewController" customModule="Use_My_Tech_Stuff" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,10 +24,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4x-5C-Kbu">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9G-Ac-g0P" userLabel="scrollContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="suh-uV-FXf">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="752"/>
@@ -76,7 +76,7 @@
                                                                             <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                                                         </collectionViewFlowLayout>
                                                                         <cells>
-                                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iXe-u6-OAH">
+                                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iXe-u6-OAH" customClass="BrowseCollectionViewCell" customModule="Use_My_Tech_Stuff" customModuleProvider="target">
                                                                                 <rect key="frame" x="20" y="2.5" width="145" height="145"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -128,13 +128,16 @@
                                                                             <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                                                         </collectionViewFlowLayout>
                                                                         <cells>
-                                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="a4t-CZ-eCj">
+                                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Cell" id="a4t-CZ-eCj" customClass="BrowseCollectionViewCell" customModule="Use_My_Tech_Stuff" customModuleProvider="target">
                                                                                 <rect key="frame" x="20" y="2.5" width="145" height="145"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                 </view>
+                                                                                <connections>
+                                                                                    <segue destination="hmJ-mq-Tg6" kind="show" id="fb9-iS-9UU"/>
+                                                                                </connections>
                                                                             </collectionViewCell>
                                                                         </cells>
                                                                     </collectionView>
@@ -178,7 +181,7 @@
                                 </constraints>
                             </scrollView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Try &quot;Cameras&quot;" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGI-dl-5Pl">
-                                <rect key="frame" x="20" y="108" width="374" height="45"/>
+                                <rect key="frame" x="20" y="160" width="374" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="7os-RT-8o6"/>
                                 </constraints>
@@ -199,7 +202,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z86-hU-uB9"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ERR-Ty-8iW"/>
+                    <navigationItem key="navigationItem" title="Browse UMTS" id="ERR-Ty-8iW"/>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="KHJ-gA-gUK" id="sdb-RS-o2a"/>
                         <outlet property="topRatedCollectionView" destination="QHy-En-ctO" id="cT4-rV-AU7"/>
@@ -234,8 +237,8 @@
                     <tabBarItem key="tabBarItem" systemItem="search" id="KJU-dF-pKF"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oc2-DW-Jhd">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="oc2-DW-Jhd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

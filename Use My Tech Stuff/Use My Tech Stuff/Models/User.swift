@@ -9,9 +9,39 @@
 import Foundation
 
 struct User: Codable {
+	let id: Int?
 	let username: String
-	let password: String
+	let password: String?
 	var email: String?
+	let firstname: String?
+	let lastname: String?
+	let phone: String?
+	let address: String?
+
+}
+
+extension User {
+	init(username: String, password: String) {
+		self.init(id: nil,
+				  username: username,
+				  password: password,
+				  email: nil,
+				  firstname: nil,
+				  lastname: nil,
+				  phone: nil,
+				  address: nil)
+	}
+
+	init(username: String, password: String, email: String) {
+		self.init(id: nil,
+				  username: username,
+				  password: password,
+				  email: email,
+				  firstname: nil,
+				  lastname: nil,
+				  phone: nil,
+				  address: nil)
+	}
 }
 
 struct Bearer: Codable {

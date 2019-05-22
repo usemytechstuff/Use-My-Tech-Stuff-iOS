@@ -22,6 +22,11 @@ class BrowseViewController: UIViewController, TechStuffAccessor {
 		setupCollectionViews()
 	}
 
+	override func viewWillAppear(_ animated: Bool) {
+//		navigationController?.navigationBar.prefersLargeTitles = false
+		super.viewWillAppear(animated)
+	}
+
 	private func setupCollectionViews() {
 		let browseCellNib = UINib(nibName: "BrowseCollectionViewCell", bundle: nil)
 
@@ -30,14 +35,26 @@ class BrowseViewController: UIViewController, TechStuffAccessor {
 		categoriesCollectionView.delegate = categoriesController
 
 		randomItemController.refreshedClosure = { [weak self] in
-		DispatchQueue.main.async {
-		self?.topRatedCollectionView.reloadData()
+			DispatchQueue.main.async {
+				self?.topRatedCollectionView.reloadData()
+			}
 		}
+		randomItemController.itemTouchedClosure = { [weak self] browseCell in
+			self?.showListingDetail(withListing: browseCell.listing)
 		}
 		randomItemController.techStuffController = techStuffController
 		topRatedCollectionView.register(browseCellNib, forCellWithReuseIdentifier: "Cell")
 		topRatedCollectionView.dataSource = randomItemController
 		topRatedCollectionView.delegate = randomItemController
+	}
+
+	func showListingDetail(withListing listing: Listing?) {
+		guard let viewItemVCArray = Bundle.main.loadNibNamed("ListingDetailViewController", owner: nil, options: nil) as? [ListingDetailViewController],
+			let viewItemVC = viewItemVCArray.first else { return }
+		viewItemVC.techStuffController = techStuffController
+		viewItemVC.listing = listing
+		navigationController?.navigationBar.prefersLargeTitles = true
+		navigationController?.pushViewController(viewItemVC, animated: true)
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
