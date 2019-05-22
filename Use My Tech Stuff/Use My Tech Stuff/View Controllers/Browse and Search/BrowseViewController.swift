@@ -23,7 +23,6 @@ class BrowseViewController: UIViewController, TechStuffAccessor {
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
-//		navigationController?.navigationBar.prefersLargeTitles = false
 		super.viewWillAppear(animated)
 	}
 
@@ -49,7 +48,9 @@ class BrowseViewController: UIViewController, TechStuffAccessor {
 	}
 
 	func showListingDetail(withListing listing: Listing?) {
-		guard let viewItemVCArray = Bundle.main.loadNibNamed("ListingDetailViewController", owner: nil, options: nil) as? [ListingDetailViewController],
+		guard let viewItemVCArray = Bundle.main.loadNibNamed("ListingDetailViewController",
+															 owner: nil,
+															 options: nil) as? [ListingDetailViewController],
 			let viewItemVC = viewItemVCArray.first else { return }
 		viewItemVC.techStuffController = techStuffController
 		viewItemVC.listing = listing

@@ -15,11 +15,12 @@ class StuffTableViewController: UITableViewController, TechStuffAccessor {
 	}
 
 	@IBAction func addNewItemButtonPressed(_ sender: UIBarButtonItem) {
-		guard let editItemVCArray = Bundle.main.loadNibNamed("EditListingDetailViewController", owner: nil, options: nil) as? [EditListingDetailViewController],
+		guard let editItemVCArray = Bundle.main.loadNibNamed("EditListingDetailViewController",
+															 owner: nil,
+															 options: nil) as? [EditListingDetailViewController],
 			let editItemVC = editItemVCArray.first else { return }
 		editItemVC.techStuffController = techStuffController
-		navigationController?.navigationBar.prefersLargeTitles = true
+		editItemVC.mode = .creatingOwn
 		navigationController?.pushViewController(editItemVC, animated: true)
 	}
 }
-

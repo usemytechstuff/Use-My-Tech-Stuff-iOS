@@ -44,6 +44,7 @@
 		33AC2F2D2294FB7600884B81 /* EditListingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33AC2F2C2294FB7600884B81 /* EditListingDetailViewController.xib */; };
 		33AC2F2F2294FE2A00884B81 /* StuffTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AC2F2E2294FE2A00884B81 /* StuffTableViewController.swift */; };
 		33AC2F312294FFCB00884B81 /* StuffNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AC2F302294FFCB00884B81 /* StuffNavController.swift */; };
+		33AC2F36229500AC00884B81 /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AC2F35229500AC00884B81 /* ItemCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		33AC2F2C2294FB7600884B81 /* EditListingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditListingDetailViewController.xib; sourceTree = "<group>"; };
 		33AC2F2E2294FE2A00884B81 /* StuffTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffTableViewController.swift; sourceTree = "<group>"; };
 		33AC2F302294FFCB00884B81 /* StuffNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffNavController.swift; sourceTree = "<group>"; };
+		33AC2F35229500AC00884B81 /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 				33A5D9E022933021007467EF /* Generic Network */,
 				33A5D9E122933053007467EF /* TechStuffController.swift */,
 				33A5DA112294F664007467EF /* StringFormatting.swift */,
+				33AC2F35229500AC00884B81 /* ItemCategory.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33AC2F36229500AC00884B81 /* ItemCategory.swift in Sources */,
 				33AC2F2B2294FB6C00884B81 /* EditListingDetailViewController.swift in Sources */,
 				33A5D9A6229310A2007467EF /* LoginViewController.swift in Sources */,
 				33A5DA022294A18F007467EF /* SearchResultTableViewController.swift in Sources */,

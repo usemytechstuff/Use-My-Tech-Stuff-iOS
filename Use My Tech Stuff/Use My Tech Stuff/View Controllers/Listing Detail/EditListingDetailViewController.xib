@@ -56,16 +56,62 @@
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" text="description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DOG-kI-wEU">
-                                <rect key="frame" x="0.0" y="190" width="374" height="530"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNR-OG-Oxs">
+                                <rect key="frame" x="0.0" y="190" width="374" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DOG-kI-wEU">
+                                <rect key="frame" x="0.0" y="221.5" width="374" height="312"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDh-Dx-4d3">
+                                <rect key="frame" x="0.0" y="541.5" width="374" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nek-7S-q6B">
+                                <rect key="frame" x="0.0" y="573" width="374" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="RNo-cv-OJD"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="RdU-JP-STD" id="jNq-UN-N1I"/>
+                                    <outlet property="delegate" destination="RdU-JP-STD" id="xGD-Ei-J3S"/>
+                                </connections>
+                            </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6P-mW-YIS">
+                                <rect key="frame" x="0.0" y="706" width="374" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Publicly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Vl-eT-hUu">
+                                        <rect key="frame" x="0.0" y="0.0" width="317" height="31"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e1A-0f-gY9">
+                                        <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="e1A-0f-gY9" firstAttribute="leading" secondItem="9Vl-eT-hUu" secondAttribute="trailing" constant="8" id="0RG-el-x6o"/>
+                                    <constraint firstAttribute="bottom" secondItem="9Vl-eT-hUu" secondAttribute="bottom" id="eEP-Nm-CzR"/>
+                                    <constraint firstItem="9Vl-eT-hUu" firstAttribute="top" secondItem="j6P-mW-YIS" secondAttribute="top" id="j4P-Jt-O8z"/>
+                                    <constraint firstItem="e1A-0f-gY9" firstAttribute="top" secondItem="j6P-mW-YIS" secondAttribute="top" id="oZo-XH-hqf"/>
+                                    <constraint firstAttribute="trailing" secondItem="e1A-0f-gY9" secondAttribute="trailing" id="qwp-5H-K9Z"/>
+                                    <constraint firstItem="9Vl-eT-hUu" firstAttribute="leading" secondItem="j6P-mW-YIS" secondAttribute="leading" id="wBw-Xv-0C8"/>
+                                    <constraint firstAttribute="bottom" secondItem="e1A-0f-gY9" secondAttribute="bottom" id="wYP-g8-f6X"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-GX-ywB">
-                                <rect key="frame" x="0.0" y="728" width="374" height="50"/>
+                                <rect key="frame" x="0.0" y="745" width="374" height="33"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAc-n6-KWN">
-                                        <rect key="frame" x="107.5" y="0.0" width="159" height="50"/>
+                                        <rect key="frame" x="108.5" y="0.0" width="157" height="33"/>
                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                                         <state key="normal" title="Post This Item For Rent"/>
                                     </button>
@@ -91,7 +137,9 @@
             </view>
             <navigationItem key="navigationItem" title="NAME ME" id="AoX-iU-1qx"/>
             <connections>
+                <outlet property="availabilitySwitch" destination="e1A-0f-gY9" id="QsB-nb-hWa"/>
                 <outlet property="brandTextField" destination="Rqu-Hp-RPx" id="Cuf-0H-a1Y"/>
+                <outlet property="categoryPicker" destination="nek-7S-q6B" id="HsJ-Vj-UXM"/>
                 <outlet property="descriptionTextView" destination="DOG-kI-wEU" id="kAs-2Z-mJS"/>
                 <outlet property="imageURLTextField" destination="ZUM-FF-qBp" id="ofA-y7-sf8"/>
                 <outlet property="modelTextField" destination="OUc-T2-9SE" id="cnu-Bh-b3a"/>
