@@ -55,13 +55,13 @@
                                                 <rect key="frame" x="0.0" y="296" width="414" height="218"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Rated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUf-TC-mHJ">
-                                                        <rect key="frame" x="20" y="8" width="374" height="42.5"/>
+                                                        <rect key="frame" x="20" y="8" width="374" height="36.5"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="31"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hx8-Od-tma">
-                                                        <rect key="frame" x="0.0" y="58.5" width="414" height="150"/>
+                                                        <rect key="frame" x="0.0" y="52.5" width="414" height="150"/>
                                                         <subviews>
                                                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QHy-En-ctO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -107,13 +107,13 @@
                                                 <rect key="frame" x="0.0" y="534" width="414" height="218"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kt-1l-Sns">
-                                                        <rect key="frame" x="20" y="8" width="374" height="42.5"/>
+                                                        <rect key="frame" x="20" y="8" width="374" height="36.5"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="31"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgH-cb-EfS">
-                                                        <rect key="frame" x="0.0" y="58.5" width="414" height="150"/>
+                                                        <rect key="frame" x="0.0" y="52.5" width="414" height="150"/>
                                                         <subviews>
                                                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8xU-k7-upl">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -159,13 +159,13 @@
                                                 <rect key="frame" x="0.0" y="772" width="414" height="218"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfH-Z7-BFs">
-                                                        <rect key="frame" x="20" y="8" width="374" height="42.5"/>
+                                                        <rect key="frame" x="20" y="8" width="374" height="36.5"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="31"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4z-tk-SLw">
-                                                        <rect key="frame" x="0.0" y="58.5" width="414" height="150"/>
+                                                        <rect key="frame" x="0.0" y="52.5" width="414" height="150"/>
                                                         <subviews>
                                                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KHJ-gA-gUK">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
