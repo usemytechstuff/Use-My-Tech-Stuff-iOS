@@ -11,8 +11,8 @@ import UIKit
 class StuffTableViewController: UITableViewController, TechStuffAccessor {
 
 	enum StuffSection: Int {
-		case myRentals
 		case myListings
+		case myRentals
 
 		static func getSection(for index: Int) -> StuffSection {
 			return StuffSection(rawValue: index) ?? .myListings
