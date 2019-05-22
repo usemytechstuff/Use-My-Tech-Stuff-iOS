@@ -29,11 +29,9 @@ class SearchResultTableViewCell: UITableViewCell, TechStuffAccessor {
 		searchResultImageView.image = UIImage(named: "placeholderImage")
 		itemTitleLabel.text = listing.title
 		itemDescriptionLabel.text = listing.description
-		itemBrandModelLabel.text = "\(listing.brand) - \(listing.model)"
+		itemBrandModelLabel.text = StringFormatting.formatBrandAndModel(brand: listing.brand, model: listing.model)
 
-		let dollars = listing.price / 100
-		let cents = listing.price % 100
-		itemPriceLabel.text = "$\(dollars).\(cents)"
+		itemPriceLabel.text = StringFormatting.formatPrice(withIntValue: listing.price)
 
 		guard let imgURL = listing.imgURL else { print("no url: \(listing)"); return }
 		techStuffController?.get(imageAtURL: imgURL, completion: { [weak self] (result: Result<UIImage, NetworkError>) in

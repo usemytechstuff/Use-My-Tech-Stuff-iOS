@@ -13,8 +13,8 @@ struct Listing: Codable {
 	let owner: Int
 	let type: String
 	let description: String
-	let brand: String
-	let model: String
+	let brand: String?
+	let model: String?
 	let imgURL: String?
 	let price: Int
 	let title: String

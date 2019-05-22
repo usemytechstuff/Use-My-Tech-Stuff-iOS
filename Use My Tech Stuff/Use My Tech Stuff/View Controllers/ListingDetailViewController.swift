@@ -40,12 +40,10 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 		loadViewIfNeeded()
 		titleTextField.text = listing.title
 		navigationItem.title = listing.title
-		brandModelLabel.text = "\(listing.brand) - \(listing.model)"
+		brandModelLabel.text = StringFormatting.formatBrandAndModel(brand: listing.brand, model: listing.model)
 		descriptionTextView.text = listing.description
 
-		let dollars = listing.price / 100
-		let cents = listing.price % 100
-		priceLabel.text = "$\(dollars).\(cents)"
+		priceLabel.text = StringFormatting.formatPrice(withIntValue: listing.price)
 
 		//image and owner
 		imageView.image = UIImage(named: "placeholderImage")
