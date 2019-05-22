@@ -57,6 +57,7 @@ class EditListingDetailViewController: UIViewController, TechStuffAccessor {
 		modelTextField.text = listing.model
 		descriptionTextView.text = listing.description
 		priceTextField.text = StringFormatting.formatPrice(withIntValue: listing.price)
+		updatePriceInfo()
 		let categoryIndex = ItemCategory.getIndex(for: ItemCategory(rawValue: listing.type))
 		categoryPicker.selectRow(categoryIndex, inComponent: 0, animated: true)
 		availabilitySwitch.isOn = listing.availability
@@ -75,9 +76,13 @@ class EditListingDetailViewController: UIViewController, TechStuffAccessor {
 	}
 
 	@IBAction func priceFieldChanged(_ sender: UITextField) {
-		guard var priceStr = sender.text else {
+		updatePriceInfo()
+	}
+
+	func updatePriceInfo() {
+		guard var priceStr = priceTextField.text else {
 			priceValue = 0
-			sender.text = "Free"
+			priceTextField.text = "Free"
 			return
 		}
 		let numbers = Set("0123456789")
@@ -85,9 +90,9 @@ class EditListingDetailViewController: UIViewController, TechStuffAccessor {
 		priceValue = Int(priceStr) ?? 0
 		priceStr = StringFormatting.formatPrice(withIntValue: priceValue ?? 0)
 		if priceValue ?? 0 == 0 {
-			sender.text = "Free"
+			priceTextField.text = "Free"
 		} else {
-			sender.text = priceStr
+			priceTextField.text = priceStr
 		}
 	}
 
@@ -112,29 +117,63 @@ class EditListingDetailViewController: UIViewController, TechStuffAccessor {
 		}
 		let availability = availabilitySwitch.isOn
 
-		var listing = Listing(owner: bearer.id,
+		var listing: Listing
+		if let existingListing = self.listing {
+			listing = Listing(id: existingListing.id,
+							  owner: existingListing.owner,
+							  type: type,
+							  description: description,
+							  brand: nil,
+							  model: nil,
+							  imgURL: nil,
+							  price: price,
+							  title: title,
+							  availability: availability,
+							  renter: existingListing.renter)
+		} else {
+			listing = Listing(owner: bearer.id,
 							  type: type,
 							  description: description,
 							  price: price,
 							  title: title,
 							  availability: availability)
+		}
 		listing.brand = brandTextField.text
 		listing.model = modelTextField.text
 		listing.imgURL = imageURLTextField.text
 
-		techStuffController?.post(newItem: listing, completion: { [weak self] (result: Result<ListingResponse, NetworkError>) in
-			DispatchQueue.main.async {
-				do {
-					let response = try result.get()
-					print(response.message)
+		switch mode {
+		case .creatingOwn:
+			techStuffController?.post(newItem: listing,
+									  completion: { [weak self] (result: Result<ListingResponse, NetworkError>) in
+				DispatchQueue.main.async {
+					do {
+						let response = try result.get()
+						print(response.message)
 
-					self?.navigationController?.popViewController(animated: true)
-				} catch {
-					let alert = UIAlertController(error: error)
-					self?.present(alert, animated: true)
+						self?.navigationController?.popViewController(animated: true)
+					} catch {
+						let alert = UIAlertController(error: error)
+						self?.present(alert, animated: true)
+					}
 				}
-			}
-		})
+			})
+		case .updatingOwn:
+			techStuffController?.update(existingItem: listing,
+										completion: { [weak self] (result: Result<ListingResponse, NetworkError>) in
+				DispatchQueue.main.async {
+					do {
+						let response = try result.get()
+						print(response.message)
+
+						self?.navigationController?.popViewController(animated: true)
+					} catch {
+						let alert = UIAlertController(error: error)
+						self?.present(alert, animated: true)
+					}
+				}
+			})
+		}
 	}
 }
 

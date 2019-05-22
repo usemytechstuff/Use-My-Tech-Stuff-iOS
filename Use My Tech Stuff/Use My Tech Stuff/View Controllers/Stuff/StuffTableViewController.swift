@@ -100,11 +100,33 @@ extension StuffTableViewController {
 	override func tableView(_ tableView: UITableView,
 							commit editingStyle: UITableViewCell.EditingStyle,
 							forRowAt indexPath: IndexPath) {
+
 		let section = StuffSection(rawValue: indexPath.section)
 		guard section == .some(.myListings) && editingStyle == .delete else { return }
 
 		guard let item = techStuffController?.myListings[indexPath.row] else { return }
 		techStuffController?.deleteFromMyListings(item: item)
 		tableView.deleteRows(at: [indexPath], with: .automatic)
+	}
+
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+
+		guard let section = StuffSection(rawValue: indexPath.section) else { return }
+		switch section {
+		case .myListings:
+			let item = techStuffController?.myListings[indexPath.row]
+			guard let editItemVCArray = Bundle.main.loadNibNamed("EditListingDetailViewController",
+																 owner: nil,
+																 options: nil) as? [EditListingDetailViewController],
+				let editItemVC = editItemVCArray.first else { return }
+			editItemVC.techStuffController = techStuffController
+			editItemVC.mode = .updatingOwn
+			editItemVC.listing = item
+			navigationController?.pushViewController(editItemVC, animated: true)
+		case .myRentals:
+			break
+		}
+
 	}
 }
