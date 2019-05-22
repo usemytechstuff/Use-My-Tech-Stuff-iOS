@@ -19,15 +19,23 @@ class BrowseViewController: UIViewController, TechStuffAccessor {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		setupCollectionViews()
+	}
+
+	private func setupCollectionViews() {
+		let browseCellNib = UINib(nibName: "BrowseCollectionViewCell", bundle: nil)
+
+		categoriesCollectionView.register(browseCellNib, forCellWithReuseIdentifier: "Cell")
 		categoriesCollectionView.dataSource = categoriesController
 		categoriesCollectionView.delegate = categoriesController
 
 		randomItemController.refreshedClosure = { [weak self] in
-			DispatchQueue.main.async {
-				self?.topRatedCollectionView.reloadData()
-			}
+		DispatchQueue.main.async {
+		self?.topRatedCollectionView.reloadData()
+		}
 		}
 		randomItemController.techStuffController = techStuffController
+		topRatedCollectionView.register(browseCellNib, forCellWithReuseIdentifier: "Cell")
 		topRatedCollectionView.dataSource = randomItemController
 		topRatedCollectionView.delegate = randomItemController
 	}

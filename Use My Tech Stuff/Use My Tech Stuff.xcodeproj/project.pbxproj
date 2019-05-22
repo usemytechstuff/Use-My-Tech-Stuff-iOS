@@ -36,6 +36,7 @@
 		33A5DA022294A18F007467EF /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5DA012294A18F007467EF /* SearchResultTableViewController.swift */; };
 		33A5DA062294B2E1007467EF /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33A5DA042294B2E1007467EF /* SearchResultTableViewCell.xib */; };
 		33A5DA082294C0C8007467EF /* RandomItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5DA072294C0C8007467EF /* RandomItemController.swift */; };
+		33A5DA0C2294C803007467EF /* BrowseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33A5DA0A2294C803007467EF /* BrowseCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		33A5DA012294A18F007467EF /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
 		33A5DA042294B2E1007467EF /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
 		33A5DA072294C0C8007467EF /* RandomItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomItemController.swift; sourceTree = "<group>"; };
+		33A5DA0A2294C803007467EF /* BrowseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowseCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				33A5D9FB22946E03007467EF /* BrowseCollectionViewCell.swift */,
+				33A5DA0A2294C803007467EF /* BrowseCollectionViewCell.xib */,
 				33A5D9FD22947BFF007467EF /* SearchResultTableViewCell.swift */,
 				33A5DA042294B2E1007467EF /* SearchResultTableViewCell.xib */,
 			);
@@ -333,6 +336,7 @@
 				33A5D9F6229460CA007467EF /* Stuff.storyboard in Resources */,
 				33A5D9D222931FCD007467EF /* Cartfile in Resources */,
 				33A5D9F422946083007467EF /* Profile.storyboard in Resources */,
+				33A5DA0C2294C803007467EF /* BrowseCollectionViewCell.xib in Resources */,
 				33A5D9FA22946D7B007467EF /* Nunito.ttf in Resources */,
 				33A5DA062294B2E1007467EF /* SearchResultTableViewCell.xib in Resources */,
 				33A5D9A9229310A2007467EF /* Main.storyboard in Resources */,
