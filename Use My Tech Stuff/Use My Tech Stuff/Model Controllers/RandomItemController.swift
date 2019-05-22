@@ -15,7 +15,6 @@ class RandomItemController: NSObject, UICollectionViewDelegate, UICollectionView
 			requestData()
 		}
 	}
-	var listedItems: [Listing] = []
 
 	var refreshedClosure: (() -> Void)?
 
@@ -32,26 +31,18 @@ class RandomItemController: NSObject, UICollectionViewDelegate, UICollectionView
 	}
 
 	func refreshItems() {
-		guard var tempListings = techStuffController?.itemListings else { return }
-		let max = min(5, tempListings.count)
-		listedItems.removeAll()
-		for _ in 0..<max {
-			let value = Int.random(in: 0..<tempListings.count)
-			listedItems.append(tempListings[value])
-			tempListings.remove(at: value)
-		}
 		refreshedClosure?()
 	}
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return listedItems.count
+		return techStuffController?.topRatedListings.count ?? 0
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
 		guard let browseCell = cell as? BrowseCollectionViewCell else { return cell }
 		browseCell.techStuffController = techStuffController
-		browseCell.listing = listedItems[indexPath.item]
+		browseCell.listing = techStuffController?.topRatedListings[indexPath.item]
 
 		return browseCell
 	}

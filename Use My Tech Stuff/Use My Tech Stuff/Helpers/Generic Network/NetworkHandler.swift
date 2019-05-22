@@ -32,6 +32,7 @@ enum NetworkError: Error {
 	case badData
 	case dataCodingError(specifically: Error)
 	case imageDecodeError
+	case urlInvalid(urlString: String?)
 	case noStatusCodeResponse
 	case httpNon200StatusCode(code: Int, data: Data?)
 }

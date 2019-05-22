@@ -36,6 +36,12 @@ extension UIAlertController {
 				message = "The server did not provide a status code. If this persists, please inform the developer."
 			case .otherError(let otherError):
 				message = "There was an unexpected error. Please screenshot this and inform the developer: \(otherError)"
+			case .urlInvalid(let stringURL):
+				var info = ""
+				if let unwrapped = stringURL {
+					 info = "'\(unwrapped)'"
+				}
+				message = "An invalid request was attempted. \(info)"
 			}
 		} else {
 			message = "There was an unexpected error. Please screenshot this and inform the developer: \(error)"

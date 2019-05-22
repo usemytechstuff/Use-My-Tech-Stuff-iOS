@@ -17,7 +17,11 @@ class TechStuffController {
 
 	var bearer: Bearer?
 
-	var itemListings: [Listing] = []
+	var itemListings: [Listing] = [] {
+		didSet {
+			updateDerivatives()
+		}
+	}
 
 	init() {
 		loadData()
@@ -41,6 +45,7 @@ class TechStuffController {
 		}
 	}
 
+	// MARK: - API stuff
 	enum Endpoints: String {
 		case signup = "/register"
 		case login = "/login"
@@ -96,8 +101,7 @@ class TechStuffController {
 
 	func get(imageAtURL imageURLString: String, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
 		guard let imageURL = URL(string: imageURLString) else {
-			// FIXME: Give better error (image url invalid)
-			completion(.failure(.imageDecodeError))
+			completion(.failure(.urlInvalid(urlString: imageURLString)))
 			return
 		}
 		let request = URLRequest(url: imageURL)
@@ -139,6 +143,55 @@ class TechStuffController {
 		}
 	}
 
+	// MARK: - list derivatives
+	var categories = [ItemCategory: [Listing]]()
+	var topRatedListings = [Listing]()
+	var recommendedForYouListings = [Listing]()
+	var myListings = [Listing]()
+	var myRentals = [Listing]()
+//	var myFavorites = [Listing]()
+
+	private func updateDerivatives() {
+		updateCategories()
+		updateRandomList(randomList: &topRatedListings)
+		updateRandomList(randomList: &recommendedForYouListings)
+		updateMyListings()
+	}
+
+	private func updateCategories() {
+		categories.removeAll()
+		for listing in itemListings {
+			let category = ItemCategory.getCategory(for: listing.type)
+			categories[category, default: []].append(listing)
+		}
+	}
+
+	private func updateRandomList( randomList: inout [Listing]) {
+		randomList.removeAll()
+		var tempListings = itemListings
+		let max = min(5, tempListings.count)
+		for _ in 0..<max {
+			let value = Int.random(in: 0..<tempListings.count)
+			randomList.append(tempListings[value])
+			tempListings.remove(at: value)
+		}
+	}
+
+	private func updateMyListings() {
+		guard let bearer = bearer else { return }
+		myListings = itemListings.filter {
+			$0.owner == bearer.id
+		}
+	}
+
+	private func updateMyRentals() {
+		guard let bearer = bearer else { return }
+		myRentals = itemListings.filter {
+			$0.renter == bearer.id
+		}
+	}
+
+	// MARK: - data persistance
 	private var fileURL: URL {
 		let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
 		return documents.appendingPathComponent("techStuff.plist")
