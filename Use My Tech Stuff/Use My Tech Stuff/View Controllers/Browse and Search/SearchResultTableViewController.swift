@@ -65,4 +65,16 @@ extension SearchResultTableViewController {
 		searchCell.listing = searchResults[indexPath.row]
 		return searchCell
 	}
+
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let item = searchResults[indexPath.row]
+		guard let viewItemVCArray = Bundle.main.loadNibNamed("ListingDetailViewController",
+															 owner: nil,
+															 options: nil) as? [ListingDetailViewController],
+			let viewItemVC = viewItemVCArray.first else { return }
+		viewItemVC.techStuffController = techStuffController
+		viewItemVC.listing = item
+		navigationController?.pushViewController(viewItemVC, animated: true)
+
+	}
 }

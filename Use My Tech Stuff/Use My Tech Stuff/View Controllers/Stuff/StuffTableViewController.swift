@@ -111,7 +111,6 @@ extension StuffTableViewController {
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-
 		guard let section = StuffSection(rawValue: indexPath.section) else { return }
 		switch section {
 		case .myListings:
