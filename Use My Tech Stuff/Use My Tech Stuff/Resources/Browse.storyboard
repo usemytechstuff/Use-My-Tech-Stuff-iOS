@@ -55,13 +55,13 @@
                                                 <rect key="frame" x="0.0" y="296" width="414" height="218"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Rated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUf-TC-mHJ">
-                                                        <rect key="frame" x="20" y="8" width="374" height="36.5"/>
+                                                        <rect key="frame" x="20" y="8" width="374" height="42.5"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="31"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hx8-Od-tma">
-                                                        <rect key="frame" x="0.0" y="52.5" width="414" height="150"/>
+                                                        <rect key="frame" x="0.0" y="58.5" width="414" height="150"/>
                                                         <subviews>
                                                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QHy-En-ctO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -107,13 +107,13 @@
                                                 <rect key="frame" x="0.0" y="534" width="414" height="218"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kt-1l-Sns">
-                                                        <rect key="frame" x="20" y="8" width="374" height="36.5"/>
+                                                        <rect key="frame" x="20" y="8" width="374" height="42.5"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="31"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgH-cb-EfS">
-                                                        <rect key="frame" x="0.0" y="52.5" width="414" height="150"/>
+                                                        <rect key="frame" x="0.0" y="58.5" width="414" height="150"/>
                                                         <subviews>
                                                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8xU-k7-upl">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -159,13 +159,13 @@
                                                 <rect key="frame" x="0.0" y="772" width="414" height="218"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfH-Z7-BFs">
-                                                        <rect key="frame" x="20" y="8" width="374" height="36.5"/>
+                                                        <rect key="frame" x="20" y="8" width="374" height="42.5"/>
                                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="31"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4z-tk-SLw">
-                                                        <rect key="frame" x="0.0" y="52.5" width="414" height="150"/>
+                                                        <rect key="frame" x="0.0" y="58.5" width="414" height="150"/>
                                                         <subviews>
                                                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KHJ-gA-gUK">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -184,9 +184,6 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                         </view>
-                                                                        <connections>
-                                                                            <segue destination="hmJ-mq-Tg6" kind="show" id="fb9-iS-9UU"/>
-                                                                        </connections>
                                                                     </collectionViewCell>
                                                                 </cells>
                                                             </collectionView>
@@ -228,6 +225,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="no" returnKeyType="search" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <action selector="searchFieldSubmitted:" destination="d8n-hF-jMf" eventType="primaryActionTriggered" id="ftK-k2-MAh"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -256,7 +256,7 @@
         <!--Search Result Table View Controller-->
         <scene sceneID="YVg-dJ-rVW">
             <objects>
-                <tableViewController id="hmJ-mq-Tg6" customClass="SearchResultTableViewController" customModule="Use_My_Tech_Stuff" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SearchResultVC" id="hmJ-mq-Tg6" customClass="SearchResultTableViewController" customModule="Use_My_Tech_Stuff" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GO1-nB-V6o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

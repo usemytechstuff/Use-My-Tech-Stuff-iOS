@@ -36,6 +36,11 @@ class BrowseViewController: UIViewController, TechStuffAccessor {
 		categoriesCollectionView.register(browseCellNib, forCellWithReuseIdentifier: "Cell")
 		categoriesCollectionView.dataSource = categoriesController
 		categoriesCollectionView.delegate = categoriesController
+		categoriesController.itemTouchedClosure = { [weak self] browseCell in
+			guard let categoryText = browseCell.textLabel.text else { return }
+			let category = ItemCategory.getCategory(for: categoryText)
+			self?.showSearchResults(inCategory: category, withSearchTerms: nil)
+		}
 
 		let showListingDetailClosure: (BrowseCollectionViewCell) -> Void = { [weak self] browseCell in
 			self?.showListingDetail(withListing: browseCell.listing)
@@ -72,14 +77,23 @@ class BrowseViewController: UIViewController, TechStuffAccessor {
 			let viewItemVC = viewItemVCArray.first else { return }
 		viewItemVC.techStuffController = techStuffController
 		viewItemVC.listing = listing
-		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationController?.pushViewController(viewItemVC, animated: true)
 	}
 
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if let techAccess = segue.destination as? TechStuffAccessor {
-			techAccess.techStuffController = techStuffController
-		}
+	func showSearchResults(inCategory category: ItemCategory?, withSearchTerms searchTerms: String?) {
+		guard let searchResultVC = UIStoryboard(name: "Browse",
+												bundle: nil).instantiateViewController(
+												withIdentifier: "SearchResultVC")
+												as? SearchResultTableViewController else { return }
+		searchResultVC.techStuffController = techStuffController
+		searchResultVC.category = category
+		searchResultVC.searchTerms = searchTerms
+		navigationController?.pushViewController(searchResultVC, animated: true)
+	}
+
+	@IBAction func searchFieldSubmitted(_ sender: UITextField) {
+		guard let searchTerms = sender.text, !searchTerms.isEmpty else { return }
+		showSearchResults(inCategory: nil, withSearchTerms: searchTerms)
 	}
 }
 

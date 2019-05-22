@@ -11,6 +11,7 @@ import UIKit
 class CategoriesController: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
 
 	let categories: [String]
+	var itemTouchedClosure: ((BrowseCollectionViewCell) -> Void)?
 
 	override init() {
 		let temp = "cameras drones headphones projectors screens speakers virtualReality"
@@ -29,5 +30,10 @@ class CategoriesController: NSObject, UICollectionViewDelegate, UICollectionView
 		browseCell.image = image
 		browseCell.textLabel.text = categories[indexPath.item].capitalizedFirst
 		return browseCell
+	}
+
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		guard let cell = collectionView.cellForItem(at: indexPath) as? BrowseCollectionViewCell else { return }
+		itemTouchedClosure?(cell)
 	}
 }
