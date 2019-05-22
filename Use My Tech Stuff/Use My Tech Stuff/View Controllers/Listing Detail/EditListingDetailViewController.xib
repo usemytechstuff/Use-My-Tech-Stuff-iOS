@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="RdU-JP-STD" customClass="EditListingDetailViewController" customModule="Use_My_Tech_Stuff" customModuleProvider="target">
+            <view key="view" contentMode="scaleToFill" id="37S-jt-RrK">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4ZP-IF-mlQ">
+                        <rect key="frame" x="20" y="64" width="374" height="778"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kW2-PS-xa0">
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUM-FF-qBp">
+                                <rect key="frame" x="0.0" y="38" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="url"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brand" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rqu-Hp-RPx">
+                                <rect key="frame" x="0.0" y="76" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OUc-T2-9SE">
+                                <rect key="frame" x="0.0" y="114" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price (Per Night)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bqo-B4-0BL">
+                                <rect key="frame" x="0.0" y="152" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" text="description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DOG-kI-wEU">
+                                <rect key="frame" x="0.0" y="190" width="374" height="530"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-GX-ywB">
+                                <rect key="frame" x="0.0" y="728" width="374" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAc-n6-KWN">
+                                        <rect key="frame" x="107.5" y="0.0" width="159" height="50"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
+                                        <state key="normal" title="Post This Item For Rent"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="vAc-n6-KWN" secondAttribute="bottom" id="gQi-b8-aRr"/>
+                                    <constraint firstItem="vAc-n6-KWN" firstAttribute="centerX" secondItem="bbg-GX-ywB" secondAttribute="centerX" id="hBN-vO-JUn"/>
+                                    <constraint firstItem="vAc-n6-KWN" firstAttribute="top" secondItem="bbg-GX-ywB" secondAttribute="top" id="lGA-rv-38I"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="4ZP-IF-mlQ" firstAttribute="leading" secondItem="Xvf-XV-bgu" secondAttribute="leading" constant="20" id="DZc-Zl-nLc"/>
+                    <constraint firstItem="Xvf-XV-bgu" firstAttribute="trailing" secondItem="4ZP-IF-mlQ" secondAttribute="trailing" constant="20" id="dW8-2N-aJf"/>
+                    <constraint firstItem="Xvf-XV-bgu" firstAttribute="bottom" secondItem="4ZP-IF-mlQ" secondAttribute="bottom" constant="20" id="hlu-so-3Dd"/>
+                    <constraint firstItem="4ZP-IF-mlQ" firstAttribute="top" secondItem="Xvf-XV-bgu" secondAttribute="top" constant="20" id="oio-ro-QtV"/>
+                </constraints>
+                <viewLayoutGuide key="safeArea" id="Xvf-XV-bgu"/>
+            </view>
+            <navigationItem key="navigationItem" title="NAME ME" id="AoX-iU-1qx"/>
+            <connections>
+                <outlet property="brandTextField" destination="Rqu-Hp-RPx" id="Cuf-0H-a1Y"/>
+                <outlet property="descriptionTextView" destination="DOG-kI-wEU" id="kAs-2Z-mJS"/>
+                <outlet property="imageURLTextField" destination="ZUM-FF-qBp" id="ofA-y7-sf8"/>
+                <outlet property="modelTextField" destination="OUc-T2-9SE" id="cnu-Bh-b3a"/>
+                <outlet property="priceTextField" destination="Bqo-B4-0BL" id="YXl-nr-4Op"/>
+                <outlet property="submitButton" destination="vAc-n6-KWN" id="LKn-Ag-ipO"/>
+                <outlet property="titleTextField" destination="kW2-PS-xa0" id="f7G-Z4-9Ae"/>
+            </connections>
+            <point key="canvasLocation" x="473.91304347826093" y="59.598214285714285"/>
+        </viewController>
+    </objects>
+</document>

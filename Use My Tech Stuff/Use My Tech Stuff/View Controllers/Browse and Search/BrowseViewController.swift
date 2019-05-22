@@ -68,6 +68,7 @@ class BrowseNavViewController: UINavigationController, TechStuffAccessor {
 	var techStuffController: TechStuffController?
 
 	override func viewDidLoad() {
+		super.viewDidLoad()
 		viewControllers.forEach {
 			if let techStuff = $0 as? TechStuffAccessor {
 				techStuff.techStuffController = techStuffController

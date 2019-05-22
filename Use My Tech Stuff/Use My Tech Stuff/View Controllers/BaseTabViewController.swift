@@ -19,13 +19,6 @@ class BaseTabViewController: UITabBarController {
 				techAccess.techStuffController = techStuffController
 			}
 		}
-
-//		guard let viewControllers = viewControllers else { return }
-//		for childViewController in viewControllers {
-//			if let techAccess = childViewController as? TechStuffAccessor {
-//				techAccess.techStuffController = techStuffController
-//			}
-//		}
 	}
 
 	override func viewDidAppear(_ animated: Bool) {

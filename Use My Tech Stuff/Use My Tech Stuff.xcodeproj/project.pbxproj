@@ -40,6 +40,10 @@
 		33A5DA0F2294D0D9007467EF /* ListingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5DA0D2294D0D9007467EF /* ListingDetailViewController.swift */; };
 		33A5DA102294D0D9007467EF /* ListingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33A5DA0E2294D0D9007467EF /* ListingDetailViewController.xib */; };
 		33A5DA122294F664007467EF /* StringFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5DA112294F664007467EF /* StringFormatting.swift */; };
+		33AC2F2B2294FB6C00884B81 /* EditListingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AC2F2A2294FB6C00884B81 /* EditListingDetailViewController.swift */; };
+		33AC2F2D2294FB7600884B81 /* EditListingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33AC2F2C2294FB7600884B81 /* EditListingDetailViewController.xib */; };
+		33AC2F2F2294FE2A00884B81 /* StuffTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AC2F2E2294FE2A00884B81 /* StuffTableViewController.swift */; };
+		33AC2F312294FFCB00884B81 /* StuffNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AC2F302294FFCB00884B81 /* StuffNavController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +95,10 @@
 		33A5DA0D2294D0D9007467EF /* ListingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailViewController.swift; sourceTree = "<group>"; };
 		33A5DA0E2294D0D9007467EF /* ListingDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListingDetailViewController.xib; sourceTree = "<group>"; };
 		33A5DA112294F664007467EF /* StringFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatting.swift; sourceTree = "<group>"; };
+		33AC2F2A2294FB6C00884B81 /* EditListingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditListingDetailViewController.swift; sourceTree = "<group>"; };
+		33AC2F2C2294FB7600884B81 /* EditListingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditListingDetailViewController.xib; sourceTree = "<group>"; };
+		33AC2F2E2294FE2A00884B81 /* StuffTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffTableViewController.swift; sourceTree = "<group>"; };
+		33AC2F302294FFCB00884B81 /* StuffNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffNavController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,12 +198,11 @@
 		33A5D9C6229311E0007467EF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				33A5D9FF2294A17D007467EF /* BrowseViewController.swift */,
-				33A5DA012294A18F007467EF /* SearchResultTableViewController.swift */,
 				33A5D9A5229310A2007467EF /* LoginViewController.swift */,
 				33A5D9EB229459D1007467EF /* BaseTabViewController.swift */,
-				33A5DA0D2294D0D9007467EF /* ListingDetailViewController.swift */,
-				33A5DA0E2294D0D9007467EF /* ListingDetailViewController.xib */,
+				33AC2F342294FFFB00884B81 /* Browse and Search */,
+				33AC2F332294FFEC00884B81 /* Listing Detail */,
+				33AC2F322294FFE500884B81 /* Stuff */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -251,6 +258,35 @@
 				33A5D9CD22931502007467EF /* UIAlertController+NetError.swift */,
 			);
 			path = "Generic Network";
+			sourceTree = "<group>";
+		};
+		33AC2F322294FFE500884B81 /* Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				33AC2F2E2294FE2A00884B81 /* StuffTableViewController.swift */,
+				33AC2F302294FFCB00884B81 /* StuffNavController.swift */,
+			);
+			path = Stuff;
+			sourceTree = "<group>";
+		};
+		33AC2F332294FFEC00884B81 /* Listing Detail */ = {
+			isa = PBXGroup;
+			children = (
+				33A5DA0D2294D0D9007467EF /* ListingDetailViewController.swift */,
+				33A5DA0E2294D0D9007467EF /* ListingDetailViewController.xib */,
+				33AC2F2A2294FB6C00884B81 /* EditListingDetailViewController.swift */,
+				33AC2F2C2294FB7600884B81 /* EditListingDetailViewController.xib */,
+			);
+			path = "Listing Detail";
+			sourceTree = "<group>";
+		};
+		33AC2F342294FFFB00884B81 /* Browse and Search */ = {
+			isa = PBXGroup;
+			children = (
+				33A5D9FF2294A17D007467EF /* BrowseViewController.swift */,
+				33A5DA012294A18F007467EF /* SearchResultTableViewController.swift */,
+			);
+			path = "Browse and Search";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +378,7 @@
 				33A5D9AE229310A3007467EF /* LaunchScreen.storyboard in Resources */,
 				33A5D9AB229310A3007467EF /* Assets.xcassets in Resources */,
 				33A5D9F022946040007467EF /* Faves.storyboard in Resources */,
+				33AC2F2D2294FB7600884B81 /* EditListingDetailViewController.xib in Resources */,
 				33A5D9F6229460CA007467EF /* Stuff.storyboard in Resources */,
 				33A5DA102294D0D9007467EF /* ListingDetailViewController.xib in Resources */,
 				33A5D9D222931FCD007467EF /* Cartfile in Resources */,
@@ -429,11 +466,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33AC2F2B2294FB6C00884B81 /* EditListingDetailViewController.swift in Sources */,
 				33A5D9A6229310A2007467EF /* LoginViewController.swift in Sources */,
 				33A5DA022294A18F007467EF /* SearchResultTableViewController.swift in Sources */,
+				33AC2F312294FFCB00884B81 /* StuffNavController.swift in Sources */,
 				33A5D9FE22947BFF007467EF /* SearchResultTableViewCell.swift in Sources */,
 				33A5DA122294F664007467EF /* StringFormatting.swift in Sources */,
 				33A5D9E62293747C007467EF /* Listing.swift in Sources */,
+				33AC2F2F2294FE2A00884B81 /* StuffTableViewController.swift in Sources */,
 				33A5D9A4229310A2007467EF /* AppDelegate.swift in Sources */,
 				33A5D9F822946BBE007467EF /* CategoriesController.swift in Sources */,
 				33A5D9CF22931502007467EF /* UIAlertController+NetError.swift in Sources */,
