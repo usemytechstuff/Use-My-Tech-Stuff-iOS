@@ -42,7 +42,6 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		updateLoginFields(animate: false)
-		techStuffController?.networkHandler.strict200CodeResponse = false
 	}
 
 	// MARK: - user input

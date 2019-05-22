@@ -20,6 +20,7 @@ class EditListingDetailViewController: UIViewController, TechStuffAccessor {
 	@IBOutlet var brandTextField: UITextField!
 	@IBOutlet var modelTextField: UITextField!
 	@IBOutlet var priceTextField: UITextField!
+	var priceValue: Int?
 	@IBOutlet var descriptionTextView: UITextView!
 	@IBOutlet var categoryPicker: UIPickerView!
 	@IBOutlet var availabilitySwitch: UISwitch!
@@ -71,6 +72,69 @@ class EditListingDetailViewController: UIViewController, TechStuffAccessor {
 		case .updatingOwn:
 			navigationItem.title = "Update an item"
 		}
+	}
+
+	@IBAction func priceFieldChanged(_ sender: UITextField) {
+		guard var priceStr = sender.text else {
+			priceValue = 0
+			sender.text = "Free"
+			return
+		}
+		let numbers = Set("0123456789")
+		priceStr = priceStr.filter { numbers.contains($0) }
+		priceValue = Int(priceStr) ?? 0
+		priceStr = StringFormatting.formatPrice(withIntValue: priceValue ?? 0)
+		if priceValue ?? 0 == 0 {
+			sender.text = "Free"
+		} else {
+			sender.text = priceStr
+		}
+	}
+
+	@IBAction func submitButtonPressed(_ sender: UIButton) {
+		submitItem()
+	}
+
+	private func submitItem() {
+		guard let bearer = techStuffController?.bearer else { return }
+		guard let title = titleTextField.text, !title.isEmpty else {
+			Animations.wiggle(view: titleTextField)
+			return
+		}
+		guard let description = descriptionTextView.text, !description.isEmpty else {
+			descriptionTextView.wiggle()
+			return
+		}
+		let type = ItemCategory.getCategory(for: categoryPicker.selectedRow(inComponent: 0)).rawValue
+		guard let price = priceValue else {
+			priceTextField.wiggle()
+			return
+		}
+		let availability = availabilitySwitch.isOn
+
+		var listing = Listing(owner: bearer.id,
+							  type: type,
+							  description: description,
+							  price: price,
+							  title: title,
+							  availability: availability)
+		listing.brand = brandTextField.text
+		listing.model = modelTextField.text
+		listing.imgURL = imageURLTextField.text
+
+		techStuffController?.post(newItem: listing, completion: { [weak self] (result: Result<ListingResponse, NetworkError>) in
+			DispatchQueue.main.async {
+				do {
+					let response = try result.get()
+					print(response.message)
+
+					self?.navigationController?.popViewController(animated: true)
+				} catch {
+					let alert = UIAlertController(error: error)
+					self?.present(alert, animated: true)
+				}
+			}
+		})
 	}
 }
 

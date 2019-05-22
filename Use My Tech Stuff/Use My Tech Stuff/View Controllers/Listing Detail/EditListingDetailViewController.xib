@@ -54,27 +54,30 @@
                                 <rect key="frame" x="0.0" y="152" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <action selector="priceFieldChanged:" destination="RdU-JP-STD" eventType="editingChanged" id="vXB-st-jry"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNR-OG-Oxs">
-                                <rect key="frame" x="0.0" y="190" width="374" height="23.5"/>
+                                <rect key="frame" x="0.0" y="190" width="374" height="20"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DOG-kI-wEU">
-                                <rect key="frame" x="0.0" y="221.5" width="374" height="312"/>
+                                <rect key="frame" x="0.0" y="218" width="374" height="312"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDh-Dx-4d3">
-                                <rect key="frame" x="0.0" y="541.5" width="374" height="23.5"/>
+                                <rect key="frame" x="0.0" y="538" width="374" height="20"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nek-7S-q6B">
-                                <rect key="frame" x="0.0" y="573" width="374" height="125"/>
+                                <rect key="frame" x="0.0" y="566" width="374" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="RNo-cv-OJD"/>
                                 </constraints>
@@ -84,7 +87,7 @@
                                 </connections>
                             </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6P-mW-YIS">
-                                <rect key="frame" x="0.0" y="706" width="374" height="31"/>
+                                <rect key="frame" x="0.0" y="699" width="374" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Publicly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Vl-eT-hUu">
                                         <rect key="frame" x="0.0" y="0.0" width="317" height="31"/>
@@ -108,12 +111,15 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-GX-ywB">
-                                <rect key="frame" x="0.0" y="745" width="374" height="33"/>
+                                <rect key="frame" x="0.0" y="738" width="374" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAc-n6-KWN">
-                                        <rect key="frame" x="108.5" y="0.0" width="157" height="33"/>
+                                        <rect key="frame" x="107.5" y="0.0" width="159" height="40"/>
                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
                                         <state key="normal" title="Post This Item For Rent"/>
+                                        <connections>
+                                            <action selector="submitButtonPressed:" destination="RdU-JP-STD" eventType="touchUpInside" id="dwR-YE-dHY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

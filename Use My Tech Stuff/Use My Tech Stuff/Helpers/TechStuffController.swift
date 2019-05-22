@@ -24,25 +24,9 @@ class TechStuffController {
 	}
 
 	init() {
+		networkHandler.strict200CodeResponse = false
 		loadData()
-		getAllItems { (result: Result<Bool, NetworkError>) in
-			do {
-				_ = try result.get()
-			} catch {
-				print(error)
-				if let netError = error as? NetworkError {
-					switch netError {
-					case .httpNon200StatusCode(let code, let data):
-						print("code: \(code)")
-						guard let data = data else { break }
-						let dataStr = String(data: data, encoding: .utf8)
-						print(dataStr)
-					default:
-						break
-					}
-				}
-			}
-		}
+		refreshItems()
 	}
 
 	// MARK: - API stuff
@@ -122,7 +106,7 @@ class TechStuffController {
 	typealias BoolCompletion = (Result<Bool, NetworkError>) -> Void
 	func getAllItems(completion: BoolCompletion? = nil) {
 		guard let bearer = bearer else {
-			// FIXME: perhaps change error here?
+			// FIXME: perhaps change error here? - reset to login screen
 			completion?(.failure(.httpNon200StatusCode(code: 401, data: nil)))
 			return
 		}
@@ -140,6 +124,54 @@ class TechStuffController {
 			} catch {
 				completion?(.failure(error as? NetworkError ?? NetworkError.otherError(error: error)))
 			}
+		}
+	}
+
+	private func refreshItems() {
+		getAllItems { (result: Result<Bool, NetworkError>) in
+			do {
+				_ = try result.get()
+			} catch {
+				print(error)
+				if let netError = error as? NetworkError {
+					switch netError {
+					case .httpNon200StatusCode(let code, let data):
+						print("code: \(code)")
+						guard let data = data else { break }
+						let dataStr = String(data: data, encoding: .utf8)
+						print(dataStr as Any)
+					default:
+						break
+					}
+				}
+			}
+		}
+	}
+
+	func post(newItem item: Listing, completion: @escaping (Result<ListingResponse, NetworkError>) -> Void) {
+		guard let bearer = bearer else {
+			// FIXME: perhaps change error here? - reset to login screen
+			completion(.failure(.httpNon200StatusCode(code: 401, data: nil)))
+			return
+		}
+		let itemsURL = baseURL.appendingPathComponent(Endpoints.items.rawValue)
+
+		var request = URLRequest(url: itemsURL)
+		request.httpMethod = HTTPMethods.post.rawValue
+		request.addValue(HTTPHeaderKeys.ContentTypes.json.rawValue, forHTTPHeaderField: HTTPHeaderKeys.contentType.rawValue)
+		request.addValue(bearer.token, forHTTPHeaderField: HTTPHeaderKeys.auth.rawValue)
+
+		let encoder = JSONEncoder()
+		do {
+			request.httpBody = try encoder.encode(item)
+		} catch {
+			completion(.failure(.dataCodingError(specifically: error)))
+			return
+		}
+
+		networkHandler.transferMahCodableDatas(with: request) { [weak self] (result: Result<ListingResponse, NetworkError>) in
+			self?.refreshItems()
+			completion(result)
 		}
 	}
 

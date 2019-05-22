@@ -48,7 +48,7 @@
         <!--Stuff-->
         <scene sceneID="96C-GR-5wg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q7W-BV-Ifm" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q7W-BV-Ifm" customClass="StuffNavController" customModule="Use_My_Tech_Stuff" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Stuff" id="PbT-sW-VHF"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
