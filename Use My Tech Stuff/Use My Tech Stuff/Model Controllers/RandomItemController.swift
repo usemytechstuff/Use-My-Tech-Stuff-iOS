@@ -10,6 +10,13 @@ import UIKit
 
 class RandomItemController: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, TechStuffAccessor {
 
+	enum RandomSelection {
+		case topRated
+		case recommendedForYou
+	}
+
+	var randomSelection = RandomSelection.topRated
+
 	var techStuffController: TechStuffController? {
 		didSet {
 			requestData()
@@ -17,7 +24,6 @@ class RandomItemController: NSObject, UICollectionViewDelegate, UICollectionView
 	}
 
 	var refreshedClosure: (() -> Void)?
-
 	var itemTouchedClosure: ((BrowseCollectionViewCell) -> Void)?
 
 	func requestData() {
@@ -35,14 +41,26 @@ class RandomItemController: NSObject, UICollectionViewDelegate, UICollectionView
 	}
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return techStuffController?.topRatedListings.count ?? 0
+		switch randomSelection {
+		case .recommendedForYou:
+			return techStuffController?.recommendedForYouListings.count ?? 0
+		case .topRated:
+			return techStuffController?.topRatedListings.count ?? 0
+		}
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
 		guard let browseCell = cell as? BrowseCollectionViewCell else { return cell }
 		browseCell.techStuffController = techStuffController
-		browseCell.listing = techStuffController?.topRatedListings[indexPath.item]
+		let listingArray: [Listing]?
+		switch randomSelection {
+		case .recommendedForYou:
+			listingArray = techStuffController?.recommendedForYouListings
+		case .topRated:
+			listingArray = techStuffController?.topRatedListings
+		}
+		browseCell.listing = listingArray?[indexPath.item]
 
 		return browseCell
 	}

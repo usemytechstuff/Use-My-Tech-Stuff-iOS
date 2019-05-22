@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="suh-uV-FXf">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="752"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="990"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPP-v9-mPB" userLabel="hero image">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
@@ -54,7 +54,7 @@
                                                             <constraint firstAttribute="bottom" secondItem="Fac-of-iin" secondAttribute="bottom" id="hml-SB-ZNz"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E45-nX-etM" userLabel="collection view">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E45-nX-etM" userLabel="top rated collection view">
                                                         <rect key="frame" x="0.0" y="296" width="414" height="218"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Rated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUf-TC-mHJ">
@@ -106,8 +106,60 @@
                                                             <constraint firstAttribute="height" priority="250" constant="218" id="sfz-5f-Ntm"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZi-EF-cjp" userLabel="collection view">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LPU-o5-kqP" userLabel="recommended collection view">
                                                         <rect key="frame" x="0.0" y="534" width="414" height="218"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kt-1l-Sns">
+                                                                <rect key="frame" x="20" y="8" width="374" height="42.5"/>
+                                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="31"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgH-cb-EfS">
+                                                                <rect key="frame" x="0.0" y="58.5" width="414" height="150"/>
+                                                                <subviews>
+                                                                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8xU-k7-upl">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7os-SY-fgN">
+                                                                            <size key="itemSize" width="145" height="145"/>
+                                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                            <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                                                        </collectionViewFlowLayout>
+                                                                        <cells>
+                                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NkQ-Pf-UNQ" customClass="BrowseCollectionViewCell" customModule="Use_My_Tech_Stuff" customModuleProvider="target">
+                                                                                <rect key="frame" x="20" y="2.5" width="145" height="145"/>
+                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                </view>
+                                                                            </collectionViewCell>
+                                                                        </cells>
+                                                                    </collectionView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="8xU-k7-upl" firstAttribute="top" secondItem="UgH-cb-EfS" secondAttribute="top" id="DsR-co-sC7"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="8xU-k7-upl" secondAttribute="bottom" id="QTA-ex-kDS"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="8xU-k7-upl" secondAttribute="trailing" id="hNd-Of-7hs"/>
+                                                                    <constraint firstItem="8xU-k7-upl" firstAttribute="leading" secondItem="UgH-cb-EfS" secondAttribute="leading" id="pqc-7l-Eh3"/>
+                                                                    <constraint firstAttribute="height" constant="150" id="s91-vi-wWc"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="9kt-1l-Sns" firstAttribute="leading" secondItem="LPU-o5-kqP" secondAttribute="leading" constant="20" id="5zz-AY-Yy7"/>
+                                                            <constraint firstAttribute="trailing" secondItem="9kt-1l-Sns" secondAttribute="trailing" constant="20" id="CXy-X4-fub"/>
+                                                            <constraint firstItem="9kt-1l-Sns" firstAttribute="top" secondItem="LPU-o5-kqP" secondAttribute="top" constant="8" id="Sa5-Dm-Crf"/>
+                                                            <constraint firstAttribute="height" priority="250" constant="218" id="m9f-k4-RcH"/>
+                                                            <constraint firstItem="UgH-cb-EfS" firstAttribute="top" secondItem="9kt-1l-Sns" secondAttribute="bottom" constant="8" id="n3G-c6-OFj"/>
+                                                            <constraint firstItem="UgH-cb-EfS" firstAttribute="leading" secondItem="LPU-o5-kqP" secondAttribute="leading" id="r9x-75-ZHu"/>
+                                                            <constraint firstAttribute="trailing" secondItem="UgH-cb-EfS" secondAttribute="trailing" id="xZB-4E-iGF"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZi-EF-cjp" userLabel="categories collection view">
+                                                        <rect key="frame" x="0.0" y="772" width="414" height="218"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfH-Z7-BFs">
                                                                 <rect key="frame" x="20" y="8" width="374" height="42.5"/>
@@ -205,6 +257,7 @@
                     <navigationItem key="navigationItem" title="Browse UMTS" id="ERR-Ty-8iW"/>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="KHJ-gA-gUK" id="sdb-RS-o2a"/>
+                        <outlet property="recommendedCollectionView" destination="8xU-k7-upl" id="zum-ou-tyb"/>
                         <outlet property="topRatedCollectionView" destination="QHy-En-ctO" id="cT4-rV-AU7"/>
                     </connections>
                 </viewController>

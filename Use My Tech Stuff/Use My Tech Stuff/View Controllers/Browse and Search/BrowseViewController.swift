@@ -12,8 +12,10 @@ class BrowseViewController: UIViewController, TechStuffAccessor {
 
 	@IBOutlet var categoriesCollectionView: UICollectionView!
 	@IBOutlet var topRatedCollectionView: UICollectionView!
+	@IBOutlet var recommendedCollectionView: UICollectionView!
 	let categoriesController = CategoriesController()
-	let randomItemController = RandomItemController()
+	let topRatedItemController = RandomItemController()
+	let recommendedItemController = RandomItemController()
 
 	var techStuffController: TechStuffController?
 
@@ -33,18 +35,32 @@ class BrowseViewController: UIViewController, TechStuffAccessor {
 		categoriesCollectionView.dataSource = categoriesController
 		categoriesCollectionView.delegate = categoriesController
 
-		randomItemController.refreshedClosure = { [weak self] in
+		let showListingDetailClosure: (BrowseCollectionViewCell) -> Void = { [weak self] browseCell in
+			self?.showListingDetail(withListing: browseCell.listing)
+		}
+
+		topRatedItemController.refreshedClosure = { [weak self] in
 			DispatchQueue.main.async {
 				self?.topRatedCollectionView.reloadData()
 			}
 		}
-		randomItemController.itemTouchedClosure = { [weak self] browseCell in
-			self?.showListingDetail(withListing: browseCell.listing)
-		}
-		randomItemController.techStuffController = techStuffController
+		topRatedItemController.itemTouchedClosure = showListingDetailClosure
+		topRatedItemController.techStuffController = techStuffController
 		topRatedCollectionView.register(browseCellNib, forCellWithReuseIdentifier: "Cell")
-		topRatedCollectionView.dataSource = randomItemController
-		topRatedCollectionView.delegate = randomItemController
+		topRatedCollectionView.dataSource = topRatedItemController
+		topRatedCollectionView.delegate = topRatedItemController
+
+		recommendedItemController.randomSelection = .recommendedForYou
+		recommendedItemController.refreshedClosure = { [weak self] in
+			DispatchQueue.main.async {
+				self?.recommendedCollectionView.reloadData()
+			}
+		}
+		recommendedItemController.itemTouchedClosure = showListingDetailClosure
+		recommendedItemController.techStuffController = techStuffController
+		recommendedCollectionView.register(browseCellNib, forCellWithReuseIdentifier: "Cell")
+		recommendedCollectionView.dataSource = recommendedItemController
+		recommendedCollectionView.delegate = recommendedItemController
 	}
 
 	func showListingDetail(withListing listing: Listing?) {
