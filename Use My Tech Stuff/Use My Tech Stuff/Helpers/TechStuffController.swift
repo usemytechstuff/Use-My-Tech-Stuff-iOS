@@ -225,6 +225,7 @@ class TechStuffController {
 	}
 
 	// MARK: - list derivatives
+	var availableItems = [Listing]()
 	var categories = [ItemCategory: [Listing]]()
 	var topRatedListings = [Listing]()
 	var recommendedForYouListings = [Listing]()
@@ -233,15 +234,20 @@ class TechStuffController {
 //	var myFavorites = [Listing]()
 
 	private func updateDerivatives() {
+		updateAvailableItems()
 		updateCategories()
 		updateRandomList(randomList: &topRatedListings)
 		updateRandomList(randomList: &recommendedForYouListings)
 		updateMyListings()
 	}
 
+	private func updateAvailableItems() {
+		availableItems = itemListings.filter { $0.availability && $0.renter == nil }
+	}
+
 	private func updateCategories() {
 		categories.removeAll()
-		for listing in itemListings {
+		for listing in availableItems {
 			let category = ItemCategory.getCategory(for: listing.type)
 			categories[category, default: []].append(listing)
 		}
@@ -249,7 +255,7 @@ class TechStuffController {
 
 	private func updateRandomList( randomList: inout [Listing]) {
 		randomList.removeAll()
-		var tempListings = itemListings
+		var tempListings = availableItems
 		let max = min(5, tempListings.count)
 		for _ in 0..<max {
 			let value = Int.random(in: 0..<tempListings.count)
