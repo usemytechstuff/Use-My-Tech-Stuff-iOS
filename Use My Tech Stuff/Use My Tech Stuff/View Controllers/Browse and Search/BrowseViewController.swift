@@ -26,6 +26,8 @@ class BrowseViewController: UIViewController, TechStuffAccessor {
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		topRatedItemController.requestData()
+		recommendedItemController.requestData()
 	}
 
 	private func setupCollectionViews() {
