@@ -69,7 +69,7 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 
 	private func login() {
 		guard let username = usernameTextField.text, !username.isEmpty else {
-			Animations.wiggle(view: usernameTextField)
+			usernameTextField.wiggle()
 			return
 		}
 		guard username.count < 32 else {
@@ -79,7 +79,7 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 			return
 		}
 		guard let password = passwordTextField.text, !password.isEmpty else {
-			Animations.wiggle(view: passwordTextField)
+			passwordTextField.wiggle()
 			return
 		}
 		guard password.count >= 8 else {
@@ -109,7 +109,7 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 
 	private func signUp() {
 		guard let username = usernameTextField.text, !username.isEmpty else {
-			Animations.wiggle(view: usernameTextField)
+			usernameTextField.wiggle()
 			return
 		}
 		guard username.count < 32 else {
@@ -119,7 +119,7 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 			return
 		}
 		guard let password = passwordTextField.text, !password.isEmpty else {
-			Animations.wiggle(view: passwordTextField)
+			passwordTextField.wiggle()
 			return
 		}
 		guard password.count >= 8 else {
@@ -128,11 +128,11 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 			return
 		}
 		guard let confirmPassword = confirmPasswordTextField.text, password == confirmPassword else {
-			Animations.wiggle(view: confirmPasswordTextField)
+			confirmPasswordTextField.wiggle()
 			return
 		}
 		guard let email = emailTextField.text, email.isEmail else {
-			Animations.wiggle(view: emailTextField)
+			emailTextField.wiggle()
 			return
 		}
 

@@ -103,7 +103,7 @@ class EditListingDetailViewController: UIViewController, TechStuffAccessor {
 	private func submitItem() {
 		guard let bearer = techStuffController?.bearer else { return }
 		guard let title = titleTextField.text, !title.isEmpty else {
-			Animations.wiggle(view: titleTextField)
+			titleTextField.wiggle()
 			return
 		}
 		guard let description = descriptionTextView.text, !description.isEmpty else {
