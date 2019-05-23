@@ -16,7 +16,12 @@ protocol TechStuffAccessor: AnyObject {
 class TechStuffController {
 	let networkHandler = NetworkHandler()
 
-	var bearer: Bearer?
+	var bearer: Bearer? {
+		didSet {
+			refreshItems()
+			loadFavs()
+		}
+	}
 
 	var itemListings: [ItemListing] = [] {
 		didSet {
@@ -225,6 +230,23 @@ class TechStuffController {
 		}
 	}
 
+	func signOut() {
+		guard let bearer = bearer else {
+			NotificationCenter.default.post(name: .checkLoginNotificationName, object: nil)
+			return
+		}
+		let logoutURL = baseURL.appendingPathComponent(Endpoints.logout.rawValue)
+
+		var request = URLRequest(url: logoutURL)
+		request.addValue(bearer.token, forHTTPHeaderField: HTTPHeaderKeys.auth.rawValue)
+
+		networkHandler.transferMahDatas(with: request) { _ in }
+		self.bearer = nil
+		saveData()
+		NotificationCenter.default.post(name: .checkLoginNotificationName, object: nil)
+
+	}
+
 	// MARK: - list derivatives
 	var availableItems = [ItemListing]()
 	var categories = [ItemCategory: [ItemListing]]()
@@ -341,21 +363,32 @@ class TechStuffController {
 		let data = try? encoder.encode(bearer)
 		defaults.set(data, forKey: "user")
 
-		guard let bearer = bearer else { return }
 		// save favorites separately
+		saveFavs()
+	}
+
+	private func saveFavs() {
+		let defaults = UserDefaults.standard
+		let encoder = PropertyListEncoder()
 		let favData = try? encoder.encode(myFavoritesIDs)
+		guard let bearer = bearer else { return }
 		defaults.set(favData, forKey: "user-favs-\(bearer.id)")
 	}
 
 	private func loadData() {
-		//load favorites separately
 		let defaults = UserDefaults.standard
 		let decoder = PropertyListDecoder()
 		guard let data = defaults.data(forKey: "user") else { return }
 		let decodedBearer = try? decoder.decode(Bearer.self, from: data)
 		self.bearer = decodedBearer
 
+		loadFavs()
+	}
+
+	private func loadFavs() {
+		let defaults = UserDefaults.standard
 		guard let bearer = bearer, let favData = defaults.data(forKey: "user-favs-\(bearer.id)") else { return }
+		let decoder = PropertyListDecoder()
 		myFavoritesIDs = (try? decoder.decode(Set<Int>.self, from: favData)) ?? Set<Int>()
 	}
 }

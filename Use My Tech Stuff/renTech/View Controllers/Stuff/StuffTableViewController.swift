@@ -30,6 +30,7 @@ class StuffTableViewController: UITableViewController, TechStuffAccessor {
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		tableView.reloadData()
 		techStuffController?.getAllItems(completion: { [weak self] (result: Result<Bool, NetworkError>) in
 			DispatchQueue.main.async {
 				do {
