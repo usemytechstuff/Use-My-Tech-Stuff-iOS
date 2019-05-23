@@ -6,12 +6,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Nunito.ttf">
             <string>Nunito-Regular</string>
+        </array>
+        <array key="SFUIText.ttf">
+            <string>.SFUIText</string>
         </array>
     </customFonts>
     <scenes>
@@ -54,14 +58,26 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E45-nX-etM" userLabel="top rated collection view">
                                                 <rect key="frame" x="0.0" y="296" width="414" height="218"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Rated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUf-TC-mHJ">
-                                                        <rect key="frame" x="20" y="8" width="374" height="42.5"/>
-                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="31"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2zR-h1-7fR" userLabel="top rated banner">
+                                                        <rect key="frame" x="0.0" y="8" width="414" height="53"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Rated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUf-TC-mHJ">
+                                                                <rect key="frame" x="20" y="8" width="374" height="37"/>
+                                                                <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="31"/>
+                                                                <color key="textColor" name="rentechWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="rentechIndigo"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="WUf-TC-mHJ" secondAttribute="trailing" constant="20" id="53A-IF-kCT"/>
+                                                            <constraint firstAttribute="bottom" secondItem="WUf-TC-mHJ" secondAttribute="bottom" constant="8" id="7gA-81-fh4"/>
+                                                            <constraint firstItem="WUf-TC-mHJ" firstAttribute="top" secondItem="2zR-h1-7fR" secondAttribute="top" constant="8" id="eNe-tN-XuX"/>
+                                                            <constraint firstItem="WUf-TC-mHJ" firstAttribute="leading" secondItem="2zR-h1-7fR" secondAttribute="leading" constant="20" id="oYN-lM-KGF"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hx8-Od-tma">
-                                                        <rect key="frame" x="0.0" y="58.5" width="414" height="150"/>
+                                                        <rect key="frame" x="0.0" y="69" width="414" height="150"/>
                                                         <subviews>
                                                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QHy-En-ctO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -95,25 +111,37 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="hx8-Od-tma" secondAttribute="trailing" id="1fw-y1-hK6"/>
-                                                    <constraint firstItem="WUf-TC-mHJ" firstAttribute="top" secondItem="E45-nX-etM" secondAttribute="top" constant="8" id="EFx-By-jYU"/>
+                                                    <constraint firstItem="hx8-Od-tma" firstAttribute="top" secondItem="2zR-h1-7fR" secondAttribute="bottom" constant="8" symbolic="YES" id="5Eo-NF-2zG"/>
                                                     <constraint firstItem="hx8-Od-tma" firstAttribute="leading" secondItem="E45-nX-etM" secondAttribute="leading" id="Hwj-ht-B9e"/>
-                                                    <constraint firstItem="WUf-TC-mHJ" firstAttribute="leading" secondItem="E45-nX-etM" secondAttribute="leading" constant="20" id="LGu-FF-pfq"/>
-                                                    <constraint firstItem="hx8-Od-tma" firstAttribute="top" secondItem="WUf-TC-mHJ" secondAttribute="bottom" constant="8" id="Xxg-9L-UPy"/>
-                                                    <constraint firstAttribute="trailing" secondItem="WUf-TC-mHJ" secondAttribute="trailing" constant="20" id="nAY-eW-3QT"/>
+                                                    <constraint firstItem="2zR-h1-7fR" firstAttribute="leading" secondItem="E45-nX-etM" secondAttribute="leading" id="dye-t8-imv"/>
                                                     <constraint firstAttribute="height" priority="250" constant="218" id="sfz-5f-Ntm"/>
+                                                    <constraint firstItem="2zR-h1-7fR" firstAttribute="top" secondItem="E45-nX-etM" secondAttribute="topMargin" id="vSd-MG-9Nl"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2zR-h1-7fR" secondAttribute="trailing" id="wQd-nQ-Q5H"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LPU-o5-kqP" userLabel="recommended collection view">
                                                 <rect key="frame" x="0.0" y="534" width="414" height="218"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kt-1l-Sns">
-                                                        <rect key="frame" x="20" y="8" width="374" height="42.5"/>
-                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="31"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grB-I0-Pil" userLabel="recommended banner">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="53"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kt-1l-Sns">
+                                                                <rect key="frame" x="20" y="8" width="374" height="37"/>
+                                                                <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="31"/>
+                                                                <color key="textColor" name="rentechWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="rentechIndigo"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="9kt-1l-Sns" secondAttribute="trailing" constant="20" id="Cgp-69-aNH"/>
+                                                            <constraint firstAttribute="bottom" secondItem="9kt-1l-Sns" secondAttribute="bottom" constant="8" id="ZIq-v3-9oJ"/>
+                                                            <constraint firstItem="9kt-1l-Sns" firstAttribute="leading" secondItem="grB-I0-Pil" secondAttribute="leading" constant="20" id="e6Z-CB-IjP"/>
+                                                            <constraint firstItem="9kt-1l-Sns" firstAttribute="top" secondItem="grB-I0-Pil" secondAttribute="top" constant="8" id="tSu-XQ-4id"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgH-cb-EfS">
-                                                        <rect key="frame" x="0.0" y="58.5" width="414" height="150"/>
+                                                        <rect key="frame" x="0.0" y="61" width="414" height="150"/>
                                                         <subviews>
                                                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8xU-k7-upl">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -146,11 +174,11 @@
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="9kt-1l-Sns" firstAttribute="leading" secondItem="LPU-o5-kqP" secondAttribute="leading" constant="20" id="5zz-AY-Yy7"/>
-                                                    <constraint firstAttribute="trailing" secondItem="9kt-1l-Sns" secondAttribute="trailing" constant="20" id="CXy-X4-fub"/>
-                                                    <constraint firstItem="9kt-1l-Sns" firstAttribute="top" secondItem="LPU-o5-kqP" secondAttribute="top" constant="8" id="Sa5-Dm-Crf"/>
+                                                    <constraint firstItem="UgH-cb-EfS" firstAttribute="top" secondItem="grB-I0-Pil" secondAttribute="bottom" constant="8" id="ATF-Tl-r3D"/>
+                                                    <constraint firstAttribute="trailing" secondItem="grB-I0-Pil" secondAttribute="trailing" id="D7L-X4-ciZ"/>
+                                                    <constraint firstItem="grB-I0-Pil" firstAttribute="top" secondItem="LPU-o5-kqP" secondAttribute="top" id="IQ5-p7-aAO"/>
+                                                    <constraint firstItem="grB-I0-Pil" firstAttribute="leading" secondItem="LPU-o5-kqP" secondAttribute="leading" id="XDC-1h-Bb2"/>
                                                     <constraint firstAttribute="height" priority="250" constant="218" id="m9f-k4-RcH"/>
-                                                    <constraint firstItem="UgH-cb-EfS" firstAttribute="top" secondItem="9kt-1l-Sns" secondAttribute="bottom" constant="8" id="n3G-c6-OFj"/>
                                                     <constraint firstItem="UgH-cb-EfS" firstAttribute="leading" secondItem="LPU-o5-kqP" secondAttribute="leading" id="r9x-75-ZHu"/>
                                                     <constraint firstAttribute="trailing" secondItem="UgH-cb-EfS" secondAttribute="trailing" id="xZB-4E-iGF"/>
                                                 </constraints>
@@ -158,14 +186,26 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZi-EF-cjp" userLabel="categories collection view">
                                                 <rect key="frame" x="0.0" y="772" width="414" height="218"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfH-Z7-BFs">
-                                                        <rect key="frame" x="20" y="8" width="374" height="42.5"/>
-                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="31"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IKJ-qD-HRe" userLabel="categories banner">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="53"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1k-9A-8jN">
+                                                                <rect key="frame" x="20" y="8" width="374" height="37"/>
+                                                                <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="31"/>
+                                                                <color key="textColor" name="rentechWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="rentechIndigo"/>
+                                                        <constraints>
+                                                            <constraint firstItem="m1k-9A-8jN" firstAttribute="leading" secondItem="IKJ-qD-HRe" secondAttribute="leading" constant="20" id="6bd-tp-rNu"/>
+                                                            <constraint firstAttribute="trailing" secondItem="m1k-9A-8jN" secondAttribute="trailing" constant="20" id="7Hr-6j-2hh"/>
+                                                            <constraint firstAttribute="bottom" secondItem="m1k-9A-8jN" secondAttribute="bottom" constant="8" id="XuY-UX-xy5"/>
+                                                            <constraint firstItem="m1k-9A-8jN" firstAttribute="top" secondItem="IKJ-qD-HRe" secondAttribute="top" constant="8" id="yWF-Pn-cKs"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4z-tk-SLw">
-                                                        <rect key="frame" x="0.0" y="58.5" width="414" height="150"/>
+                                                        <rect key="frame" x="0.0" y="61" width="414" height="150"/>
                                                         <subviews>
                                                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KHJ-gA-gUK">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -198,12 +238,12 @@
                                                     </view>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="n4z-tk-SLw" firstAttribute="top" secondItem="IKJ-qD-HRe" secondAttribute="bottom" constant="8" id="2VD-WL-mxA"/>
                                                     <constraint firstAttribute="height" priority="250" constant="218" id="3wB-El-va3"/>
                                                     <constraint firstAttribute="trailing" secondItem="n4z-tk-SLw" secondAttribute="trailing" id="B2x-ee-Nq1"/>
-                                                    <constraint firstItem="xfH-Z7-BFs" firstAttribute="top" secondItem="TZi-EF-cjp" secondAttribute="top" constant="8" id="E2P-dK-DhS"/>
-                                                    <constraint firstItem="n4z-tk-SLw" firstAttribute="top" secondItem="xfH-Z7-BFs" secondAttribute="bottom" constant="8" id="M51-dY-KQD"/>
-                                                    <constraint firstAttribute="trailing" secondItem="xfH-Z7-BFs" secondAttribute="trailing" constant="20" id="NzL-gi-VrD"/>
-                                                    <constraint firstItem="xfH-Z7-BFs" firstAttribute="leading" secondItem="TZi-EF-cjp" secondAttribute="leading" constant="20" id="TUY-fx-YaV"/>
+                                                    <constraint firstItem="IKJ-qD-HRe" firstAttribute="top" secondItem="TZi-EF-cjp" secondAttribute="top" id="FMa-3l-8ic"/>
+                                                    <constraint firstAttribute="trailing" secondItem="IKJ-qD-HRe" secondAttribute="trailing" id="Zny-Xn-i6I"/>
+                                                    <constraint firstItem="IKJ-qD-HRe" firstAttribute="leading" secondItem="TZi-EF-cjp" secondAttribute="leading" id="sda-wk-2i5"/>
                                                     <constraint firstItem="n4z-tk-SLw" firstAttribute="leading" secondItem="TZi-EF-cjp" secondAttribute="leading" id="wxv-ig-dXI"/>
                                                 </constraints>
                                             </view>
@@ -230,7 +270,7 @@
                                 </connections>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="rentechWhite"/>
                         <constraints>
                             <constraint firstItem="T4x-5C-Kbu" firstAttribute="top" secondItem="z86-hU-uB9" secondAttribute="top" id="A43-Od-0y3"/>
                             <constraint firstAttribute="bottom" secondItem="T4x-5C-Kbu" secondAttribute="bottom" id="EAr-Vw-suB"/>
@@ -296,5 +336,12 @@
         <image name="Herosection" width="414" height="276"/>
         <image name="rentechLogo5" width="250" height="59"/>
         <image name="search" width="21" height="21"/>
+        <namedColor name="rentechIndigo">
+            <color red="0.396078431372549" green="0.33725490196078434" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="rentechWhite">
+            <color red="0.94901960784313721" green="0.94509803921568625" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
+    <color key="tintColor" name="rentechIndigo"/>
 </document>
