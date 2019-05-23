@@ -97,12 +97,16 @@ extension StuffTableViewController {
 		return searchCell
 	}
 
-	override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+	override func tableView(_ tableView: UITableView,
+							trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
+							-> UISwipeActionsConfiguration? {
 		guard let section = StuffSection(rawValue: indexPath.section) else { return nil }
 		let action: UIContextualAction
 		switch section {
 		case .myListings:
-			action = UIContextualAction(style: .destructive, title: "Remove Listing", handler: { [weak self] (action, view, handler) in
+			action = UIContextualAction(style: .destructive,
+										title: "Remove Listing",
+										handler: { [weak self] (_, _, handler) in
 				guard let item = self?.techStuffController?.myListings[indexPath.row] else { return }
 				self?.techStuffController?.deleteFromMyListings(item: item)
 				self?.tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -110,7 +114,9 @@ extension StuffTableViewController {
 			})
 			action.backgroundColor = .red
 		case .myRentals:
-			action = UIContextualAction(style: .destructive, title: "Return Item To Owner", handler: { [weak self] (action, view, handler) in
+			action = UIContextualAction(style: .destructive,
+										title: "Return Item To Owner",
+										handler: { [weak self] (_, _, handler) in
 				guard let item = self?.techStuffController?.myRentals[indexPath.row] else { return }
 				self?.techStuffController?.removeFromMyRentals(item: item)
 				self?.tableView.deleteRows(at: [indexPath], with: .automatic)
