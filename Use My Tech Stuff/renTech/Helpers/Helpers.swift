@@ -57,12 +57,18 @@ enum AppearanceHelper {
 
 	static func setupAppearance() {
 		guard let rentechBlack = rentechBlack else { return }
+		guard let rentechIndigo = rentechIndigo else { return }
+		guard let rentechWhite = rentechWhite else { return }
+
 		let textAttributes = [
 			NSAttributedString.Key.foregroundColor: rentechBlack,
+//			NSAttributedString.Key.foregroundColor: rentechWhite,
 			NSAttributedString.Key.font: headerFont(with: .headline, pointSize: 26)
 		]
 		UINavigationBar.appearance().titleTextAttributes = textAttributes
 		UINavigationBar.appearance().largeTitleTextAttributes = textAttributes
+
+//		UINavigationBar.appearance().barTintColor = rentechIndigo
 	}
 
 	static func headerFont(with textStyle: UIFont.TextStyle, pointSize: CGFloat) -> UIFont {

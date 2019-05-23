@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -66,18 +67,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DOG-kI-wEU">
-                                <rect key="frame" x="0.0" y="221.5" width="374" height="312"/>
+                                <rect key="frame" x="0.0" y="221.5" width="374" height="310"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDh-Dx-4d3">
-                                <rect key="frame" x="0.0" y="541.5" width="374" height="23.5"/>
+                                <rect key="frame" x="0.0" y="539.5" width="374" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nek-7S-q6B">
-                                <rect key="frame" x="0.0" y="573" width="374" height="125"/>
+                                <rect key="frame" x="0.0" y="571" width="374" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="RNo-cv-OJD"/>
                                 </constraints>
@@ -87,7 +88,7 @@
                                 </connections>
                             </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6P-mW-YIS">
-                                <rect key="frame" x="0.0" y="706" width="374" height="31"/>
+                                <rect key="frame" x="0.0" y="704" width="374" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Publicly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Vl-eT-hUu">
                                         <rect key="frame" x="0.0" y="0.0" width="317" height="31"/>
@@ -99,7 +100,7 @@
                                         <rect key="frame" x="325" y="0.0" width="51" height="31"/>
                                     </switch>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="e1A-0f-gY9" firstAttribute="leading" secondItem="9Vl-eT-hUu" secondAttribute="trailing" constant="8" id="0RG-el-x6o"/>
                                     <constraint firstAttribute="bottom" secondItem="9Vl-eT-hUu" secondAttribute="bottom" id="eEP-Nm-CzR"/>
@@ -111,18 +112,24 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-GX-ywB">
-                                <rect key="frame" x="0.0" y="745" width="374" height="33"/>
+                                <rect key="frame" x="0.0" y="743" width="374" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAc-n6-KWN">
-                                        <rect key="frame" x="108.5" y="0.0" width="157" height="33"/>
+                                        <rect key="frame" x="73.5" y="0.0" width="227" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="8GL-4s-3f9"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
-                                        <state key="normal" title="Post This Item For Rent"/>
+                                        <inset key="contentEdgeInsets" minX="35" minY="0.0" maxX="35" maxY="0.0"/>
+                                        <state key="normal" title="Post This Item For Rent" backgroundImage="indigoBG">
+                                            <color key="titleColor" name="rentechWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="submitButtonPressed:" destination="RdU-JP-STD" eventType="touchUpInside" id="dwR-YE-dHY"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="vAc-n6-KWN" secondAttribute="bottom" id="gQi-b8-aRr"/>
                                     <constraint firstItem="vAc-n6-KWN" firstAttribute="centerX" secondItem="bbg-GX-ywB" secondAttribute="centerX" id="hBN-vO-JUn"/>
@@ -132,7 +139,7 @@
                         </subviews>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" name="rentechWhite"/>
                 <constraints>
                     <constraint firstItem="4ZP-IF-mlQ" firstAttribute="leading" secondItem="Xvf-XV-bgu" secondAttribute="leading" constant="20" id="DZc-Zl-nLc"/>
                     <constraint firstItem="Xvf-XV-bgu" firstAttribute="trailing" secondItem="4ZP-IF-mlQ" secondAttribute="trailing" constant="20" id="dW8-2N-aJf"/>
@@ -156,4 +163,10 @@
             <point key="canvasLocation" x="473.91304347826093" y="59.598214285714285"/>
         </viewController>
     </objects>
+    <resources>
+        <image name="indigoBG" width="23" height="23"/>
+        <namedColor name="rentechWhite">
+            <color red="0.94901960784313721" green="0.94509803921568625" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

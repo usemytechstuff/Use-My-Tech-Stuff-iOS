@@ -42,6 +42,8 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		imageView.layer.cornerRadius = 4
+
 		favButton = UIBarButtonItem(image: UIImage(named: "heart"), style: .plain, target: self, action: #selector(addToFavorites))
 		navigationItem.rightBarButtonItem = favButton
 	}

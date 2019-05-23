@@ -27,6 +27,7 @@ class SearchResultTableViewCell: UITableViewCell, TechStuffAccessor {
 	private func updateViews() {
 		guard let listing = listing, searchResultImageView != nil else { return }
 		searchResultImageView.image = UIImage(named: "placeholderImage")
+		searchResultImageView.layer.cornerRadius = 4
 		itemTitleLabel.text = listing.title
 		itemDescriptionLabel.text = listing.description
 		itemBrandModelLabel.text = StringFormatting.formatBrandAndModel(brand: listing.brand, model: listing.model)

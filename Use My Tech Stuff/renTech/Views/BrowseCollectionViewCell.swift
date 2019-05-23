@@ -21,6 +21,20 @@ class BrowseCollectionViewCell: UICollectionViewCell, TechStuffAccessor {
 		}
 	}
 
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		commonInit()
+	}
+
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+		commonInit()
+	}
+
+	private func commonInit() {
+		layer.cornerRadius = 4
+	}
+
 	@IBOutlet var textLabel: UILabel! {
 		didSet {
 			textLabel.layer.shadowOpacity = 1
