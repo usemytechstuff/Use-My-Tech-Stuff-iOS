@@ -18,7 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <viewController id="RdU-JP-STD" customClass="ListingDetailViewController" customModule="Use_My_Tech_Stuff" customModuleProvider="target">
+        <viewController id="RdU-JP-STD" customClass="ListingDetailViewController" customModule="renTech" customModuleProvider="target">
             <view key="view" contentMode="scaleToFill" id="37S-jt-RrK">
                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,7 +103,7 @@
                 <outlet property="priceLabel" destination="k83-Zw-w8n" id="p6S-50-XDv"/>
                 <outlet property="submitButton" destination="vAc-n6-KWN" id="O8L-H6-wSp"/>
             </connections>
-            <point key="canvasLocation" x="473.91304347826093" y="59.598214285714285"/>
+            <point key="canvasLocation" x="535" y="44"/>
         </viewController>
     </objects>
 </document>
