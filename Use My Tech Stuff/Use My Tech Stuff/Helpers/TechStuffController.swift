@@ -287,6 +287,22 @@ class TechStuffController {
 		myListings.remove(at: index)
 	}
 
+	func removeFromMyRentals(item: Listing) {
+		var item = item
+		item.renter = nil
+		print(item)
+		update(existingItem: item) { (result: Result<ListingResponse, NetworkError>) in
+			do {
+				_ = try result.get()
+			} catch {
+				print(error)
+			}
+		}
+
+		guard let index = myRentals.firstIndex(of: item) else { return }
+		myRentals.remove(at: index)
+	}
+
 	// MARK: - data persistance
 	private var fileURL: URL {
 		let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]

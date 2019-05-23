@@ -29,6 +29,21 @@ struct Listing: Codable, Equatable {
 		}
 		return lhs.title == rhs.title && lhs.description == rhs.description
 	}
+
+	func encode(to encoder: Encoder) throws {
+		var container = encoder.container(keyedBy: CodingKeys.self)
+		try container.encode(id, forKey: .id)
+		try container.encode(owner, forKey: .owner)
+		try container.encode(type, forKey: .type)
+		try container.encode(description, forKey: .description)
+		try container.encode(brand, forKey: .brand)
+		try container.encode(model, forKey: .model)
+		try container.encode(imgURL, forKey: .imgURL)
+		try container.encode(price, forKey: .price)
+		try container.encode(title, forKey: .title)
+		try container.encode(availability, forKey: .availability)
+		try container.encode(renter, forKey: .renter)
+	}
 }
 
 extension Listing {
@@ -51,4 +66,5 @@ extension Listing {
 struct ListingResponse: Codable {
 	let message: String
 	let item: Listing?
+	let changes: Listing?
 }
