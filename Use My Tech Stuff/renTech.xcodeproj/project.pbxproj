@@ -14,6 +14,8 @@
 		33685CF4229663E200EA57AB /* ProfileNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685CF3229663E200EA57AB /* ProfileNavController.swift */; };
 		33685CF62296640600EA57AB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685CF52296640600EA57AB /* ProfileViewController.swift */; };
 		33685CF822970DB300EA57AB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685CF722970DB300EA57AB /* GradientView.swift */; };
+		33685CFB2297227700EA57AB /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33685CF92297227700EA57AB /* Nunito-Bold.ttf */; };
+		33685CFC2297227700EA57AB /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33685CFA2297227700EA57AB /* Nunito-SemiBold.ttf */; };
 		33A5D9A4229310A2007467EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9A3229310A2007467EF /* AppDelegate.swift */; };
 		33A5D9A6229310A2007467EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9A5229310A2007467EF /* LoginViewController.swift */; };
 		33A5D9A9229310A2007467EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9A7229310A2007467EF /* Main.storyboard */; };
@@ -72,6 +74,8 @@
 		33685CF3229663E200EA57AB /* ProfileNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavController.swift; sourceTree = "<group>"; };
 		33685CF52296640600EA57AB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		33685CF722970DB300EA57AB /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		33685CF92297227700EA57AB /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-Bold.ttf"; path = "../../../assets/fonts/Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		33685CFA2297227700EA57AB /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-SemiBold.ttf"; path = "../../../assets/fonts/Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		33A5D9A0229310A2007467EF /* renTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = renTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A5D9A3229310A2007467EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33A5D9A5229310A2007467EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +254,8 @@
 			isa = PBXGroup;
 			children = (
 				33A5D9F922946D7B007467EF /* Nunito.ttf */,
+				33685CF92297227700EA57AB /* Nunito-Bold.ttf */,
+				33685CFA2297227700EA57AB /* Nunito-SemiBold.ttf */,
 				33A5D9A7229310A2007467EF /* Main.storyboard */,
 				33A5D9ED22945DC7007467EF /* Browse.storyboard */,
 				33A5D9EF22946040007467EF /* Faves.storyboard */,
@@ -417,9 +423,11 @@
 				33A5D9EE22945DC7007467EF /* Browse.storyboard in Resources */,
 				33A5D9D922932158007467EF /* .swiftlint.yml in Resources */,
 				33A5D9AE229310A3007467EF /* LaunchScreen.storyboard in Resources */,
+				33685CFC2297227700EA57AB /* Nunito-SemiBold.ttf in Resources */,
 				33A5D9AB229310A3007467EF /* Assets.xcassets in Resources */,
 				33A5D9F022946040007467EF /* Faves.storyboard in Resources */,
 				33AC2F2D2294FB7600884B81 /* EditListingDetailViewController.xib in Resources */,
+				33685CFB2297227700EA57AB /* Nunito-Bold.ttf in Resources */,
 				33A5D9F6229460CA007467EF /* Stuff.storyboard in Resources */,
 				33A5DA102294D0D9007467EF /* ListingDetailViewController.xib in Resources */,
 				33A5D9D222931FCD007467EF /* Cartfile in Resources */,

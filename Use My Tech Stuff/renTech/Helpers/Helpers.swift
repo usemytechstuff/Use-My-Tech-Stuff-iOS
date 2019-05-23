@@ -56,15 +56,21 @@ enum AppearanceHelper {
 	static let rentechWhite = UIColor(named: "rentechWhite")
 
 	static func setupAppearance() {
+		guard let rentechBlack = rentechBlack else { return }
 		let textAttributes = [
 			NSAttributedString.Key.foregroundColor: rentechBlack,
-			NSAttributedString.Key.font: headerFont(with: .headline, pointSize: 30)
+			NSAttributedString.Key.font: headerFont(with: .headline, pointSize: 26)
 		]
 		UINavigationBar.appearance().titleTextAttributes = textAttributes
 		UINavigationBar.appearance().largeTitleTextAttributes = textAttributes
 	}
 
 	static func headerFont(with textStyle: UIFont.TextStyle, pointSize: CGFloat) -> UIFont {
+		let font = UIFont(name: "Nunito-Bold", size: pointSize)!
+		return UIFontMetrics(forTextStyle: textStyle).scaledFont(for: font)
+	}
+
+	static func standardFont(with textStyle: UIFont.TextStyle, pointSize: CGFloat) -> UIFont {
 		let font = UIFont(name: "Nunito", size: pointSize)!
 		return UIFontMetrics(forTextStyle: textStyle).scaledFont(for: font)
 	}
