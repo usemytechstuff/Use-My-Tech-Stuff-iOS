@@ -6,15 +6,22 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Stuff-->
         <scene sceneID="LKe-QI-uN2">
             <objects>
                 <tableViewController id="hYI-qz-Jo8" customClass="StuffTableViewController" customModule="renTech" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="N54-f9-5Ie">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="606"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -39,17 +46,62 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWg-vt-Rs3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1314.4927536231885" y="67.633928571428569"/>
+            <point key="canvasLocation" x="2693" y="-173"/>
         </scene>
-        <!--Stuff-->
+        <!--Stuff and Profile-->
+        <scene sceneID="Hld-iC-nrG">
+            <objects>
+                <viewController id="0rN-AA-kBF" customClass="StuffAndProfileContainerController" customModule="renTech" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Fg-LX-EyQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NR-pM-Zqd">
+                                <rect key="frame" x="0.0" y="140" width="414" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="AGX-g3-9DE"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="Yqm-Gp-9MJ" kind="embed" id="frV-dx-Cnu"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhy-rL-9UP">
+                                <rect key="frame" x="0.0" y="290" width="414" height="606"/>
+                                <connections>
+                                    <segue destination="hYI-qz-Jo8" kind="embed" id="qUK-Az-ozc"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lhy-rL-9UP" firstAttribute="leading" secondItem="AW4-cQ-LF9" secondAttribute="leading" id="CrE-fv-EfV"/>
+                            <constraint firstItem="lhy-rL-9UP" firstAttribute="top" secondItem="5NR-pM-Zqd" secondAttribute="bottom" id="Fwl-Wd-e1w"/>
+                            <constraint firstAttribute="bottom" secondItem="lhy-rL-9UP" secondAttribute="bottom" id="WE2-vK-weu"/>
+                            <constraint firstItem="lhy-rL-9UP" firstAttribute="trailing" secondItem="AW4-cQ-LF9" secondAttribute="trailing" id="Xfl-nA-tSZ"/>
+                            <constraint firstItem="5NR-pM-Zqd" firstAttribute="leading" secondItem="AW4-cQ-LF9" secondAttribute="leading" id="lQY-n5-k9r"/>
+                            <constraint firstItem="AW4-cQ-LF9" firstAttribute="trailing" secondItem="5NR-pM-Zqd" secondAttribute="trailing" id="mdv-RV-8df"/>
+                            <constraint firstItem="5NR-pM-Zqd" firstAttribute="top" secondItem="AW4-cQ-LF9" secondAttribute="top" id="uUi-9I-P8c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AW4-cQ-LF9"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Stuff and Profile" id="TOT-CQ-55S"/>
+                    <connections>
+                        <outlet property="profileContainerView" destination="5NR-pM-Zqd" id="Dkr-ye-MJi"/>
+                        <outlet property="stuffContainerView" destination="lhy-rL-9UP" id="hXk-en-AoC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tA9-aw-EyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1570" y="50"/>
+        </scene>
+        <!--Stuff and Profile-->
         <scene sceneID="96C-GR-5wg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q7W-BV-Ifm" customClass="StuffNavController" customModule="renTech" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stuff" image="stuff" id="PbT-sW-VHF"/>
+                    <tabBarItem key="tabBarItem" title="Stuff and Profile" image="stuff" id="PbT-sW-VHF"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="FvI-AF-32w">
@@ -58,12 +110,63 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="hYI-qz-Jo8" kind="relationship" relationship="rootViewController" id="rkX-YU-oeO"/>
+                        <segue destination="0rN-AA-kBF" kind="relationship" relationship="rootViewController" id="ZeU-vu-qtr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tIL-Sw-x9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="404.34782608695656" y="67.633928571428569"/>
+        </scene>
+        <!--User Profile-->
+        <scene sceneID="sWD-vy-Zba">
+            <objects>
+                <viewController id="Yqm-Gp-9MJ" customClass="ProfileViewController" customModule="renTech" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VtM-Mh-KXj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vQP-hF-S6D">
+                                <rect key="frame" x="20" y="14" width="374" height="122"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7B-Rz-OvX">
+                                        <rect key="frame" x="145" y="0.0" width="84.5" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nT8-OU-QDg">
+                                        <rect key="frame" x="119" y="35.5" width="136.5" height="42.5"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="31"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GW-0L-VhU">
+                                        <rect key="frame" x="153.5" y="86" width="67" height="36"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                        <state key="normal" title="Sign Out"/>
+                                        <connections>
+                                            <action selector="signoutButtonPressed:" destination="Yqm-Gp-9MJ" eventType="touchUpInside" id="RU8-1z-IVH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nUN-3j-ZGM" firstAttribute="trailing" secondItem="vQP-hF-S6D" secondAttribute="trailing" constant="20" id="0At-Pc-y2G"/>
+                            <constraint firstItem="vQP-hF-S6D" firstAttribute="centerY" secondItem="VtM-Mh-KXj" secondAttribute="centerY" id="0Hv-uZ-Hpc"/>
+                            <constraint firstItem="vQP-hF-S6D" firstAttribute="leading" secondItem="nUN-3j-ZGM" secondAttribute="leading" constant="20" id="we9-cC-8Lb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nUN-3j-ZGM"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="User Profile" id="byF-og-0yG"/>
+                    <connections>
+                        <outlet property="usernameLabel" destination="nT8-OU-QDg" id="CiV-MC-Ey0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b1g-Nd-JZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2678" y="175"/>
         </scene>
     </scenes>
     <resources>

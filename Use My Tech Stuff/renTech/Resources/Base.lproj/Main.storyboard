@@ -41,26 +41,6 @@
             </objects>
             <point key="canvasLocation" x="-1538" y="-204"/>
         </scene>
-        <!--Profile-->
-        <scene sceneID="L67-Fm-6O5">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="GP7-gb-iBA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="oqR-Pp-ocB"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cWx-4p-oOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1538" y="-50"/>
-        </scene>
-        <!--Inbox-->
-        <scene sceneID="U2a-WU-se1">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Inbox" id="f7c-Tl-bjq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7S9-JM-8cR"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wMx-mi-zQR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1538" y="-111"/>
-        </scene>
         <!--Base Tab View Controller-->
         <scene sceneID="7JL-TP-FxI">
             <objects>
@@ -74,7 +54,6 @@
                         <segue destination="SF7-s6-zT5" kind="relationship" relationship="viewControllers" id="xsF-qc-cdp"/>
                         <segue destination="WxP-3N-EGS" kind="relationship" relationship="viewControllers" id="fbx-o9-M2X"/>
                         <segue destination="578-yH-NWo" kind="relationship" relationship="viewControllers" id="qgX-de-1D6"/>
-                        <segue destination="GP7-gb-iBA" kind="relationship" relationship="viewControllers" id="ykX-hn-Dpm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ah2-ct-sWu" userLabel="First Responder" sceneMemberID="firstResponder"/>
