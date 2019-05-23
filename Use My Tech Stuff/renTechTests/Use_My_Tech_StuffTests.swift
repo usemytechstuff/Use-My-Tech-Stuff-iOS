@@ -1,6 +1,6 @@
 //
 //  Use_My_Tech_StuffTests.swift
-//  Use My Tech StuffTests
+//  renTechTests
 //
 //  Created by Michael Redig on 5/20/19.
 //  Copyright © 2019 Red_Egg Productions. All rights reserved.

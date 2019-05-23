@@ -1,6 +1,6 @@
 //
 //  CategoriesController.swift
-//  Use My Tech Stuff
+//  renTech
 //
 //  Created by Michael Redig on 5/21/19.
 //  Copyright © 2019 Red_Egg Productions. All rights reserved.
