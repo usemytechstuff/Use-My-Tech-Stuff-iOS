@@ -48,3 +48,10 @@ extension UIView {
 extension NSNotification.Name {
 	static let checkLoginNotificationName = NSNotification.Name(rawValue: "com.redeggproductions.renTech.checkLogin")
 }
+
+
+enum AppearanceHelper {
+	static let rentechIndigo = UIColor(hue: 246/360, saturation: 89/100, brightness: 65/100, alpha: 1)
+	static let rentechBlack = UIColor(hue: 248/360, saturation: 6/100, brightness: 25/100, alpha: 1)
+	static let rentechWhite = UIColor(hue: 260/360, saturation: 12/100, brightness: 95/100, alpha: 1)
+}

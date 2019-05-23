@@ -13,6 +13,7 @@
 		33685CF12296603400EA57AB /* JWTDecode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33685CF02296603400EA57AB /* JWTDecode.framework */; };
 		33685CF4229663E200EA57AB /* ProfileNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685CF3229663E200EA57AB /* ProfileNavController.swift */; };
 		33685CF62296640600EA57AB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685CF52296640600EA57AB /* ProfileViewController.swift */; };
+		33685CF822970DB300EA57AB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685CF722970DB300EA57AB /* GradientView.swift */; };
 		33A5D9A4229310A2007467EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9A3229310A2007467EF /* AppDelegate.swift */; };
 		33A5D9A6229310A2007467EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9A5229310A2007467EF /* LoginViewController.swift */; };
 		33A5D9A9229310A2007467EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9A7229310A2007467EF /* Main.storyboard */; };
@@ -70,6 +71,7 @@
 		33685CF02296603400EA57AB /* JWTDecode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JWTDecode.framework; path = Carthage/Build/iOS/JWTDecode.framework; sourceTree = SOURCE_ROOT; };
 		33685CF3229663E200EA57AB /* ProfileNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavController.swift; sourceTree = "<group>"; };
 		33685CF52296640600EA57AB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		33685CF722970DB300EA57AB /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		33A5D9A0229310A2007467EF /* renTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = renTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A5D9A3229310A2007467EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33A5D9A5229310A2007467EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				33A5DA0A2294C803007467EF /* BrowseCollectionViewCell.xib */,
 				33A5D9FD22947BFF007467EF /* SearchResultTableViewCell.swift */,
 				33A5DA042294B2E1007467EF /* SearchResultTableViewCell.xib */,
+				33685CF722970DB300EA57AB /* GradientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				33A5D9FE22947BFF007467EF /* SearchResultTableViewCell.swift in Sources */,
 				33A5DA122294F664007467EF /* StringFormatting.swift in Sources */,
 				33A5D9E62293747C007467EF /* ItemListing.swift in Sources */,
+				33685CF822970DB300EA57AB /* GradientView.swift in Sources */,
 				33AC2F2F2294FE2A00884B81 /* StuffTableViewController.swift in Sources */,
 				33A5D9A4229310A2007467EF /* AppDelegate.swift in Sources */,
 				33A5D9F822946BBE007467EF /* CategoriesController.swift in Sources */,

@@ -52,7 +52,7 @@ struct Bearer: Codable {
 
 	var username: String? {
 		let jwt = try? decode()
-		return jwt?.body["usename"] as? String
+		return jwt?.body["username"] as? String
 	}
 
 	func decode() throws -> JWT {
