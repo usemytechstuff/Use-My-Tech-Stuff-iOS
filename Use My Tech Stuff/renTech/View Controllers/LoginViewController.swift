@@ -169,9 +169,7 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 			animation = { [weak self] in
 				guard let self = self else { return }
 				self.confirmPasswordTextField.isHidden = true
-				self.confirmPasswordTextField.alpha = 0
 				self.emailTextField.isHidden = true
-				self.emailTextField.alpha = 0
 				self.loginButton.setTitle("Login", for: .normal)
 				self.loginTypeSelector.selectedSegmentIndex = self.loginMode.rawValue
 				self.stackContainer.layoutSubviews()
@@ -180,9 +178,7 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 			animation = { [weak self] in
 				guard let self = self else { return }
 				self.confirmPasswordTextField.isHidden = false
-				self.confirmPasswordTextField.alpha = 1
 				self.emailTextField.isHidden = false
-				self.emailTextField.alpha = 1
 				self.loginButton.setTitle("Sign Up", for: .normal)
 				self.loginTypeSelector.selectedSegmentIndex = self.loginMode.rawValue
 				self.stackContainer.layoutSubviews()

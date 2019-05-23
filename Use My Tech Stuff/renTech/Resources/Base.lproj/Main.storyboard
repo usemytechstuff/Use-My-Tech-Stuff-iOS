@@ -178,8 +178,8 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="6wn-k8-VNE" firstAttribute="height" secondItem="wyj-wL-1BU" secondAttribute="height" id="08n-oU-Gg8"/>
-                                    <constraint firstItem="FSR-1k-ayo" firstAttribute="height" secondItem="6wn-k8-VNE" secondAttribute="height" id="Zqw-I7-waN"/>
+                                    <constraint firstItem="6wn-k8-VNE" firstAttribute="height" secondItem="wyj-wL-1BU" secondAttribute="height" priority="750" id="08n-oU-Gg8"/>
+                                    <constraint firstItem="FSR-1k-ayo" firstAttribute="height" secondItem="6wn-k8-VNE" secondAttribute="height" priority="750" id="Zqw-I7-waN"/>
                                     <constraint firstItem="wyj-wL-1BU" firstAttribute="height" secondItem="IQU-hz-IrL" secondAttribute="height" id="qpL-GM-Bbg"/>
                                 </constraints>
                             </stackView>
