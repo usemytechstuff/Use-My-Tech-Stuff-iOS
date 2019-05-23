@@ -35,20 +35,20 @@
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Herosection" translatesAutoresizingMaskIntoConstraints="NO" id="Fac-of-iin">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jY0-Eq-y7d">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rentechLogo5" translatesAutoresizingMaskIntoConstraints="NO" id="bUX-W7-6q7">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
-                                                    </button>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="bUX-W7-6q7" firstAttribute="leading" secondItem="CPP-v9-mPB" secondAttribute="leading" id="1Cm-Os-3k7"/>
                                                     <constraint firstItem="Fac-of-iin" firstAttribute="top" secondItem="CPP-v9-mPB" secondAttribute="top" id="52y-ff-G27"/>
-                                                    <constraint firstItem="jY0-Eq-y7d" firstAttribute="top" secondItem="CPP-v9-mPB" secondAttribute="top" id="542-RW-150"/>
-                                                    <constraint firstAttribute="bottom" secondItem="jY0-Eq-y7d" secondAttribute="bottom" id="7HX-HF-XH8"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bUX-W7-6q7" secondAttribute="trailing" id="Cru-sK-7cm"/>
                                                     <constraint firstAttribute="trailing" secondItem="Fac-of-iin" secondAttribute="trailing" id="EuS-Xg-dhq"/>
                                                     <constraint firstItem="Fac-of-iin" firstAttribute="leading" secondItem="CPP-v9-mPB" secondAttribute="leading" id="IRN-Ed-egK"/>
-                                                    <constraint firstItem="jY0-Eq-y7d" firstAttribute="leading" secondItem="CPP-v9-mPB" secondAttribute="leading" id="bkk-UL-2WF"/>
-                                                    <constraint firstAttribute="trailing" secondItem="jY0-Eq-y7d" secondAttribute="trailing" id="hdm-lR-03e"/>
+                                                    <constraint firstItem="bUX-W7-6q7" firstAttribute="top" secondItem="CPP-v9-mPB" secondAttribute="top" id="QhL-2s-W2D"/>
                                                     <constraint firstAttribute="bottom" secondItem="Fac-of-iin" secondAttribute="bottom" id="hml-SB-ZNz"/>
+                                                    <constraint firstAttribute="bottom" secondItem="bUX-W7-6q7" secondAttribute="bottom" id="nqA-XH-eQE"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E45-nX-etM" userLabel="top rated collection view">
@@ -294,6 +294,7 @@
     </scenes>
     <resources>
         <image name="Herosection" width="414" height="276"/>
+        <image name="rentechLogo5" width="250" height="59"/>
         <image name="search" width="21" height="21"/>
     </resources>
 </document>

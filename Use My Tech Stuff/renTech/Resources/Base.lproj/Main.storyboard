@@ -71,7 +71,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="ShowLogin" animates="NO" id="fyx-LA-4HL"/>
                         <segue destination="SF7-s6-zT5" kind="relationship" relationship="viewControllers" id="xsF-qc-cdp"/>
                         <segue destination="WxP-3N-EGS" kind="relationship" relationship="viewControllers" id="fbx-o9-M2X"/>
                         <segue destination="578-yH-NWo" kind="relationship" relationship="viewControllers" id="qgX-de-1D6"/>
@@ -85,7 +84,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="renTech" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LoginViewController" customModule="renTech" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

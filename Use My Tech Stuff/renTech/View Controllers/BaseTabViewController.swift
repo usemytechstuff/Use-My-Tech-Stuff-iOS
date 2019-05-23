@@ -12,6 +12,10 @@ class BaseTabViewController: UITabBarController {
 	let techStuffController = TechStuffController()
 
 	var loginObserver: NSObjectProtocol?
+	var presentingLogin: Bool {
+		return (presentedViewController as? LoginViewController) != nil ? true : false
+	}
+	var animate = false
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -25,7 +29,8 @@ class BaseTabViewController: UITabBarController {
 		loginObserver = NotificationCenter.default.addObserver(forName: .checkLoginNotificationName,
 															   object: nil,
 															   queue: nil) { [weak self] _ in
-			self?.checkLogin()
+			guard let self = self else { return }
+			self.checkLogin(animated: self.animate)
 		}
 	}
 
@@ -40,16 +45,14 @@ class BaseTabViewController: UITabBarController {
 		checkLogin()
 	}
 
-	private func checkLogin() {
-		if techStuffController.bearer == nil {
-			performSegue(withIdentifier: "ShowLogin", sender: nil)
-		}
-	}
-
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "ShowLogin" {
-			if let dest = segue.destination as? LoginViewController {
-				dest.techStuffController = techStuffController
+	private func checkLogin(animated: Bool = false) {
+		if techStuffController.bearer == nil && presentingLogin == false {
+			guard let loginVC = UIStoryboard.main?.instantiateViewController(withIdentifier: "LoginVC") as? LoginViewController
+				else { return }
+			loginVC.techStuffController = techStuffController
+			present(loginVC, animated: animated) { [weak self] in
+				self?.selectedIndex = 0
+				self?.animate = true
 			}
 		}
 	}
