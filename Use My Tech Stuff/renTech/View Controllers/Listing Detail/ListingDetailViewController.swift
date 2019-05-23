@@ -24,6 +24,7 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 	@IBOutlet var descriptionTextView: UITextView!
 	@IBOutlet var submitButton: UIButton!
 	@IBOutlet var priceLabel: UILabel!
+	var favButton: UIBarButtonItem?
 
 	var mode = ListingMode.viewing {
 		didSet {
@@ -40,6 +41,14 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		favButton = UIBarButtonItem(image: UIImage(named: "heartIcon"), style: .plain, target: self, action: #selector(addToFavorites))
+		navigationItem.rightBarButtonItem = favButton
+	}
+
+	@objc func addToFavorites(_ sender: UIBarButtonItem) {
+		techStuffController?.addToFavorites(item: listing)
+		updateFavButton(item: listing)
 	}
 
 	func updateViews() {
@@ -53,10 +62,10 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 			brandModelLabel.isHidden = true
 		}
 		descriptionTextView.text = listing.description
-
 		priceLabel.text = StringFormatting.formatPrice(withIntValue: listing.price)
 
 		updateMode()
+		updateFavButton(item: listing)
 
 		//image and owner
 		imageView.image = UIImage(named: "placeholderImage")
@@ -71,6 +80,14 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 				}
 			}
 		})
+	}
+
+	func updateFavButton(item: ItemListing?) {
+		if techStuffController?.itemIsInFavorites(item: item) ?? false {
+			favButton?.isEnabled = false
+		} else {
+			favButton?.isEnabled = true
+		}
 	}
 
 	private func checkMode(item: ItemListing, bearer: Bearer) {

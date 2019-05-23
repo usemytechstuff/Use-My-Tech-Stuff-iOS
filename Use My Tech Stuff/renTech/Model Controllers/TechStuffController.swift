@@ -232,7 +232,7 @@ class TechStuffController {
 	var recommendedForYouListings = [ItemListing]()
 	var myListings = [ItemListing]()
 	var myRentals = [ItemListing]()
-//	var myFavorites = [ItemListing]()
+	var myFavorites = [ItemListing]()
 
 	private func updateDerivatives() {
 		updateAvailableItems()
@@ -241,6 +241,7 @@ class TechStuffController {
 		updateRandomList(randomList: &recommendedForYouListings)
 		updateMyListings()
 		updateMyRentals()
+		updateMyFavorites()
 	}
 
 	private func updateAvailableItems() {
@@ -280,6 +281,13 @@ class TechStuffController {
 		}
 	}
 
+	private func updateMyFavorites() {
+		myFavorites = itemListings.filter {
+			guard let id = $0.id else { return false }
+			return myFavoritesIDs.contains(id)
+		}
+	}
+
 	// MARK: - my listing management
 
 	func deleteFromMyListings(item: ItemListing) {
@@ -304,18 +312,39 @@ class TechStuffController {
 		myRentals.remove(at: index)
 	}
 
-	// MARK: - data persistance
-	private var fileURL: URL {
-		let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-		return documents.appendingPathComponent("techStuff.plist")
+	// MARK: - my favorites management
+
+	private var myFavoritesIDs = Set<Int>()
+	func addToFavorites(item: ItemListing?) {
+		guard let id = item?.id else { return }
+		myFavoritesIDs.insert(id)
+		updateMyFavorites()
+		saveData()
 	}
 
+	func removeFromFavorites(item: ItemListing?) {
+		guard let id = item?.id else { return }
+		myFavoritesIDs.remove(id)
+		updateMyFavorites()
+		saveData()
+	}
+
+	func itemIsInFavorites(item: ItemListing?) -> Bool {
+		guard let id = item?.id else { return false }
+		return myFavoritesIDs.contains(id)
+	}
+
+	// MARK: - data persistance
 	private func saveData() {
 		let defaults = UserDefaults.standard
 		let encoder = PropertyListEncoder()
 		let data = try? encoder.encode(bearer)
 		defaults.set(data, forKey: "user")
+
+		guard let bearer = bearer else { return }
 		// save favorites separately
+		let favData = try? encoder.encode(myFavoritesIDs)
+		defaults.set(favData, forKey: "user-favs-\(bearer.id)")
 	}
 
 	private func loadData() {
@@ -323,7 +352,10 @@ class TechStuffController {
 		let defaults = UserDefaults.standard
 		let decoder = PropertyListDecoder()
 		guard let data = defaults.data(forKey: "user") else { return }
-		let bearer = try? decoder.decode(Bearer.self, from: data)
-		self.bearer = bearer
+		let decodedBearer = try? decoder.decode(Bearer.self, from: data)
+		self.bearer = decodedBearer
+
+		guard let bearer = bearer, let favData = defaults.data(forKey: "user-favs-\(bearer.id)") else { return }
+		myFavoritesIDs = (try? decoder.decode(Set<Int>.self, from: favData)) ?? Set<Int>()
 	}
 }

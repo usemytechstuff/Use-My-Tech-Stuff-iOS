@@ -95,6 +95,7 @@
                 <viewLayoutGuide key="safeArea" id="Xvf-XV-bgu"/>
             </view>
             <navigationItem key="navigationItem" title="NAME ME" id="AoX-iU-1qx"/>
+            <value key="contentSizeForViewInPopover" type="size" width="414" height="896"/>
             <connections>
                 <outlet property="brandModelLabel" destination="oDk-ZJ-LBw" id="d6r-2I-3Td"/>
                 <outlet property="descriptionTextView" destination="DOG-kI-wEU" id="fdb-qf-eFH"/>
