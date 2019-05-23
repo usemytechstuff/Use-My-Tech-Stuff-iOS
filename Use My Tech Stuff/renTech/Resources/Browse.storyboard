@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Browse UMTS-->
+        <!--Browse renTech-->
         <scene sceneID="IXV-rc-yUi">
             <objects>
-                <viewController id="d8n-hF-jMf" customClass="BrowseViewController" customModule="Use_My_Tech_Stuff" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d8n-hF-jMf" customClass="BrowseViewController" customModule="renTech" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xZ2-e8-cf3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +73,7 @@
                                                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                                                 </collectionViewFlowLayout>
                                                                 <cells>
-                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iXe-u6-OAH" customClass="BrowseCollectionViewCell" customModule="Use_My_Tech_Stuff" customModuleProvider="target">
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iXe-u6-OAH" customClass="BrowseCollectionViewCell" customModule="renTech" customModuleProvider="target">
                                                                         <rect key="frame" x="20" y="2.5" width="145" height="145"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -125,7 +125,7 @@
                                                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                                                 </collectionViewFlowLayout>
                                                                 <cells>
-                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NkQ-Pf-UNQ" customClass="BrowseCollectionViewCell" customModule="Use_My_Tech_Stuff" customModuleProvider="target">
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NkQ-Pf-UNQ" customClass="BrowseCollectionViewCell" customModule="renTech" customModuleProvider="target">
                                                                         <rect key="frame" x="20" y="2.5" width="145" height="145"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -177,7 +177,7 @@
                                                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                                                 </collectionViewFlowLayout>
                                                                 <cells>
-                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Cell" id="a4t-CZ-eCj" customClass="BrowseCollectionViewCell" customModule="Use_My_Tech_Stuff" customModuleProvider="target">
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Cell" id="a4t-CZ-eCj" customClass="BrowseCollectionViewCell" customModule="renTech" customModuleProvider="target">
                                                                         <rect key="frame" x="20" y="2.5" width="145" height="145"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -242,7 +242,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z86-hU-uB9"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Browse UMTS" id="ERR-Ty-8iW"/>
+                    <navigationItem key="navigationItem" title="Browse renTech" id="ERR-Ty-8iW"/>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="KHJ-gA-gUK" id="sdb-RS-o2a"/>
                         <outlet property="recommendedCollectionView" destination="8xU-k7-upl" id="zum-ou-tyb"/>
@@ -256,7 +256,7 @@
         <!--Search Result Table View Controller-->
         <scene sceneID="YVg-dJ-rVW">
             <objects>
-                <tableViewController storyboardIdentifier="SearchResultVC" id="hmJ-mq-Tg6" customClass="SearchResultTableViewController" customModule="Use_My_Tech_Stuff" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SearchResultVC" id="hmJ-mq-Tg6" customClass="SearchResultTableViewController" customModule="renTech" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GO1-nB-V6o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -271,11 +271,11 @@
             </objects>
             <point key="canvasLocation" x="1915.9420289855075" y="180.80357142857142"/>
         </scene>
-        <!--Browse Nav View Controller-->
+        <!--Browse-->
         <scene sceneID="ZNS-Nd-9H4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kGQ-sk-y2k" customClass="BrowseNavViewController" customModule="Use_My_Tech_Stuff" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="KJU-dF-pKF"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kGQ-sk-y2k" customClass="BrowseNavViewController" customModule="renTech" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Browse" image="search" id="KJU-dF-pKF"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="oc2-DW-Jhd">
@@ -294,5 +294,6 @@
     </scenes>
     <resources>
         <image name="Herosection" width="414" height="276"/>
+        <image name="search" width="21" height="21"/>
     </resources>
 </document>

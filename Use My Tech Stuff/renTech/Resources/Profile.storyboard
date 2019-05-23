@@ -71,7 +71,7 @@
         <scene sceneID="efh-OY-qoV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TYk-Xw-wvP" customClass="ProfileNavController" customModule="renTech" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="Tc7-03-U3Y"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="Tc7-03-U3Y"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="j8v-7J-qTR">
@@ -88,4 +88,7 @@
             <point key="canvasLocation" x="118.84057971014494" y="120.53571428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="profile" width="21" height="21"/>
+    </resources>
 </document>

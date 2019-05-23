@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--UMTStuff-->
+        <!--Stuff-->
         <scene sceneID="LKe-QI-uN2">
             <objects>
-                <tableViewController id="hYI-qz-Jo8" customClass="StuffTableViewController" customModule="Use_My_Tech_Stuff" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hYI-qz-Jo8" customClass="StuffTableViewController" customModule="renTech" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="N54-f9-5Ie">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,7 +32,7 @@
                             <outlet property="delegate" destination="hYI-qz-Jo8" id="9LZ-am-ukO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="UMTStuff" id="cm2-SQ-3E4">
+                    <navigationItem key="navigationItem" title="Stuff" id="cm2-SQ-3E4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xAp-RS-AGd">
                             <connections>
                                 <action selector="addNewItemButtonPressed:" destination="hYI-qz-Jo8" id="UZG-Td-0Wh"/>
@@ -48,8 +48,8 @@
         <!--Stuff-->
         <scene sceneID="96C-GR-5wg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q7W-BV-Ifm" customClass="StuffNavController" customModule="Use_My_Tech_Stuff" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stuff" id="PbT-sW-VHF"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q7W-BV-Ifm" customClass="StuffNavController" customModule="renTech" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stuff" image="stuff" id="PbT-sW-VHF"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="FvI-AF-32w">
@@ -66,4 +66,7 @@
             <point key="canvasLocation" x="404.34782608695656" y="67.633928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="stuff" width="25" height="21"/>
+    </resources>
 </document>

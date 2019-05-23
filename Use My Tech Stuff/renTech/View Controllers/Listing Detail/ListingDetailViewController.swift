@@ -42,7 +42,7 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		favButton = UIBarButtonItem(image: UIImage(named: "heartIcon"), style: .plain, target: self, action: #selector(addToFavorites))
+		favButton = UIBarButtonItem(image: UIImage(named: "heart"), style: .plain, target: self, action: #selector(addToFavorites))
 		navigationItem.rightBarButtonItem = favButton
 	}
 

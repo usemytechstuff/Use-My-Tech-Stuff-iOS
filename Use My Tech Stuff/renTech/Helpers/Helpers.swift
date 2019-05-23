@@ -49,9 +49,23 @@ extension NSNotification.Name {
 	static let checkLoginNotificationName = NSNotification.Name(rawValue: "com.redeggproductions.renTech.checkLogin")
 }
 
-
 enum AppearanceHelper {
-	static let rentechIndigo = UIColor(hue: 246/360, saturation: 89/100, brightness: 65/100, alpha: 1)
-	static let rentechBlack = UIColor(hue: 248/360, saturation: 6/100, brightness: 25/100, alpha: 1)
-	static let rentechWhite = UIColor(hue: 260/360, saturation: 12/100, brightness: 95/100, alpha: 1)
+
+	static let rentechBlack = UIColor(named: "rentechBlack")
+	static let rentechIndigo = UIColor(named: "rentechIndigo")
+	static let rentechWhite = UIColor(named: "rentechWhite")
+
+	static func setupAppearance() {
+		let textAttributes = [
+			NSAttributedString.Key.foregroundColor: rentechBlack,
+			NSAttributedString.Key.font: headerFont(with: .headline, pointSize: 30)
+		]
+		UINavigationBar.appearance().titleTextAttributes = textAttributes
+		UINavigationBar.appearance().largeTitleTextAttributes = textAttributes
+	}
+
+	static func headerFont(with textStyle: UIFont.TextStyle, pointSize: CGFloat) -> UIFont {
+		let font = UIFont(name: "Nunito", size: pointSize)!
+		return UIFontMetrics(forTextStyle: textStyle).scaledFont(for: font)
+	}
 }

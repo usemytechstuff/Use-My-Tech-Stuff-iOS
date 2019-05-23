@@ -39,11 +39,11 @@
             </objects>
             <point key="canvasLocation" x="1044.9275362318842" y="157.36607142857142"/>
         </scene>
-        <!--Favorites Nav Controller-->
+        <!--Favs-->
         <scene sceneID="vGT-Dc-lwV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rjK-b1-u2Z" customClass="FavoritesNavController" customModule="renTech" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="GgB-JE-naf"/>
+                    <tabBarItem key="tabBarItem" title="Favs" image="heart" id="GgB-JE-naf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="RAM-fi-ak6">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -59,4 +59,7 @@
             <point key="canvasLocation" x="134.78260869565219" y="157.36607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" width="23" height="19"/>
+    </resources>
 </document>
