@@ -197,24 +197,6 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 		}
 	}
 
-//	private func wiggle(textField: UITextField) {
-//
-//		let spring = { (finished: Bool) in
-//			UIView.animate(withDuration: 1,
-//						   delay: 0,
-//						   usingSpringWithDamping: 0.2,
-//						   initialSpringVelocity: 0,
-//						   options: [],
-//						   animations: {
-//							textField.transform = .identity
-//			}, completion: nil)
-//		}
-//
-//		UIView.animate(withDuration: 0.1, animations: {
-//			textField.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
-//		}, completion: spring)
-//	}
-
 	@IBAction func passwordFieldEdited(_ sender: UITextField) {
 		if loginMode == .signUp {
 			if let password = passwordTextField.text, let confirmPassword = confirmPasswordTextField.text {
