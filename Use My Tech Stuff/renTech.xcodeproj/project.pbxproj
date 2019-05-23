@@ -61,14 +61,14 @@
 
 /* Begin PBXFileReference section */
 		33685CE722960C0600EA57AB /* ViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHelper.swift; sourceTree = "<group>"; };
-		33A5D9A0229310A2007467EF /* Use My Tech Stuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Use My Tech Stuff.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33A5D9A0229310A2007467EF /* renTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = renTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A5D9A3229310A2007467EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33A5D9A5229310A2007467EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		33A5D9A8229310A2007467EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33A5D9AA229310A3007467EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33A5D9AD229310A3007467EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33A5D9AF229310A3007467EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		33A5D9B4229310A4007467EF /* Use My Tech StuffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Use My Tech StuffTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33A5D9B4229310A4007467EF /* renTechTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = renTechTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A5D9B8229310A4007467EF /* Use_My_Tech_StuffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Use_My_Tech_StuffTests.swift; sourceTree = "<group>"; };
 		33A5D9BA229310A4007467EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33A5D9CA22931453007467EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 			children = (
 				33A5D9D822932158007467EF /* .swiftlint.yml */,
 				33A5D9D122931FCD007467EF /* Cartfile */,
-				33A5D9A2229310A2007467EF /* Use My Tech Stuff */,
+				33A5D9A2229310A2007467EF /* renTech */,
 				33A5D9B7229310A4007467EF /* Use My Tech StuffTests */,
 				33A5D9DE22932441007467EF /* Frameworks */,
 				33A5D9A1229310A2007467EF /* Products */,
@@ -143,13 +143,13 @@
 		33A5D9A1229310A2007467EF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				33A5D9A0229310A2007467EF /* Use My Tech Stuff.app */,
-				33A5D9B4229310A4007467EF /* Use My Tech StuffTests.xctest */,
+				33A5D9A0229310A2007467EF /* renTech.app */,
+				33A5D9B4229310A4007467EF /* renTechTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		33A5D9A2229310A2007467EF /* Use My Tech Stuff */ = {
+		33A5D9A2229310A2007467EF /* renTech */ = {
 			isa = PBXGroup;
 			children = (
 				33A5D9CC229314FA007467EF /* Helpers */,
@@ -160,7 +160,7 @@
 				33A5D9A3229310A2007467EF /* AppDelegate.swift */,
 				33A5D9C7229311EA007467EF /* Resources */,
 			);
-			path = "Use My Tech Stuff";
+			path = renTech;
 			sourceTree = "<group>";
 		};
 		33A5D9B7229310A4007467EF /* Use My Tech StuffTests */ = {
@@ -301,9 +301,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		33A5D99F229310A2007467EF /* Use My Tech Stuff */ = {
+		33A5D99F229310A2007467EF /* renTech */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 33A5D9BD229310A4007467EF /* Build configuration list for PBXNativeTarget "Use My Tech Stuff" */;
+			buildConfigurationList = 33A5D9BD229310A4007467EF /* Build configuration list for PBXNativeTarget "renTech" */;
 			buildPhases = (
 				33A5D9C822931208007467EF /* Run Script - swiftlint */,
 				33A5D99C229310A2007467EF /* Sources */,
@@ -316,14 +316,14 @@
 			);
 			dependencies = (
 			);
-			name = "Use My Tech Stuff";
+			name = renTech;
 			productName = "Use My Tech Stuff";
-			productReference = 33A5D9A0229310A2007467EF /* Use My Tech Stuff.app */;
+			productReference = 33A5D9A0229310A2007467EF /* renTech.app */;
 			productType = "com.apple.product-type.application";
 		};
-		33A5D9B3229310A4007467EF /* Use My Tech StuffTests */ = {
+		33A5D9B3229310A4007467EF /* renTechTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 33A5D9C0229310A4007467EF /* Build configuration list for PBXNativeTarget "Use My Tech StuffTests" */;
+			buildConfigurationList = 33A5D9C0229310A4007467EF /* Build configuration list for PBXNativeTarget "renTechTests" */;
 			buildPhases = (
 				33A5D9B0229310A4007467EF /* Sources */,
 				33A5D9B1229310A4007467EF /* Frameworks */,
@@ -334,9 +334,9 @@
 			dependencies = (
 				33A5D9B6229310A4007467EF /* PBXTargetDependency */,
 			);
-			name = "Use My Tech StuffTests";
+			name = renTechTests;
 			productName = "Use My Tech StuffTests";
-			productReference = 33A5D9B4229310A4007467EF /* Use My Tech StuffTests.xctest */;
+			productReference = 33A5D9B4229310A4007467EF /* renTechTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -358,7 +358,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 33A5D99B229310A2007467EF /* Build configuration list for PBXProject "Use My Tech Stuff" */;
+			buildConfigurationList = 33A5D99B229310A2007467EF /* Build configuration list for PBXProject "renTech" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -371,8 +371,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				33A5D99F229310A2007467EF /* Use My Tech Stuff */,
-				33A5D9B3229310A4007467EF /* Use My Tech StuffTests */,
+				33A5D99F229310A2007467EF /* renTech */,
+				33A5D9B3229310A4007467EF /* renTechTests */,
 			);
 		};
 /* End PBXProject section */
@@ -513,7 +513,7 @@
 /* Begin PBXTargetDependency section */
 		33A5D9B6229310A4007467EF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 33A5D99F229310A2007467EF /* Use My Tech Stuff */;
+			target = 33A5D99F229310A2007467EF /* renTech */;
 			targetProxy = 33A5D9B5229310A4007467EF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -664,13 +664,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Use My Tech Stuff/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/renTech/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.redeggproductions.Use-My-Tech-Stuff";
+				PRODUCT_BUNDLE_IDENTIFIER = com.redeggproductions.renTech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -687,13 +687,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Use My Tech Stuff/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/renTech/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.redeggproductions.Use-My-Tech-Stuff";
+				PRODUCT_BUNDLE_IDENTIFIER = com.redeggproductions.renTech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -717,7 +717,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Use My Tech Stuff.app/Use My Tech Stuff";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/renTech.app/renTech";
 			};
 			name = Debug;
 		};
@@ -738,14 +738,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Use My Tech Stuff.app/Use My Tech Stuff";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/renTech.app/renTech";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		33A5D99B229310A2007467EF /* Build configuration list for PBXProject "Use My Tech Stuff" */ = {
+		33A5D99B229310A2007467EF /* Build configuration list for PBXProject "renTech" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				33A5D9BB229310A4007467EF /* Debug */,
@@ -754,7 +754,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		33A5D9BD229310A4007467EF /* Build configuration list for PBXNativeTarget "Use My Tech Stuff" */ = {
+		33A5D9BD229310A4007467EF /* Build configuration list for PBXNativeTarget "renTech" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				33A5D9BE229310A4007467EF /* Debug */,
@@ -763,7 +763,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		33A5D9C0229310A4007467EF /* Build configuration list for PBXNativeTarget "Use My Tech StuffTests" */ = {
+		33A5D9C0229310A4007467EF /* Build configuration list for PBXNativeTarget "renTechTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				33A5D9C1229310A4007467EF /* Debug */,

@@ -28,7 +28,6 @@ class BaseTabViewController: UITabBarController {
 
 	private func checkLogin() {
 		if techStuffController.bearer == nil {
-			print("niled")
 			performSegue(withIdentifier: "ShowLogin", sender: nil)
 		}
 	}
