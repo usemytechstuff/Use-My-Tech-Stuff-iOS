@@ -62,4 +62,5 @@
     <resources>
         <image name="heart" width="23" height="19"/>
     </resources>
+    <color key="tintColor" name="rentechIndigo"/>
 </document>

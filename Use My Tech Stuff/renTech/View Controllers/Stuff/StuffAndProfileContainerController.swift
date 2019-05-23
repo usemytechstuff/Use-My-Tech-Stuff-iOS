@@ -24,4 +24,8 @@ class StuffAndProfileContainerController: UIViewController, TechStuffAccessor {
 			dest.techStuffController = techStuffController
 		}
 	}
+
+	@IBAction func signOutButtonPressed(_ sender: UIBarButtonItem) {
+		techStuffController?.signOut()
+	}
 }

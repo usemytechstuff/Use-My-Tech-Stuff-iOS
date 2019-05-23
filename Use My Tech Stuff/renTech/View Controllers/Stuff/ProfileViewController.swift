@@ -26,8 +26,4 @@ class ProfileViewController: UIViewController, TechStuffAccessor {
 		guard let bearer = techStuffController?.bearer else { return }
 		usernameLabel.text = bearer.username
 	}
-
-	@IBAction func signoutButtonPressed(_ sender: UIButton) {
-		techStuffController?.signOut()
-	}
 }
