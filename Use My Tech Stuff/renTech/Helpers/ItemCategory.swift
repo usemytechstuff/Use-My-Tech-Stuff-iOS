@@ -62,6 +62,5 @@ enum ItemCategory: String, CaseIterable {
 		default:
 			return .miscellaneous
 		}
-
 	}
 }

@@ -11,6 +11,8 @@ import UIKit
 class BaseTabViewController: UITabBarController {
 	let techStuffController = TechStuffController()
 
+	var loginObserver: NSObjectProtocol?
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -18,6 +20,18 @@ class BaseTabViewController: UITabBarController {
 			if let techAccess = $0 as? TechStuffAccessor {
 				techAccess.techStuffController = techStuffController
 			}
+		}
+
+		loginObserver = NotificationCenter.default.addObserver(forName: .checkLoginNotificationName,
+															   object: nil,
+															   queue: nil) { [weak self] _ in
+			self?.checkLogin()
+		}
+	}
+
+	deinit {
+		if let loginObserver = loginObserver {
+			NotificationCenter.default.removeObserver(loginObserver)
 		}
 	}
 

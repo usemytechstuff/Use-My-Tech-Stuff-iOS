@@ -107,8 +107,8 @@ class TechStuffController {
 	typealias BoolCompletion = (Result<Bool, NetworkError>) -> Void
 	func getAllItems(completion: BoolCompletion? = nil) {
 		guard let bearer = bearer else {
-			// FIXME: perhaps change error here? - reset to login screen
 			completion?(.failure(.httpNon200StatusCode(code: 401, data: nil)))
+			NotificationCenter.default.post(name: .checkLoginNotificationName, object: nil)
 			return
 		}
 		let itemsURL = baseURL.appendingPathComponent(Endpoints.items.rawValue)
@@ -151,8 +151,8 @@ class TechStuffController {
 
 	func post(newItem item: Listing, completion: @escaping (Result<ListingResponse, NetworkError>) -> Void) {
 		guard let bearer = bearer else {
-			// FIXME: perhaps change error here? - reset to login screen
 			completion(.failure(.httpNon200StatusCode(code: 401, data: nil)))
+			NotificationCenter.default.post(name: .checkLoginNotificationName, object: nil)
 			return
 		}
 		let itemsURL = baseURL.appendingPathComponent(Endpoints.items.rawValue)
@@ -178,8 +178,8 @@ class TechStuffController {
 
 	func delete(existingItem item: Listing, completion: @escaping (Result<ListingResponse, NetworkError>) -> Void) {
 		guard let bearer = bearer else {
-			// FIXME: perhaps change error here? - reset to login screen
 			completion(.failure(.httpNon200StatusCode(code: 401, data: nil)))
+			NotificationCenter.default.post(name: .checkLoginNotificationName, object: nil)
 			return
 		}
 		guard let itemID = item.id else { return }
@@ -199,8 +199,8 @@ class TechStuffController {
 
 	func update(existingItem item: Listing, completion: @escaping (Result<ListingResponse, NetworkError>) -> Void) {
 		guard let bearer = bearer else {
-			// FIXME: perhaps change error here? - reset to login screen
 			completion(.failure(.httpNon200StatusCode(code: 401, data: nil)))
+			NotificationCenter.default.post(name: .checkLoginNotificationName, object: nil)
 			return
 		}
 		guard let itemID = item.id else { return }
