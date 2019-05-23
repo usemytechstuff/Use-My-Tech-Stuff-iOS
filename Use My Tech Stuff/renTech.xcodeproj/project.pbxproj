@@ -10,6 +10,7 @@
 		33685CEA2296308900EA57AB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685CE92296308900EA57AB /* Helpers.swift */; };
 		33685CEC2296485A00EA57AB /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685CEB2296485A00EA57AB /* FavoritesTableViewController.swift */; };
 		33685CEF2296489300EA57AB /* FavoritesNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685CEE2296489300EA57AB /* FavoritesNavController.swift */; };
+		33685CF12296603400EA57AB /* JWTDecode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33685CF02296603400EA57AB /* JWTDecode.framework */; };
 		33A5D9A4229310A2007467EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9A3229310A2007467EF /* AppDelegate.swift */; };
 		33A5D9A6229310A2007467EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9A5229310A2007467EF /* LoginViewController.swift */; };
 		33A5D9A9229310A2007467EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9A7229310A2007467EF /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		33685CE92296308900EA57AB /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		33685CEB2296485A00EA57AB /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		33685CEE2296489300EA57AB /* FavoritesNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNavController.swift; sourceTree = "<group>"; };
+		33685CF02296603400EA57AB /* JWTDecode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JWTDecode.framework; path = Carthage/Build/iOS/JWTDecode.framework; sourceTree = SOURCE_ROOT; };
 		33A5D9A0229310A2007467EF /* renTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = renTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A5D9A3229310A2007467EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33A5D9A5229310A2007467EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			files = (
 				33A5D9DF229325E0007467EF /* SwiftyUtils.framework in Frameworks */,
 				33A5D9E4229352E0007467EF /* IQKeyboardManagerSwift.framework in Frameworks */,
+				33685CF12296603400EA57AB /* JWTDecode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +268,7 @@
 		33A5D9DE22932441007467EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				33685CF02296603400EA57AB /* JWTDecode.framework */,
 				33A5D9E3229352E0007467EF /* IQKeyboardManagerSwift.framework */,
 				33A5D9DA22932208007467EF /* SwiftyUtils.framework */,
 			);
@@ -467,6 +471,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyUtils.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/JWTDecode.framework",
 			);
 			name = "Run Script - carthage";
 			outputFileListPaths = (
@@ -474,6 +479,7 @@
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyUtils.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IQKeyboardManagerSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/JWTDecode.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

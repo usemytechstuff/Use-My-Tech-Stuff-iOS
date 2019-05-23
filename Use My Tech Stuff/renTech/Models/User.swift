@@ -44,8 +44,19 @@ extension User {
 	}
 }
 
+import JWTDecode
 struct Bearer: Codable {
 	let id: Int
 	let message: String?
 	let token: String
+
+	var username: String? {
+		let jwt = try? decode()
+		return jwt?.body["usename"] as? String
+	}
+
+	func decode() throws -> JWT {
+		let jwt = try JWTDecode.decode(jwt: token)
+		return jwt
+	}
 }

@@ -1,2 +1,3 @@
 github "tbaranes/SwiftyUtils"
 github "hackiftekhar/IQKeyboardManager"
+github "auth0/JWTDecode.swift" ~> 2.3
