@@ -53,7 +53,7 @@ class RandomItemController: NSObject, UICollectionViewDelegate, UICollectionView
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
 		guard let browseCell = cell as? BrowseCollectionViewCell else { return cell }
 		browseCell.techStuffController = techStuffController
-		let listingArray: [Listing]?
+		let listingArray: [ItemListing]?
 		switch randomSelection {
 		case .recommendedForYou:
 			listingArray = techStuffController?.recommendedForYouListings

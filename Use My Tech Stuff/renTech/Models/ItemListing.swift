@@ -1,5 +1,5 @@
 //
-//  Listing.swift
+//  ItemListing.swift
 //  renTech
 //
 //  Created by Michael Redig on 5/20/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Listing: Codable, Equatable {
+struct ItemListing: Codable, Equatable {
 	let id: Int?
 	let owner: Int
 	let type: String
@@ -23,7 +23,7 @@ struct Listing: Codable, Equatable {
 	let availability: Bool
 	var renter: Int?
 
-	static func == (rhs: Listing, lhs: Listing) -> Bool {
+	static func == (rhs: ItemListing, lhs: ItemListing) -> Bool {
 		if rhs.id != nil || lhs.id != nil {
 			return rhs.id == lhs.id
 		}
@@ -32,7 +32,9 @@ struct Listing: Codable, Equatable {
 
 	func encode(to encoder: Encoder) throws {
 		var container = encoder.container(keyedBy: CodingKeys.self)
-		try container.encode(id, forKey: .id)
+		if id != nil {
+			try container.encode(id, forKey: .id)
+		}
 		try container.encode(owner, forKey: .owner)
 		try container.encode(type, forKey: .type)
 		try container.encode(description, forKey: .description)
@@ -46,7 +48,7 @@ struct Listing: Codable, Equatable {
 	}
 }
 
-extension Listing {
+extension ItemListing {
 	init(owner: Int, type: String, description: String, price: Int, title: String, availability: Bool) {
 		self.owner = owner
 		self.type = type
@@ -65,6 +67,6 @@ extension Listing {
 
 struct ListingResponse: Codable {
 	let message: String
-	let item: Listing?
-	let changes: Listing?
+	let item: ItemListing?
+	let changes: ItemListing?
 }

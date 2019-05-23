@@ -33,7 +33,7 @@ class EditListingDetailViewController: UIViewController, TechStuffAccessor {
 	}
 
 	var techStuffController: TechStuffController?
-	var listing: Listing? {
+	var listing: ItemListing? {
 		didSet {
 			updateViews()
 		}
@@ -117,9 +117,9 @@ class EditListingDetailViewController: UIViewController, TechStuffAccessor {
 		}
 		let availability = availabilitySwitch.isOn
 
-		var listing: Listing
+		var listing: ItemListing
 		if let existingListing = self.listing {
-			listing = Listing(id: existingListing.id,
+			listing = ItemListing(id: existingListing.id,
 							  owner: existingListing.owner,
 							  type: type,
 							  description: description,
@@ -131,7 +131,7 @@ class EditListingDetailViewController: UIViewController, TechStuffAccessor {
 							  availability: availability,
 							  renter: existingListing.renter)
 		} else {
-			listing = Listing(owner: bearer.id,
+			listing = ItemListing(owner: bearer.id,
 							  type: type,
 							  description: description,
 							  price: price,

@@ -32,7 +32,7 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 	}
 
 	var techStuffController: TechStuffController?
-	var listing: Listing? {
+	var listing: ItemListing? {
 		didSet {
 			updateViews()
 		}
@@ -73,7 +73,7 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 		})
 	}
 
-	private func checkMode(item: Listing, bearer: Bearer) {
+	private func checkMode(item: ItemListing, bearer: Bearer) {
 		if item.owner == bearer.id {
 			mode = .viewingOwn
 			return

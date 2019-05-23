@@ -22,7 +22,7 @@
 		33A5D9DF229325E0007467EF /* SwiftyUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A5D9D622932086007467EF /* SwiftyUtils.framework */; };
 		33A5D9E222933053007467EF /* TechStuffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9E122933053007467EF /* TechStuffController.swift */; };
 		33A5D9E4229352E0007467EF /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A5D9E3229352E0007467EF /* IQKeyboardManagerSwift.framework */; };
-		33A5D9E62293747C007467EF /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9E52293747C007467EF /* Listing.swift */; };
+		33A5D9E62293747C007467EF /* ItemListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9E52293747C007467EF /* ItemListing.swift */; };
 		33A5D9EC229459D1007467EF /* BaseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D9EB229459D1007467EF /* BaseTabViewController.swift */; };
 		33A5D9EE22945DC7007467EF /* Browse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9ED22945DC7007467EF /* Browse.storyboard */; };
 		33A5D9F022946040007467EF /* Faves.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33A5D9EF22946040007467EF /* Faves.storyboard */; };
@@ -79,7 +79,7 @@
 		33A5D9DA22932208007467EF /* SwiftyUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUtils.framework; path = Carthage/Build/iOS/SwiftyUtils.framework; sourceTree = SOURCE_ROOT; };
 		33A5D9E122933053007467EF /* TechStuffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechStuffController.swift; sourceTree = "<group>"; };
 		33A5D9E3229352E0007467EF /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = SOURCE_ROOT; };
-		33A5D9E52293747C007467EF /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
+		33A5D9E52293747C007467EF /* ItemListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListing.swift; sourceTree = "<group>"; };
 		33A5D9EB229459D1007467EF /* BaseTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabViewController.swift; sourceTree = "<group>"; };
 		33A5D9ED22945DC7007467EF /* Browse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Browse.storyboard; sourceTree = "<group>"; };
 		33A5D9EF22946040007467EF /* Faves.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Faves.storyboard; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				33A5D9CA22931453007467EF /* User.swift */,
-				33A5D9E52293747C007467EF /* Listing.swift */,
+				33A5D9E52293747C007467EF /* ItemListing.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -480,7 +480,7 @@
 				33AC2F312294FFCB00884B81 /* StuffNavController.swift in Sources */,
 				33A5D9FE22947BFF007467EF /* SearchResultTableViewCell.swift in Sources */,
 				33A5DA122294F664007467EF /* StringFormatting.swift in Sources */,
-				33A5D9E62293747C007467EF /* Listing.swift in Sources */,
+				33A5D9E62293747C007467EF /* ItemListing.swift in Sources */,
 				33AC2F2F2294FE2A00884B81 /* StuffTableViewController.swift in Sources */,
 				33A5D9A4229310A2007467EF /* AppDelegate.swift in Sources */,
 				33A5D9F822946BBE007467EF /* CategoriesController.swift in Sources */,

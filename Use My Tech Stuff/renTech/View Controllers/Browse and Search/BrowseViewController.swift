@@ -70,7 +70,7 @@ class BrowseViewController: UIViewController, TechStuffAccessor {
 		recommendedCollectionView.delegate = recommendedItemController
 	}
 
-	func showListingDetail(withListing listing: Listing?) {
+	func showListingDetail(withListing listing: ItemListing?) {
 		guard let viewItemVC = UIViewController.listingDetailViewController() else { return }
 		viewItemVC.techStuffController = techStuffController
 		viewItemVC.listing = listing

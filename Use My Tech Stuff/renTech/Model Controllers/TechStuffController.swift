@@ -18,7 +18,7 @@ class TechStuffController {
 
 	var bearer: Bearer?
 
-	var itemListings: [Listing] = [] {
+	var itemListings: [ItemListing] = [] {
 		didSet {
 			updateDerivatives()
 		}
@@ -117,7 +117,7 @@ class TechStuffController {
 		request.addValue(HTTPHeaderKeys.ContentTypes.json.rawValue, forHTTPHeaderField: HTTPHeaderKeys.contentType.rawValue)
 		request.addValue(bearer.token, forHTTPHeaderField: HTTPHeaderKeys.auth.rawValue)
 
-		networkHandler.transferMahCodableDatas(with: request) { (result: Result<[Listing], NetworkError>) in
+		networkHandler.transferMahCodableDatas(with: request) { (result: Result<[ItemListing], NetworkError>) in
 			do {
 				let listings = try result.get()
 				self.itemListings = listings.sorted { $0.title < $1.title }
@@ -149,7 +149,7 @@ class TechStuffController {
 		}
 	}
 
-	func post(newItem item: Listing, completion: @escaping (Result<ListingResponse, NetworkError>) -> Void) {
+	func post(newItem item: ItemListing, completion: @escaping (Result<ListingResponse, NetworkError>) -> Void) {
 		guard let bearer = bearer else {
 			completion(.failure(.httpNon200StatusCode(code: 401, data: nil)))
 			NotificationCenter.default.post(name: .checkLoginNotificationName, object: nil)
@@ -176,7 +176,7 @@ class TechStuffController {
 		}
 	}
 
-	func delete(existingItem item: Listing, completion: @escaping (Result<ListingResponse, NetworkError>) -> Void) {
+	func delete(existingItem item: ItemListing, completion: @escaping (Result<ListingResponse, NetworkError>) -> Void) {
 		guard let bearer = bearer else {
 			completion(.failure(.httpNon200StatusCode(code: 401, data: nil)))
 			NotificationCenter.default.post(name: .checkLoginNotificationName, object: nil)
@@ -197,7 +197,7 @@ class TechStuffController {
 		}
 	}
 
-	func update(existingItem item: Listing, completion: @escaping (Result<ListingResponse, NetworkError>) -> Void) {
+	func update(existingItem item: ItemListing, completion: @escaping (Result<ListingResponse, NetworkError>) -> Void) {
 		guard let bearer = bearer else {
 			completion(.failure(.httpNon200StatusCode(code: 401, data: nil)))
 			NotificationCenter.default.post(name: .checkLoginNotificationName, object: nil)
@@ -226,13 +226,13 @@ class TechStuffController {
 	}
 
 	// MARK: - list derivatives
-	var availableItems = [Listing]()
-	var categories = [ItemCategory: [Listing]]()
-	var topRatedListings = [Listing]()
-	var recommendedForYouListings = [Listing]()
-	var myListings = [Listing]()
-	var myRentals = [Listing]()
-//	var myFavorites = [Listing]()
+	var availableItems = [ItemListing]()
+	var categories = [ItemCategory: [ItemListing]]()
+	var topRatedListings = [ItemListing]()
+	var recommendedForYouListings = [ItemListing]()
+	var myListings = [ItemListing]()
+	var myRentals = [ItemListing]()
+//	var myFavorites = [ItemListing]()
 
 	private func updateDerivatives() {
 		updateAvailableItems()
@@ -255,7 +255,7 @@ class TechStuffController {
 		}
 	}
 
-	private func updateRandomList( randomList: inout [Listing]) {
+	private func updateRandomList( randomList: inout [ItemListing]) {
 		randomList.removeAll()
 		var tempListings = availableItems
 		let max = min(5, tempListings.count)
@@ -282,13 +282,13 @@ class TechStuffController {
 
 	// MARK: - my listing management
 
-	func deleteFromMyListings(item: Listing) {
+	func deleteFromMyListings(item: ItemListing) {
 		delete(existingItem: item) { _ in }
 		guard let index = myListings.firstIndex(of: item) else { return }
 		myListings.remove(at: index)
 	}
 
-	func removeFromMyRentals(item: Listing) {
+	func removeFromMyRentals(item: ItemListing) {
 		var item = item
 		item.renter = nil
 		print(item)

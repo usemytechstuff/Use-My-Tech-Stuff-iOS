@@ -15,7 +15,7 @@ class BrowseCollectionViewCell: UICollectionViewCell, TechStuffAccessor {
 	@IBOutlet var myContentView: UIView!
 	@IBOutlet var imageView: UIImageView!
 
-	var listing: Listing? {
+	var listing: ItemListing? {
 		didSet {
 			updateViews()
 		}

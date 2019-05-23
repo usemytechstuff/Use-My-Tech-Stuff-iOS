@@ -11,7 +11,7 @@ import UIKit
 class SearchResultTableViewController: UITableViewController, TechStuffAccessor {
 	var techStuffController: TechStuffController?
 
-	var searchResults = [Listing]()
+	var searchResults = [ItemListing]()
 
 	var category: ItemCategory?
 	var searchTerms: String?

@@ -18,7 +18,7 @@ class SearchResultTableViewCell: UITableViewCell, TechStuffAccessor {
 	@IBOutlet var itemDescriptionLabel: UILabel!
 	@IBOutlet var itemPriceLabel: UILabel!
 
-	var listing: Listing? {
+	var listing: ItemListing? {
 		didSet {
 			updateViews()
 		}
