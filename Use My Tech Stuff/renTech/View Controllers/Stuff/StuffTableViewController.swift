@@ -44,10 +44,7 @@ class StuffTableViewController: UITableViewController, TechStuffAccessor {
 	}
 
 	@IBAction func addNewItemButtonPressed(_ sender: UIBarButtonItem) {
-		guard let editItemVCArray = Bundle.main.loadNibNamed("EditListingDetailViewController",
-															 owner: nil,
-															 options: nil) as? [EditListingDetailViewController],
-			let editItemVC = editItemVCArray.first else { return }
+		guard let editItemVC = UIViewController.editListingDetailViewController() else { return }
 		editItemVC.techStuffController = techStuffController
 		editItemVC.mode = .creatingOwn
 		navigationController?.pushViewController(editItemVC, animated: true)
@@ -133,10 +130,7 @@ extension StuffTableViewController {
 		switch section {
 		case .myListings:
 			let item = techStuffController?.myListings[indexPath.row]
-			guard let editItemVCArray = Bundle.main.loadNibNamed("EditListingDetailViewController",
-																 owner: nil,
-																 options: nil) as? [EditListingDetailViewController],
-				let editItemVC = editItemVCArray.first else { return }
+			guard let editItemVC = UIViewController.editListingDetailViewController() else { return }
 			editItemVC.techStuffController = techStuffController
 			editItemVC.mode = .updatingOwn
 			editItemVC.listing = item

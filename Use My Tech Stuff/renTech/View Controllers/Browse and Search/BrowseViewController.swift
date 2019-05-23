@@ -71,7 +71,7 @@ class BrowseViewController: UIViewController, TechStuffAccessor {
 	}
 
 	func showListingDetail(withListing listing: Listing?) {
-		guard let viewItemVC = ViewControllerHelper.listingDetailViewController() else { return }
+		guard let viewItemVC = UIViewController.listingDetailViewController() else { return }
 		viewItemVC.techStuffController = techStuffController
 		viewItemVC.listing = listing
 		navigationController?.pushViewController(viewItemVC, animated: true)
