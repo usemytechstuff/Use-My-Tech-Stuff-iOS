@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favorites Table View Controller-->
+        <!--Favorited Items-->
         <scene sceneID="xgc-ZI-s6L">
             <objects>
                 <tableViewController id="WDr-EB-9Uy" customClass="FavoritesTableViewController" customModule="renTech" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                             <outlet property="delegate" destination="WDr-EB-9Uy" id="aOz-H8-kpz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Dtt-yJ-gG8"/>
+                    <navigationItem key="navigationItem" title="Favorited Items" id="Dtt-yJ-gG8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVd-TX-OCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -45,8 +45,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rjK-b1-u2Z" customClass="FavoritesNavController" customModule="renTech" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="GgB-JE-naf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RAM-fi-ak6">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="RAM-fi-ak6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

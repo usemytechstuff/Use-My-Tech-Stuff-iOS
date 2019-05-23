@@ -46,4 +46,19 @@ extension FavoritesTableViewController {
 		viewItemVC.listing = item
 		navigationController?.pushViewController(viewItemVC, animated: true)
 	}
+
+	override func tableView(_ tableView: UITableView,
+							trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
+							-> UISwipeActionsConfiguration? {
+			let action = UIContextualAction(style: .destructive,
+											title: "Remove Favorite",
+											handler: { [weak self] (_, _, handler) in
+												guard let item = self?.techStuffController?.myFavorites[indexPath.row] else { return }
+												self?.techStuffController?.removeFromFavorites(item: item)
+												self?.tableView.deleteRows(at: [indexPath], with: .automatic)
+												handler(true)
+											})
+			action.backgroundColor = .red
+			return UISwipeActionsConfiguration(actions: [action])
+	}
 }
