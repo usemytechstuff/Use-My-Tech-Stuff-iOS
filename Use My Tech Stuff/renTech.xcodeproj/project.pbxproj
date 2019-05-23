@@ -133,7 +133,7 @@
 				33A5D9D822932158007467EF /* .swiftlint.yml */,
 				33A5D9D122931FCD007467EF /* Cartfile */,
 				33A5D9A2229310A2007467EF /* renTech */,
-				33A5D9B7229310A4007467EF /* Use My Tech StuffTests */,
+				33A5D9B7229310A4007467EF /* renTechTests */,
 				33A5D9DE22932441007467EF /* Frameworks */,
 				33A5D9A1229310A2007467EF /* Products */,
 				33A5D9D522932086007467EF /* Frameworks */,
@@ -163,13 +163,13 @@
 			path = renTech;
 			sourceTree = "<group>";
 		};
-		33A5D9B7229310A4007467EF /* Use My Tech StuffTests */ = {
+		33A5D9B7229310A4007467EF /* renTechTests */ = {
 			isa = PBXGroup;
 			children = (
 				33A5D9B8229310A4007467EF /* Use_My_Tech_StuffTests.swift */,
 				33A5D9BA229310A4007467EF /* Info.plist */,
 			);
-			path = "Use My Tech StuffTests";
+			path = renTechTests;
 			sourceTree = "<group>";
 		};
 		33A5D9C3229311D2007467EF /* Models */ = {
