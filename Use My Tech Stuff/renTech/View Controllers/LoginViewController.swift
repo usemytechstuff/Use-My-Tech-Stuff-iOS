@@ -34,8 +34,8 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 	@IBOutlet var passwordTextField: UITextField!
 	@IBOutlet var confirmPasswordTextField: UITextField!
 	@IBOutlet var emailTextField: UITextField!
+	@IBOutlet var toggleLoginModeButton: UIButton!
 
-	@IBOutlet var loginTypeSelector: UISegmentedControl!
 	@IBOutlet var loginButton: UIButton!
 
 	// MARK: - init stuff
@@ -50,8 +50,13 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 	}
 
 	// MARK: - user input
-	@IBAction func loginTypeChanged(_ sender: UISegmentedControl) {
-		loginMode = LoginMode.getType(for: sender.selectedSegmentIndex)
+	@IBAction func loginTypeToggle(_ sender: UIButton) {
+		switch loginMode {
+		case .login:
+			loginMode = .signUp
+		case .signUp:
+			loginMode = .login
+		}
 	}
 
 	@IBAction func loginButtonPressed(_ sender: UIButton) {
@@ -171,7 +176,7 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 				self.confirmPasswordTextField.isHidden = true
 				self.emailTextField.isHidden = true
 				self.loginButton.setTitle("Login", for: .normal)
-				self.loginTypeSelector.selectedSegmentIndex = self.loginMode.rawValue
+				self.toggleLoginModeButton.setTitle("Need an account?", for: .normal)
 				self.stackContainer.layoutSubviews()
 			}
 		case .signUp:
@@ -180,7 +185,7 @@ class LoginViewController: UIViewController, TechStuffAccessor {
 				self.confirmPasswordTextField.isHidden = false
 				self.emailTextField.isHidden = false
 				self.loginButton.setTitle("Sign Up", for: .normal)
-				self.loginTypeSelector.selectedSegmentIndex = self.loginMode.rawValue
+				self.toggleLoginModeButton.setTitle("Already a member?", for: .normal)
 				self.stackContainer.layoutSubviews()
 			}
 		}
