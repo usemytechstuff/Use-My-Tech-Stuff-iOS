@@ -186,6 +186,13 @@ extension EditListingDetailViewController: UIPickerViewDelegate, UIPickerViewDat
 		return ItemCategory.allCases.count
 	}
 
+	func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+		let string = ItemCategory.allCases[row].rawValue
+		let snake = string.uncamelized
+		let result = snake.replacingOccurrences(of: "_", with: " ")
+		return NSAttributedString(string: result, attributes: [NSAttributedString.Key.foregroundColor: AppearanceHelper.rentechBlack])
+	}
+
 	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 		let string = ItemCategory.allCases[row].rawValue
 		let snake = string.uncamelized
