@@ -50,6 +50,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhy-rL-9UP">
+                                <rect key="frame" x="0.0" y="100" width="414" height="656"/>
+                                <connections>
+                                    <segue destination="hYI-qz-Jo8" kind="embed" id="qUK-Az-ozc"/>
+                                </connections>
+                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NR-pM-Zqd">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <constraints>
@@ -57,12 +63,6 @@
                                 </constraints>
                                 <connections>
                                     <segue destination="Yqm-Gp-9MJ" kind="embed" id="frV-dx-Cnu"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhy-rL-9UP">
-                                <rect key="frame" x="0.0" y="100" width="414" height="656"/>
-                                <connections>
-                                    <segue destination="hYI-qz-Jo8" kind="embed" id="qUK-Az-ozc"/>
                                 </connections>
                             </containerView>
                         </subviews>

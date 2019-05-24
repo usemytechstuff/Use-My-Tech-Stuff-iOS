@@ -20,6 +20,8 @@ class StuffTableViewController: UITableViewController, TechStuffAccessor {
 		}
 	}
 
+	var scrollChanged: ((UIScrollView) -> Void)?
+
 	var techStuffController: TechStuffController?
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -80,7 +82,10 @@ extension StuffTableViewController {
 	}
 
 	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-		guard let headerView = Bundle.main.loadNibNamed("StuffTableHeaderView", owner: nil, options: nil)?.first as? StuffTableHeaderView else { return nil }
+		guard let headerView = Bundle.main.loadNibNamed("StuffTableHeaderView",
+														owner: nil,
+														options: nil)?.first as? StuffTableHeaderView
+														else { return nil }
 		guard let section = StuffSection(rawValue: section) else { return nil }
 		switch section {
 		case .myListings:
@@ -162,5 +167,9 @@ extension StuffTableViewController {
 			viewItemVC.listing = item
 			navigationController?.pushViewController(viewItemVC, animated: true)
 		}
+	}
+
+	override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		scrollChanged?(scrollView)
 	}
 }

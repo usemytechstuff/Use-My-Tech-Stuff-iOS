@@ -284,7 +284,7 @@ class TechStuffController {
 	private func updateRandomList( randomList: inout [ItemListing]) {
 		randomList.removeAll()
 		var tempListings = availableItems
-		let max = min(5, tempListings.count)
+		let max = min(15, tempListings.count)
 		for _ in 0..<max {
 			let value = Int.random(in: 0..<tempListings.count)
 			randomList.append(tempListings[value])
