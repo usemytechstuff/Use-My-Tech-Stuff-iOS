@@ -39,6 +39,11 @@ class ListingDetailViewController: UIViewController, TechStuffAccessor {
 		}
 	}
 
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		descriptionTextView.contentOffset = .zero
+	}
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 

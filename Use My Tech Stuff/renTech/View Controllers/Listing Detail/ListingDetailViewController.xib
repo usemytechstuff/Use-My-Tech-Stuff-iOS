@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait">
+    <device id="ipad11_0rounded" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -24,94 +24,125 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <viewController id="RdU-JP-STD" customClass="ListingDetailViewController" customModule="renTech" customModuleProvider="target">
             <view key="view" contentMode="scaleToFill" id="37S-jt-RrK">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4ZP-IF-mlQ">
-                        <rect key="frame" x="20" y="40" width="280" height="508"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PmU-Vu-mUG">
+                        <rect key="frame" x="0.0" y="24" width="834" height="1150"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8Xq-1z-nZh">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="304.5"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcS-Xx-24L">
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="1150"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lo-Yl-1fL">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4ZP-IF-mlQ">
+                                        <rect key="frame" x="20" y="20" width="794" height="1089.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VHn-DD-fid">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
-                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8Xq-1z-nZh">
+                                                <rect key="frame" x="0.0" y="0.0" width="794" height="810.5"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lo-Yl-1fL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="794" height="794"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VHn-DD-fid">
+                                                                <rect key="frame" x="0.0" y="0.0" width="794" height="794"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="VHn-DD-fid" firstAttribute="width" relation="lessThanOrEqual" secondItem="4lo-Yl-1fL" secondAttribute="width" id="8KB-A3-mha"/>
+                                                            <constraint firstAttribute="trailing" secondItem="VHn-DD-fid" secondAttribute="trailing" priority="750" id="Giv-zW-9wi"/>
+                                                            <constraint firstItem="VHn-DD-fid" firstAttribute="height" relation="lessThanOrEqual" secondItem="4lo-Yl-1fL" secondAttribute="height" id="ZHI-zh-mLI"/>
+                                                            <constraint firstAttribute="bottom" secondItem="VHn-DD-fid" secondAttribute="bottom" priority="750" id="duq-hs-I1H"/>
+                                                            <constraint firstItem="VHn-DD-fid" firstAttribute="centerX" secondItem="4lo-Yl-1fL" secondAttribute="centerX" id="gGw-XX-Ipg"/>
+                                                            <constraint firstAttribute="width" secondItem="4lo-Yl-1fL" secondAttribute="height" multiplier="1:1" id="kV8-l9-4Fa"/>
+                                                            <constraint firstItem="VHn-DD-fid" firstAttribute="top" secondItem="4lo-Yl-1fL" secondAttribute="top" priority="750" id="maD-zi-daV"/>
+                                                            <constraint firstItem="VHn-DD-fid" firstAttribute="leading" secondItem="4lo-Yl-1fL" secondAttribute="leading" priority="750" id="q2Q-CT-Kc6"/>
+                                                            <constraint firstItem="VHn-DD-fid" firstAttribute="centerY" secondItem="4lo-Yl-1fL" secondAttribute="centerY" id="uzV-7M-TYc"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="brand model" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDk-ZJ-LBw">
+                                                        <rect key="frame" x="0.0" y="802" width="794" height="8.5"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="8Xq-1z-nZh" secondAttribute="height" multiplier="577:589" id="umV-0w-8tY"/>
+                                                </constraints>
+                                            </stackView>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVE-7e-ze2">
+                                                <rect key="frame" x="0.0" y="814.5" width="794" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                                <color key="textColor" name="rentechBlack"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DOG-kI-wEU">
+                                                <rect key="frame" x="0.0" y="818.5" width="794" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="AwK-dH-4DA"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="100" id="LSC-gq-Aut"/>
+                                                </constraints>
+                                                <string key="text">This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. </string>
+                                                <color key="textColor" name="rentechBlack"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k83-Zw-w8n">
+                                                <rect key="frame" x="0.0" y="1026.5" width="794" height="20"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
+                                                <color key="textColor" name="rentechBlack"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-GX-ywB">
+                                                <rect key="frame" x="0.0" y="1054.5" width="794" height="35"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAc-n6-KWN">
+                                                        <rect key="frame" x="298.5" y="0.0" width="197" height="35"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito SemiBold" pointSize="15"/>
+                                                        <inset key="contentEdgeInsets" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
+                                                        <state key="normal" title="Rent This Item" backgroundImage="indigoBG">
+                                                            <color key="titleColor" name="rentechWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="submitButtonPressed:" destination="RdU-JP-STD" eventType="touchUpInside" id="uTx-fG-geG"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="cOW-Lk-PMJ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="vAc-n6-KWN" secondAttribute="bottom" id="gQi-b8-aRr"/>
+                                                    <constraint firstItem="vAc-n6-KWN" firstAttribute="centerX" secondItem="bbg-GX-ywB" secondAttribute="centerX" id="hBN-vO-JUn"/>
+                                                    <constraint firstItem="vAc-n6-KWN" firstAttribute="top" secondItem="bbg-GX-ywB" secondAttribute="top" id="lGA-rv-38I"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="VHn-DD-fid" firstAttribute="width" relation="lessThanOrEqual" secondItem="4lo-Yl-1fL" secondAttribute="width" id="8KB-A3-mha"/>
-                                            <constraint firstAttribute="trailing" secondItem="VHn-DD-fid" secondAttribute="trailing" priority="750" id="Giv-zW-9wi"/>
-                                            <constraint firstItem="VHn-DD-fid" firstAttribute="height" relation="lessThanOrEqual" secondItem="4lo-Yl-1fL" secondAttribute="height" id="ZHI-zh-mLI"/>
-                                            <constraint firstAttribute="bottom" secondItem="VHn-DD-fid" secondAttribute="bottom" priority="750" id="duq-hs-I1H"/>
-                                            <constraint firstItem="VHn-DD-fid" firstAttribute="centerX" secondItem="4lo-Yl-1fL" secondAttribute="centerX" id="gGw-XX-Ipg"/>
-                                            <constraint firstAttribute="width" secondItem="4lo-Yl-1fL" secondAttribute="height" multiplier="1:1" id="kV8-l9-4Fa"/>
-                                            <constraint firstItem="VHn-DD-fid" firstAttribute="top" secondItem="4lo-Yl-1fL" secondAttribute="top" priority="750" id="maD-zi-daV"/>
-                                            <constraint firstItem="VHn-DD-fid" firstAttribute="leading" secondItem="4lo-Yl-1fL" secondAttribute="leading" priority="750" id="q2Q-CT-Kc6"/>
-                                            <constraint firstItem="VHn-DD-fid" firstAttribute="centerY" secondItem="4lo-Yl-1fL" secondAttribute="centerY" id="uzV-7M-TYc"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="brand model" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDk-ZJ-LBw">
-                                        <rect key="frame" x="0.0" y="288" width="280" height="16.5"/>
-                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVE-7e-ze2">
-                                <rect key="frame" x="0.0" y="308.5" width="280" height="0.0"/>
-                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
-                                <color key="textColor" name="rentechBlack"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DOG-kI-wEU">
-                                <rect key="frame" x="0.0" y="312.5" width="280" height="121"/>
-                                <string key="text">This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. This is a long description. </string>
-                                <color key="textColor" name="rentechBlack"/>
-                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k83-Zw-w8n">
-                                <rect key="frame" x="0.0" y="441.5" width="280" height="23.5"/>
-                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
-                                <color key="textColor" name="rentechBlack"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-GX-ywB">
-                                <rect key="frame" x="0.0" y="473" width="280" height="35"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAc-n6-KWN">
-                                        <rect key="frame" x="40.5" y="0.0" width="199" height="35"/>
-                                        <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito SemiBold" pointSize="15"/>
-                                        <inset key="contentEdgeInsets" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
-                                        <state key="normal" title="Rent This Item" backgroundImage="indigoBG">
-                                            <color key="titleColor" name="rentechWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="submitButtonPressed:" destination="RdU-JP-STD" eventType="touchUpInside" id="uTx-fG-geG"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="cOW-Lk-PMJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="vAc-n6-KWN" secondAttribute="bottom" id="gQi-b8-aRr"/>
-                                    <constraint firstItem="vAc-n6-KWN" firstAttribute="centerX" secondItem="bbg-GX-ywB" secondAttribute="centerX" id="hBN-vO-JUn"/>
-                                    <constraint firstItem="vAc-n6-KWN" firstAttribute="top" secondItem="bbg-GX-ywB" secondAttribute="top" id="lGA-rv-38I"/>
+                                    <constraint firstAttribute="trailing" secondItem="4ZP-IF-mlQ" secondAttribute="trailing" constant="20" id="Urs-MM-2v3"/>
+                                    <constraint firstItem="4ZP-IF-mlQ" firstAttribute="leading" secondItem="vcS-Xx-24L" secondAttribute="leading" constant="20" id="d8V-m7-VP3"/>
+                                    <constraint firstItem="4ZP-IF-mlQ" firstAttribute="width" secondItem="vcS-Xx-24L" secondAttribute="width" constant="-40" id="noF-zQ-scS"/>
+                                    <constraint firstItem="4ZP-IF-mlQ" firstAttribute="top" secondItem="vcS-Xx-24L" secondAttribute="top" constant="20" id="qV4-fc-ZWY"/>
+                                    <constraint firstAttribute="bottom" secondItem="4ZP-IF-mlQ" secondAttribute="bottom" constant="20" id="r0u-Di-fHX"/>
                                 </constraints>
-                            </view>
+                            </scrollView>
                         </subviews>
-                    </stackView>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vcS-Xx-24L" firstAttribute="top" secondItem="PmU-Vu-mUG" secondAttribute="top" id="G6Q-Bk-IS3"/>
+                            <constraint firstAttribute="bottom" secondItem="vcS-Xx-24L" secondAttribute="bottom" id="OJZ-qp-VtS"/>
+                            <constraint firstItem="vcS-Xx-24L" firstAttribute="leading" secondItem="PmU-Vu-mUG" secondAttribute="leading" id="hr8-rI-KYz"/>
+                            <constraint firstAttribute="trailing" secondItem="vcS-Xx-24L" secondAttribute="trailing" id="k20-je-xoj"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" name="rentechWhite"/>
                 <constraints>
-                    <constraint firstItem="4ZP-IF-mlQ" firstAttribute="leading" secondItem="Xvf-XV-bgu" secondAttribute="leading" constant="20" id="DZc-Zl-nLc"/>
-                    <constraint firstItem="Xvf-XV-bgu" firstAttribute="trailing" secondItem="4ZP-IF-mlQ" secondAttribute="trailing" constant="20" id="dW8-2N-aJf"/>
-                    <constraint firstItem="Xvf-XV-bgu" firstAttribute="bottom" secondItem="4ZP-IF-mlQ" secondAttribute="bottom" constant="20" id="hlu-so-3Dd"/>
-                    <constraint firstItem="4ZP-IF-mlQ" firstAttribute="top" secondItem="Xvf-XV-bgu" secondAttribute="top" constant="20" id="oio-ro-QtV"/>
+                    <constraint firstItem="PmU-Vu-mUG" firstAttribute="trailing" secondItem="Xvf-XV-bgu" secondAttribute="trailing" id="3tB-aO-byw"/>
+                    <constraint firstItem="PmU-Vu-mUG" firstAttribute="leading" secondItem="Xvf-XV-bgu" secondAttribute="leading" id="H7z-dw-2h1"/>
+                    <constraint firstItem="PmU-Vu-mUG" firstAttribute="top" secondItem="Xvf-XV-bgu" secondAttribute="top" id="fft-GX-rdo"/>
+                    <constraint firstItem="PmU-Vu-mUG" firstAttribute="bottom" secondItem="Xvf-XV-bgu" secondAttribute="bottom" id="jtk-yg-2N2"/>
                 </constraints>
                 <viewLayoutGuide key="safeArea" id="Xvf-XV-bgu"/>
             </view>
