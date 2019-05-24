@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3301393A22976B19006F5C96 /* StuffTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301393822976B19006F5C96 /* StuffTableHeaderView.swift */; };
 		3301393B22976B19006F5C96 /* StuffTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3301393922976B19006F5C96 /* StuffTableHeaderView.xib */; };
+		332E611822978C1900AE2442 /* ImageAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332E611722978C1900AE2442 /* ImageAnimator.swift */; };
+		332E611A22978C4800AE2442 /* ImageAnimator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 332E611922978C4800AE2442 /* ImageAnimator.xib */; };
 		33685CEA2296308900EA57AB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685CE92296308900EA57AB /* Helpers.swift */; };
 		33685CEC2296485A00EA57AB /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685CEB2296485A00EA57AB /* FavoritesTableViewController.swift */; };
 		33685CEF2296489300EA57AB /* FavoritesNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685CEE2296489300EA57AB /* FavoritesNavController.swift */; };
@@ -69,6 +71,8 @@
 /* Begin PBXFileReference section */
 		3301393822976B19006F5C96 /* StuffTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffTableHeaderView.swift; sourceTree = "<group>"; };
 		3301393922976B19006F5C96 /* StuffTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StuffTableHeaderView.xib; sourceTree = "<group>"; };
+		332E611722978C1900AE2442 /* ImageAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageAnimator.swift; path = renTech/Views/ImageAnimator.swift; sourceTree = SOURCE_ROOT; };
+		332E611922978C4800AE2442 /* ImageAnimator.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageAnimator.xib; sourceTree = "<group>"; };
 		33685CE92296308900EA57AB /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		33685CEB2296485A00EA57AB /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		33685CEE2296489300EA57AB /* FavoritesNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNavController.swift; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 		33A5D9C5229311DC007467EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				332E611722978C1900AE2442 /* ImageAnimator.swift */,
+				332E611922978C4800AE2442 /* ImageAnimator.xib */,
 				3301393822976B19006F5C96 /* StuffTableHeaderView.swift */,
 				3301393922976B19006F5C96 /* StuffTableHeaderView.xib */,
 				33A5D9FB22946E03007467EF /* BrowseCollectionViewCell.swift */,
@@ -423,6 +429,7 @@
 				33685CFB2297227700EA57AB /* Nunito-Bold.ttf in Resources */,
 				33A5D9F6229460CA007467EF /* Stuff.storyboard in Resources */,
 				33A5DA102294D0D9007467EF /* ListingDetailViewController.xib in Resources */,
+				332E611A22978C4800AE2442 /* ImageAnimator.xib in Resources */,
 				33A5D9D222931FCD007467EF /* Cartfile in Resources */,
 				33A5DA0C2294C803007467EF /* BrowseCollectionViewCell.xib in Resources */,
 				33A5D9FA22946D7B007467EF /* Nunito.ttf in Resources */,
@@ -532,6 +539,7 @@
 				33A5D9D022931502007467EF /* NetworkHandler.swift in Sources */,
 				33685CEF2296489300EA57AB /* FavoritesNavController.swift in Sources */,
 				33A5D9CB22931453007467EF /* User.swift in Sources */,
+				332E611822978C1900AE2442 /* ImageAnimator.swift in Sources */,
 				33685CF62296640600EA57AB /* ProfileViewController.swift in Sources */,
 				33A5D9FC22946E03007467EF /* BrowseCollectionViewCell.swift in Sources */,
 				33A5D9EC229459D1007467EF /* BaseTabViewController.swift in Sources */,
