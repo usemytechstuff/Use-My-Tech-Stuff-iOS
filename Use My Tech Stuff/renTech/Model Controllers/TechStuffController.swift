@@ -242,6 +242,9 @@ class TechStuffController {
 
 		networkHandler.transferMahDatas(with: request) { _ in }
 		self.bearer = nil
+		myFavoritesIDs.removeAll()
+		itemListings.removeAll()
+		updateDerivatives()
 		saveData()
 		NotificationCenter.default.post(name: .checkLoginNotificationName, object: nil)
 
