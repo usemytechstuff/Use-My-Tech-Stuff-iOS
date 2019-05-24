@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3301393A22976B19006F5C96 /* StuffTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301393822976B19006F5C96 /* StuffTableHeaderView.swift */; };
+		3301393B22976B19006F5C96 /* StuffTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3301393922976B19006F5C96 /* StuffTableHeaderView.xib */; };
 		33685CEA2296308900EA57AB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685CE92296308900EA57AB /* Helpers.swift */; };
 		33685CEC2296485A00EA57AB /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685CEB2296485A00EA57AB /* FavoritesTableViewController.swift */; };
 		33685CEF2296489300EA57AB /* FavoritesNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685CEE2296489300EA57AB /* FavoritesNavController.swift */; };
@@ -65,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3301393822976B19006F5C96 /* StuffTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffTableHeaderView.swift; sourceTree = "<group>"; };
+		3301393922976B19006F5C96 /* StuffTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StuffTableHeaderView.xib; sourceTree = "<group>"; };
 		33685CE92296308900EA57AB /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		33685CEB2296485A00EA57AB /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		33685CEE2296489300EA57AB /* FavoritesNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNavController.swift; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 		33A5D9C5229311DC007467EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3301393822976B19006F5C96 /* StuffTableHeaderView.swift */,
+				3301393922976B19006F5C96 /* StuffTableHeaderView.xib */,
 				33A5D9FB22946E03007467EF /* BrowseCollectionViewCell.swift */,
 				33A5DA0A2294C803007467EF /* BrowseCollectionViewCell.xib */,
 				33A5D9FD22947BFF007467EF /* SearchResultTableViewCell.swift */,
@@ -413,6 +419,7 @@
 				33A5D9AB229310A3007467EF /* Assets.xcassets in Resources */,
 				33A5D9F022946040007467EF /* Faves.storyboard in Resources */,
 				33AC2F2D2294FB7600884B81 /* EditListingDetailViewController.xib in Resources */,
+				3301393B22976B19006F5C96 /* StuffTableHeaderView.xib in Resources */,
 				33685CFB2297227700EA57AB /* Nunito-Bold.ttf in Resources */,
 				33A5D9F6229460CA007467EF /* Stuff.storyboard in Resources */,
 				33A5DA102294D0D9007467EF /* ListingDetailViewController.xib in Resources */,
@@ -514,6 +521,7 @@
 				33A5D9E62293747C007467EF /* ItemListing.swift in Sources */,
 				33685CF822970DB300EA57AB /* GradientView.swift in Sources */,
 				33AC2F2F2294FE2A00884B81 /* StuffTableViewController.swift in Sources */,
+				3301393A22976B19006F5C96 /* StuffTableHeaderView.swift in Sources */,
 				33A5D9A4229310A2007467EF /* AppDelegate.swift in Sources */,
 				33A5D9F822946BBE007467EF /* CategoriesController.swift in Sources */,
 				33A5D9CF22931502007467EF /* UIAlertController+NetError.swift in Sources */,

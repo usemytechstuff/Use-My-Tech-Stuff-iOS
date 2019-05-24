@@ -44,7 +44,7 @@ class StuffTableViewController: UITableViewController, TechStuffAccessor {
 		})
 	}
 
-	@IBAction func addNewItemButtonPressed(_ sender: UIBarButtonItem) {
+	@IBAction func addNewItemButtonPressed(_ sender: UIButton) {
 		guard let editItemVC = UIViewController.editListingDetailViewController() else { return }
 		editItemVC.techStuffController = techStuffController
 		editItemVC.mode = .creatingOwn
@@ -77,6 +77,25 @@ extension StuffTableViewController {
 		case .myRentals:
 			return "My Rentals"
 		}
+	}
+
+	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		guard let headerView = Bundle.main.loadNibNamed("StuffTableHeaderView", owner: nil, options: nil)?.first as? StuffTableHeaderView else { return nil }
+		guard let section = StuffSection(rawValue: section) else { return nil }
+		switch section {
+		case .myListings:
+			headerView.headerTitleLabel.text = "My Listings"
+			headerView.showButton()
+			headerView.addItemButton.addTarget(self, action: #selector(addNewItemButtonPressed), for: .touchUpInside)
+		case .myRentals:
+			headerView.headerTitleLabel.text = "My Rentals"
+			headerView.showButton(false)
+		}
+		return headerView
+	}
+
+	override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return 75
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
