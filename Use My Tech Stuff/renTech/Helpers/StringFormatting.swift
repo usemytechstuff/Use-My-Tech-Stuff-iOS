@@ -10,15 +10,15 @@ import Foundation
 
 struct StringFormatting {
 	static func formatBrandAndModel(brand: String?, model: String?) -> String {
-		if let brand = brand, let model = model {
+		if let brand = brand, !brand.isEmpty, let model = model, !model.isEmpty {
 			return "\(brand) - \(model)"
 		}
 
-		if let brand = brand {
+		if let brand = brand, !brand.isEmpty {
 			return brand
 		}
 
-		if let model = model {
+		if let model = model, !model.isEmpty {
 			return model
 		}
 
