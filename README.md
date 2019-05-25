@@ -12,7 +12,7 @@ AirBNB, but for renting tech equipment! Okay, so it's actually a school project,
 
 ### Table of contents
 * [Features](#features)
-* [Sample Video](#samplevideo)
+* [Sample Video](#sample-video)
 * [Install Instructions](#installinstructions)
 * [Other Components of This Project](#othercomponentsofthisproject)
 * [Team Members](#teammembers)
@@ -50,10 +50,7 @@ AirBNB, but for renting tech equipment! Okay, so it's actually a school project,
 
 
 #### Sample Video
-[![video link](https://img.youtube.com/vi/jTYAqBvjlv0/hqdefault.jpg)](https://www.youtube.com/embed/jTYAqBvjlv0)
-
-<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/jTYAqBvjlv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
- -->
+[![video link](https://img.youtube.com/vi/jTYAqBvjlv0/hqdefault.jpg)](https://youtu.be/jTYAqBvjlv0)
 
 #### Install Instructions
 1. Clone this repository
