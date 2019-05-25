@@ -13,9 +13,9 @@ AirBNB, but for renting tech equipment! Okay, so it's actually a school project,
 ### Table of contents
 * [Features](#features)
 * [Sample Video](#sample-video)
-* [Install Instructions](#installinstructions)
-* [Other Components of This Project](#othercomponentsofthisproject)
-* [Team Members](#teammembers)
+* [Install Instructions](#install-instructions)
+* [Other Components of This Project](#other-components-of-this-project)
+* [Team Members](#team-members)
 * [Acknowledgements](#acknowledgements)
 
 ### Features
