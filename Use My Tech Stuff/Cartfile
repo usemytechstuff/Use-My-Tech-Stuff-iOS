@@ -1,3 +1,4 @@
 github "tbaranes/SwiftyUtils"
 github "hackiftekhar/IQKeyboardManager"
 github "auth0/JWTDecode.swift" ~> 2.3
+github "morizotter/TouchVisualizer" "3.0.0"

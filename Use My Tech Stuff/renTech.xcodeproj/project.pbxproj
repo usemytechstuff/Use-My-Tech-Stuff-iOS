@@ -56,6 +56,7 @@
 		33AC2F2F2294FE2A00884B81 /* StuffTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AC2F2E2294FE2A00884B81 /* StuffTableViewController.swift */; };
 		33AC2F312294FFCB00884B81 /* StuffNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AC2F302294FFCB00884B81 /* StuffNavController.swift */; };
 		33AC2F36229500AC00884B81 /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AC2F35229500AC00884B81 /* ItemCategory.swift */; };
+		33F337122298AC1A00D74CAF /* TouchVisualizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33F337112298AC1A00D74CAF /* TouchVisualizer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		33AC2F2E2294FE2A00884B81 /* StuffTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffTableViewController.swift; sourceTree = "<group>"; };
 		33AC2F302294FFCB00884B81 /* StuffNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffNavController.swift; sourceTree = "<group>"; };
 		33AC2F35229500AC00884B81 /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
+		33F337112298AC1A00D74CAF /* TouchVisualizer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TouchVisualizer.framework; path = Carthage/Build/iOS/TouchVisualizer.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				33A5D9DF229325E0007467EF /* SwiftyUtils.framework in Frameworks */,
 				33A5D9E4229352E0007467EF /* IQKeyboardManagerSwift.framework in Frameworks */,
 				33685CF12296603400EA57AB /* JWTDecode.framework in Frameworks */,
+				33F337122298AC1A00D74CAF /* TouchVisualizer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +290,7 @@
 		33A5D9DE22932441007467EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				33F337112298AC1A00D74CAF /* TouchVisualizer.framework */,
 				33685CF02296603400EA57AB /* JWTDecode.framework */,
 				33A5D9E3229352E0007467EF /* IQKeyboardManagerSwift.framework */,
 				33A5D9DA22932208007467EF /* SwiftyUtils.framework */,
@@ -495,6 +499,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyUtils.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/JWTDecode.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TouchVisualizer.framework",
 			);
 			name = "Run Script - carthage";
 			outputFileListPaths = (
@@ -503,6 +508,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyUtils.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IQKeyboardManagerSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/JWTDecode.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/TouchVisualizer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

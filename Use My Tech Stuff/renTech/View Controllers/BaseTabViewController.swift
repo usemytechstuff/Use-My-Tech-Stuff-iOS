@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TouchVisualizer
 
 class BaseTabViewController: UITabBarController {
 	let techStuffController = TechStuffController()
@@ -19,6 +20,8 @@ class BaseTabViewController: UITabBarController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		// enable this line to show touches - useful for demos
+//		Visualizer.start()
 
 		viewControllers?.forEach {
 			if let techAccess = $0 as? TechStuffAccessor {
