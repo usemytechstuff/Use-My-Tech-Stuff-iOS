@@ -38,7 +38,7 @@ AirBNB, but for renting tech equipment! Okay, so it's actually a school project,
 	* Backend didn't have search support, so that is handled locally
 	* Top Rated and Recommended additionally aren't algotihmic magic, but instead just randomization
 	* Favorites are also stored locally. While they *are* saved per user id (if you have multiple users on a device, each will have their own favorites), they will *not* sync to other devices you log in on.
-		* Your listings and rentals *do* sync over, through the cloud though!
+		* Your listings and rentals *do* sync through the cloud though!
 	* (Mostly) conformed to swiftlint style guides
 	* Used the following libraries:
 		* [tbaranes/SwiftyUtils](https://github.com/tbaranes/SwiftyUtils)
