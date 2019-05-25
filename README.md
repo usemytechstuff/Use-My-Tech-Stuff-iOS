@@ -12,7 +12,7 @@ AirBNB, but for renting tech equipment! Okay, so it's actually a school project,
 
 ### Table of contents
 * [Features](#features)
-* [Sample Video](#sample-video)
+* [Sample Video](#Sample-Video)
 * [Install Instructions](#install-instructions)
 * [Other Components of This Project](#other-components-of-this-project)
 * [Team Members](#team-members)
@@ -64,6 +64,7 @@ AirBNB, but for renting tech equipment! Okay, so it's actually a school project,
 * [Web Front End A](https://github.com/usemytechstuff/Use-My-Tech-Stuff-FE-Bazen)
 * [Web Front End B](https://github.com/usemytechstuff/Use-My-Tech-Stuff-FE-Sarah)
 * [Web Back End](https://github.com/usemytechstuff/Use-My-Tech-Stuff-BE)
+* [UX Design](https://projects.invisionapp.com/share/54S302QUYQJ)
 
 #### Team Members
 * UX: Chariton Shumway - [@ShumwayChariton](https://twitter.com/ShumwayChariton)
