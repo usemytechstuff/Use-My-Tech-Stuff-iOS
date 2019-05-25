@@ -1,5 +1,5 @@
-# renTech
-![rentech logo](https://github.com/usemytechstuff/Use-My-Tech-Stuff-iOS/blob/master/assets/rentechLogo4.png)
+# ![rentech logo](https://github.com/usemytechstuff/Use-My-Tech-Stuff-iOS/blob/master/assets/rentechLogo4.png)
+
 (Formerly *Use My Tech Stuff*)
 
 ### What is renTech?
