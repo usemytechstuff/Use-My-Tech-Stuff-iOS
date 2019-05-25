@@ -1,4 +1,4 @@
-# ![rentech logo](https://github.com/usemytechstuff/Use-My-Tech-Stuff-iOS/blob/master/assets/rentechLogo4.png)
+![rentech logo](https://github.com/usemytechstuff/Use-My-Tech-Stuff-iOS/blob/master/assets/rentechLogo4.png)
 
 (Formerly *Use My Tech Stuff*)
 
@@ -50,7 +50,10 @@ AirBNB, but for renting tech equipment! Okay, so it's actually a school project,
 
 
 #### Sample Video
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jTYAqBvjlv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![video link](https://img.youtube.com/vi/jTYAqBvjlv0/hqdefault.jpg)](https://www.youtube.com/embed/jTYAqBvjlv0)
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/jTYAqBvjlv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ -->
 
 #### Install Instructions
 1. Clone this repository
