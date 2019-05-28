@@ -70,9 +70,9 @@ AirBNB, but for renting tech equipment! Okay, so it's actually a school project,
 * UX: Chariton Shumway - [@ShumwayChariton](https://twitter.com/ShumwayChariton)
 * iOS Dev: [Michael Redig (me)](https://github.com/mredig) - [@mredig](https://twitter.com/mredig)
 * Backend: Benson Lei
-* Web UI: Oluwatimileyin Ojo - [@timileyinojo](https://twitter.com/timileyinojo)
+* Web UI: [Oluwatimileyin Ojo](https://github.com/openwell) - [@timileyinojo](https://twitter.com/timileyinojo)
 * Web UI: Bryant Patton
-* Web UI: Philip Johnson - [@philjj](https://twitter.com/philjj)
+* Web UI: [Philip Johnson](https://github.com/phil7j) - [@philjj](https://twitter.com/philjj)
 * Front End: Sarah Lee - [@sarahguamie](https://twitter.com/sarahguamie)
 * Front End: Bazen Berhane
 * Scrum Master: [Scott Vojik](https://github.com/sk-vojik) [@scottvojik](https://twitter.com/scottvojik)
