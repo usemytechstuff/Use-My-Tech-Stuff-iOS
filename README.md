@@ -75,7 +75,7 @@ AirBNB, but for renting tech equipment! Okay, so it's actually a school project,
 * Web UI: [Philip Johnson](https://github.com/phil7j) - [@philjj](https://twitter.com/philjj)
 * Front End: Sarah Lee - [@sarahguamie](https://twitter.com/sarahguamie)
 * Front End: Bazen Berhane
-* Scrum Master: [Scott Vojik](https://github.com/sk-vojik) [@scottvojik](https://twitter.com/scottvojik)
+* Team Leader: [Scott Vojik](https://github.com/sk-vojik) [@scottvojik](https://twitter.com/scottvojik)
 
 #### Acknowledgements
 * Thanks to [Lambda](https://lambdaschool.com/) for being awesome, organizing this build week, and providing a fantastic education!
