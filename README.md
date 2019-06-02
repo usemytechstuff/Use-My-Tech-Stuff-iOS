@@ -36,7 +36,7 @@ AirBNB, but for renting tech equipment! Okay, so it's actually a school project,
 		* Updates items with PUT
 		* Deletes items with DELETE
 	* Backend didn't have search support, so that is handled locally
-	* Top Rated and Recommended additionally aren't algotihmic magic, but instead just randomization
+	* Top Rated and Recommended additionally aren't algorithmic magic, but instead just randomization
 	* Favorites are also stored locally. While they *are* saved per user id (if you have multiple users on a device, each will have their own favorites), they will *not* sync to other devices you log in on.
 		* Your listings and rentals *do* sync through the cloud though!
 	* (Mostly) conformed to swiftlint style guides
